@@ -1,0 +1,56 @@
+body {
+	background:#E9ECF4 ;
+	font-size: 0.875em;
+}
+.bg-lightrj{
+	background:#2a6f96;
+}
+
+
+.border-radius {
+	border: 1px solid #1f53c5;
+	border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+}
+
+.margencorta {
+	margin-bottom: 0.5rem;
+	
+}
+
+.derecha {
+	float: right;
+}
+
+.ancho {
+	width:7rem ;
+}
+.contenedor {
+	width: 150px;
+	height: 150px;
+}
+
+.inner {
+	overflow: hidden;
+}
+.inner img {
+	transition: all 1.5s ease;
+} 
+
+.inner:hover img {
+	transform: scale(1.5);
+	rotate: 20;
+}
+
+/*estilos para la tabla*/
+table th {
+    background-color: #337ab7 !important;
+    color: white;
+}
+table>tbody>tr>td {
+    vertical-align: middle !important;
+}
+
+/*para alinear los botones y cuadro de busqueda*/
+.btn-group, .btn-group-vertical {
+    position: absolute !important;
+}
