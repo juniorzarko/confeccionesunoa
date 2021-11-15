@@ -24,7 +24,7 @@ function iniciarsesion(){
     $.ajax({
         // la URL para la petición (url: "url al recurso o endpoint")
        // url: "http://localhost:8080/api/Cabin/all",
-        url: "localhost/principal.php",
+        url: "http://localhost/confeccionesunoa/login.php",
         // la información a enviar
         // (también es posible utilizar una cadena de datos)
         //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
@@ -68,8 +68,8 @@ function registrarusuario(){
     
 
         let datos={
-            nombre:$("#usuario").val(),
-            usuario:$("#usuario").val(),
+            nombre:$("#reg_usuario").val(),
+            usuario:$("#reg_usuario").val(),
             clave:$("#clave").val(),
             email:$("#email").val(),
             estado: "Activo",//$("#estado").val();
@@ -77,12 +77,12 @@ function registrarusuario(){
     
         }
         
-       console.log(datos);
+       //console.log(datos);
 
         $.ajax({
             // la URL para la petición (url: "url al recurso o endpoint")
            // url: "http://localhost:8080/api/Cabin/all",
-            url: "http://localhost/confeccionesunoa/index.php",
+            url: "http://localhost/confeccionesunoa/login.php/user/actualizar",
             // la información a enviar
             // (también es posible utilizar una cadena de datos)
             //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
@@ -110,13 +110,13 @@ function registrarusuario(){
             error: function (xhr, status) {
                 $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
                 //$("#mensajes").hide(1000);
-                console.log("problemas al conectar");
+                console.log(xhr);
             },
     
             // código a ejecutar sin importar si la petición falló o no
             complete: function (xhr, status) {
                 $("#mensajes").html("Obteniendo lista...");
-                $("#mensajes").hide(1000);
+                $("#mensajes").hide(500);
             }
         });
 }

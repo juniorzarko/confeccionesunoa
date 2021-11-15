@@ -11,7 +11,7 @@ class UserModel extends conexionDB{
   private $estado;
   
 function __constructor($id,$nombre,$usuario,$clave,$email,$estado){
-  $this->id=$id;
+  $this->id=null;//$id;
   $this->nombre=$nombre;
   $this->usuario=$usuario;
   $this->clave=$clave;
@@ -62,5 +62,13 @@ function __constructor($id,$nombre,$usuario,$clave,$email,$estado){
 	}
 
 }
+
+class Tb_lote {
+
+
+
+
+}
+
 
 ?>

@@ -1,18 +1,5 @@
 <?php
-//include_once 'Controlador/controlador.php';
-include_once 'Controlador/controlador.php';
 session_start();
-$control = new controlador();
-    
-    if(isset($_SESSION['usuario'])) {
-        header('location: principal.php');
-    }
-    $error = '';
- 
-    $json = file_get_contents('php://input',true); // Con este funcion recibimos los datos enviados de javascript
-    $datos = json_decode($json,true);
-
-    echo($datos);
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +20,7 @@ $control = new controlador();
     
 <div class="contenedor-form">
     <div class="header ">
+        <div id="mensajes"></div>
         <div class="logo-title">
             <img src="img/confeccion.jpg" class="img-fluid img-thumbnail rounded-circle" alt="">
             <h2>Confecciones Uno A</h2>
@@ -52,7 +40,7 @@ $control = new controlador();
                       </svg>
                     </span>
                     <div class="input-group-prepend  ">
-                        <input type="text" class="form-control" id="usuario" -describedby="UsuarioHelp" placeholder="Usuario">
+                        <input type="text" class="form-control" id="log_usuario" -describedby="UsuarioHelp" placeholder="Usuario">
                     </div>
                  </div>             
             </div>
@@ -71,6 +59,7 @@ $control = new controlador();
                    <use xlink:href="iconos/bootstrap-icons.svg#arrow-right-circle-fill"/>
                  </svg></button>                
             </div>       
+            <div id="mensajes"></div>
         </form>
     </div>
 
@@ -104,7 +93,7 @@ $control = new controlador();
                                   </svg>
                                 </span> 
                             </div>				
-                                <input name="" type="hidden" class="form-control" id="" placeholder="Cod. Operador"></input>
+                                <input name="" type="hidden" class="form-control" id="cod_operador" placeholder="Cod. Operador"></input>
                             
                         </div>
                         <div class=" input-group input-group-addon col-md-4" id="">                        
@@ -114,7 +103,7 @@ $control = new controlador();
                                   </svg>
                                 </span> 
                             </div>				
-                                <input name="" type="text" class="form-control" id="usuario" placeholder="Usuario"></input>
+                                <input name="" type="text" class="form-control" id="reg_usuario" placeholder="Usuario"></input>
                             
                         </div>
                         <div class=" input-group input-group-addon col-md-4" id="">                        
@@ -136,7 +125,7 @@ $control = new controlador();
                                   </svg>
                                 </span> 
                             </div>				
-                                <input name="" type="text" class="form-control" id="clave" placeholder="Dirección"></input>
+                                <input name="" type="text" class="form-control" id="direccion" placeholder="Dirección"></input>
                             
                         </div>
                         <div class=" input-group input-group-addon col-md-4" id="">                        
@@ -146,7 +135,7 @@ $control = new controlador();
                                   </svg>
                                 </span> 
                             </div>				
-                                <input name="" type="number" class="form-control" id="" placeholder="Telefono"></input>
+                                <input name="" type="number" class="form-control" id="telefono" placeholder="Telefono"></input>
                             
                         </div>
                         <div class=" input-group input-group-addon col-md-4" id="">                        
@@ -156,7 +145,7 @@ $control = new controlador();
                                   </svg>
                                 </span> 
                             </div>				
-                                <input name="" type="text" class="form-control" id="" placeholder="Cargo"></input>
+                                <input name="" type="text" class="form-control" id="cargo" placeholder="Cargo"></input>
                             
                         </div>                                 
                     </div>
@@ -168,7 +157,7 @@ $control = new controlador();
                                   </svg>
                                 </span> 
                             </div>				
-                                <input name="" type="email" class="form-control" id="" placeholder="Correo Electronico"></input>
+                                <input name="" type="email" class="form-control" id="email" placeholder="Correo Electronico"></input>
                             
                         </div>
                         <div class=" input-group input-group-addon col-md-4" id="">                        

@@ -7,7 +7,7 @@ class RestUtils
     $return_obj		= new RestRequest();
         // almacenaremos nuestros datos aquí
     $data			= array();
-
+   
     switch ($request_method){
         // gets are easy...
         case 'get':
@@ -34,21 +34,23 @@ class RestUtils
     // set the raw data, so we can access it if needed (there may be
     // other pieces to your requests)
     $return_obj->setRequestVars($data);
-
-    if(isset($data['data'])){
+    
+    if(isset($data)){
         // translate the JSON to an Object for use however you want
-        $return_obj->setData(json_decode($data['data']));
+        $return_obj->setData($data);
     }
+    
     return $return_obj;
 	}
 
    public static function sendResponse($status = 200, $body = '', $content_type = 'text/html'){
-            $status_header = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);
+            
+    $status_header = 'HTTP/1.1 ' . $status . ' ' . RestUtils::getStatusCodeMessage($status);
             // set the status
             header($status_header);
             // set the content type
             header('Content-type: ' . $content_type);
-        
+           // var_dump($status_header); 
             // pages with body are easy
             if($body != ''){
                 // send the body
@@ -179,10 +181,12 @@ class RestRequest
 	}
 
 	public function setRequestVars($request_vars){
+       
 		$this->request_vars = $request_vars;
 	}
 
 	public function getData(){
+      
 		return $this->data;
 	}
 

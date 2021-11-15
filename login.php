@@ -1,9 +1,34 @@
 
 <?php
-include_once 'Modelos/modelo.php';
-session_start();
+include_once 'Modelo/modelo.php';
+//include_once 'Controlador/controlador.php';
+include_once 'Controlador/controlador.php';
 
+$control = new controlador();
+    
+if(isset($_SESSION['usuario'])) {
+  header('location: principal.php');
+ }
+$error = '';
+$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$uri = explode( '/', $uri ); 
 
+$control->recibirdatos($uri);
+//echo(get_headers());
+//$json = file_get_contents('php://input',true); // Con este funcion recibimos los datos enviados de javascript
+//$datos = json_decode($json,true);
+
+//$datos=$control->processRequest();
+//echo($datos->getData());
+//var_dump($datos->getData());
+//$datos = json_decode($datos,true);
+//if (isset($datos))
+//$control->sendResponse(200, json_encode($datos->getData()), 'application/json');
+//$metodo=$control->getMethod();
+//var_dump($datos); 
+//recibirdatos($uri,$datos);
+
+/*
     if(isset($_SESSION['usuario'])) {
         header('location: principal.php');
     }
@@ -35,7 +60,7 @@ session_start();
         }
     }
 
-
+*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
