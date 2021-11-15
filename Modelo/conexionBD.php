@@ -1,7 +1,7 @@
 <?php 
 
 Abstract class conexionDB{
-  protected $usuario;
+  protected $usuariobd;
   protected $contrasena;
   protected $basedatos=[];
   protected $servidor;
@@ -10,9 +10,17 @@ Abstract class conexionDB{
   
       function __construct()
         {
-          $this->usuario='root';
+          $this->usuariobd='root';
           $this->contrasena='phpadmin';
           $this->basedatos[1]='BD_confeccionesunoa';  //$_POST["db"];
+        
+        }
+
+        function conexionDB($usuario,$contrasena,$basedatos)
+        {
+          $this->usuariobd=$usuario;
+          $this->contrasena=$contrasena;
+          $this->basedatos[1]=$basedatos;  //$_POST["db"];
         
         }
 
@@ -64,7 +72,20 @@ Abstract class conexionDB{
         $this->conexion = null;
 
      }
-  
+
+     function getUsuario(){
+       return $this->usuariobd;
+
+     }
+     
+     function setUsuario($usuario){
+      $this->usuariobd=$usuario;
+
+    }
+
+
+
+
 /*    *****METODOS PARA MANEJO DE LLENADO DE TABLAS BASE PARA EL  USO DE LA PLATAFORA
 
      Consultar campos de las tablas
