@@ -180,7 +180,7 @@ if(isset($_SESSION['usuario'])) {
       <script src="js/funcionesOperario.js"></script>  
       <script src="js/funcionesLotes.js"></script>
       <script src="js/funcionesOperaciones.js"></script>
-      <script src="js/funcionesProcesos,js"></script>
+      <script src="js/funcionesOperacion.js"></script>
       <script src="js/funcionesProcesosLote.js"></script>
       <script src="js/oper_principal.js"></script>
       <script src="js/gsap.js"></script>      
