@@ -17,15 +17,15 @@ function __construct(){
 
 public function recibirdatos($url){
 
-    $url_pet =$url[1] . '/' . $url[3] ;
+    $url_pet =$url[1] . '/' . $url[3] . $url[4] ;
     var_dump($url_pet);    
 
     switch ($url_pet){
 
-        case 'confeccionesunoa/user':
+        case 'confeccionesunoa/user/registrar':
             $this_rest = RestUtils::processRequest();
             print_r($this_rest->getData());
-            
+
             //var_dump($this_rest);   
             break;
         case 'confecciones/registro':

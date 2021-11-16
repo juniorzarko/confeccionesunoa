@@ -82,7 +82,7 @@ function registrarusuario(){
         $.ajax({
             // la URL para la petición (url: "url al recurso o endpoint")
            // url: "http://localhost:8080/api/Cabin/all",
-            url: "http://localhost/confeccionesunoa/login.php/user/actualizar",
+            url: "http://localhost/confeccionesunoa/login.php/user/registrar",
             // la información a enviar
             // (también es posible utilizar una cadena de datos)
             //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
