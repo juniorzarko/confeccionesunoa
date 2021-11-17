@@ -1,7 +1,7 @@
 
 <?php
-include_once 'Modelo/modelo.php';
-//include_once 'Controlador/controlador.php';
+
+
 include_once 'Controlador/controlador.php';
 
 $control = new controlador();
@@ -14,6 +14,8 @@ $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri = explode( '/', $uri ); 
 
 $control->recibirdatos($uri);
+//include_once 'Controlador/controlador.php';
+
 //echo(get_headers());
 //$json = file_get_contents('php://input',true); // Con este funcion recibimos los datos enviados de javascript
 //$datos = json_decode($json,true);

@@ -16,15 +16,15 @@ function iniciarsesion(){
    
 
     let datos={
-        usuario:$("#usuario").val(),
-        password:$("#password").val()
+        usuario:$("#log_usuario").val(),
+        password:$("#log_password").val()
 
     }
 
     $.ajax({
         // la URL para la petición (url: "url al recurso o endpoint")
        // url: "http://localhost:8080/api/Cabin/all",
-        url: "http://localhost/confeccionesunoa/login.php",
+        url: "http://localhost/confeccionesunoa/index.php/user/ingresar",
         // la información a enviar
         // (también es posible utilizar una cadena de datos)
         //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
@@ -40,10 +40,12 @@ function iniciarsesion(){
         // la respuesta es pasada como argumento a la función
         success: function (respuesta) {
             //escribe en la consola del desarrollador para efectos de depuración
+            console.log("entro por success");
             console.log(respuesta);
-
+            $("#mensajes").html("llego respuesta");
+            $("#mensajes").hide(1000);
             //recibe el arreglo 'items' de la respuesta a la petición
-            listarRespuesta(respuesta);
+           // listarRespuesta(respuesta);
         },
 
         // código a ejecutar si la petición falla;
@@ -52,12 +54,16 @@ function iniciarsesion(){
         error: function (xhr, status) {
             $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
             //$("#mensajes").hide(1000);
+            console.log("entro por error ingresar");
+            console.log(status);
         },
 
         // código a ejecutar sin importar si la petición falló o no
         complete: function (xhr, status) {
-            $("#mensajes").html("Obteniendo listado de Cabañas...");
-            $("#mensajes").hide(1000);
+            $("#mensajes").html("Usuario no existe");
+            //$("#mensajes").hide(1000);
+            console.log("entro por complete ingresar");
+            console.log(status);
         }
     });
 }
@@ -82,7 +88,7 @@ function registrarusuario(){
         $.ajax({
             // la URL para la petición (url: "url al recurso o endpoint")
            // url: "http://localhost:8080/api/Cabin/all",
-            url: "http://localhost/confeccionesunoa/login.php/user/actualizar",
+            url: "http://localhost/confeccionesunoa/index.php/user/registrar",
             // la información a enviar
             // (también es posible utilizar una cadena de datos)
             //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
@@ -99,8 +105,9 @@ function registrarusuario(){
             success: function (respuesta) {
                 //escribe en la consola del desarrollador para efectos de depuración
                 console.log(respuesta);
-                console.log("dio respuesta");
-                //recibe el arreglo 'items' de la respuesta a la petición
+                console.log("Llego la respuesta por success");
+                alert("Usuario ha sido creado");
+                //rec   ibe el arreglo 'items' de la respuesta a la petición
                // listarRespuesta(respuesta);
             },
     
@@ -110,6 +117,8 @@ function registrarusuario(){
             error: function (xhr, status) {
                 $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
                 //$("#mensajes").hide(1000);
+                
+                console.log("entro por error");
                 console.log(xhr);
             },
     
@@ -117,6 +126,7 @@ function registrarusuario(){
             complete: function (xhr, status) {
                 $("#mensajes").html("Obteniendo lista...");
                 $("#mensajes").hide(500);
+                console.log("entro por complete");
             }
         });
 }

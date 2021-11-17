@@ -1,22 +1,31 @@
 <?php
 include_once 'Modelo/conexionBD.php';
 
-class UserModel extends conexionDB{
+class UserModel {
 
-  private $id;
-  private $nombre;
-  private $usuario;
-  private $clave;
-  private $email;
-  private $estado;
-  
-function __constructor($id,$nombre,$usuario,$clave,$email,$estado){
-  $this->id=null;//$id;
-  $this->nombre=$nombre;
-  $this->usuario=$usuario;
-  $this->clave=$clave;
-  $this->email=$email;
-  $this->estado=$estado;
+  public $id;
+  public $nombre;
+  public $usuario;
+  public $clave;
+  public $email;
+  public $estado;
+
+  function __construct (){
+
+	$this->id=null;//$id;
+
+}
+
+
+function UserModelParam($objUserModel){
+
+	$this->id=null;//$id;
+	$this->nombre=$objUserModel['nombre'];
+	$this->usuario=$objUserModel['usuario'];
+	$this->clave=$objUserModel['clave'];
+	$this->email=$objUserModel['email'];
+	$this->estado=$objUserModel['estado'];
+//	var_dump($this->nombre);
 }
 
 
@@ -31,7 +40,7 @@ function __constructor($id,$nombre,$usuario,$clave,$email,$estado){
 		$this->usuario = $usuario;
 	}
 
-  public function setclave($clave){
+  public function setClave($clave){
 		$this->clave = $clave;
 	}
   public function setEmail($email){
@@ -43,14 +52,15 @@ function __constructor($id,$nombre,$usuario,$clave,$email,$estado){
 	}
   
   public function getNombre(){
-		$this->nombre = $nombre;
+		return $this->nombre;
 	}
 
   public function getUsuario(){
+		//print_r($this->usuario);
 		return $this->usuario;
 	}
 
-  public function getclave(){
+  public function getClave(){
 		return $this->clave;
 	}
   public function getEmail(){

@@ -1,5 +1,20 @@
 <?php
-session_start();
+//session_start();
+include_once 'Controlador/controlador.php';
+
+$control = new controlador();
+    
+if(isset($_SESSION['usuario'])) {
+  header('location: principal.php');
+ }else if($_SERVER['REQUEST_URI']){
+
+    $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $url = explode( '/', $url ); 
+    
+    $control->recibirdatos($url);
+ }else{
+    $error = '';
+ }
 ?>
 
 <!DOCTYPE html>
@@ -50,12 +65,12 @@ session_start();
                             <use xlink:href="iconos/bootstrap-icons.svg#file-lock2-fill"/>
                         </svg>
                         <div class="input-group-prepend  ">
-                                 <input type="password" class="form-control" id="password" -describedby="UsuarioHelp"   placeholder="Contraseña">                             
+                                 <input type="password" class="form-control" id="log_password" -describedby="UsuarioHelp"   placeholder="Contraseña">                             
                         </div>
                 </div>                   
             </div>  
             <div class="input-group col-md-12 ">                
-                <button type="submit">Ingresar<svg class="bi text-white ml-3" width="32" height="32" fill="currentColor">
+                <button type="button" onclick="iniciarsesion();"  >Ingresar<svg class="bi text-white ml-3" width="32" height="32" fill="currentColor">
                    <use xlink:href="iconos/bootstrap-icons.svg#arrow-right-circle-fill"/>
                  </svg></button>                
             </div>       

@@ -110,7 +110,8 @@ class RestUtils
 		// via parse_ini_file()... however, this will suffice
 		// for an example
                 // Deben almacenarse en un archivo .ini y luego analizarse mediante la función parse_ini_file (), pero esto es suficiente, por ejemplo:
-		$codes = Array(
+      
+        $codes = Array(
 		    100 => 'Continue',
 		    101 => 'Switching Protocols',
 		    200 => 'OK',

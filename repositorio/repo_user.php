@@ -1,6 +1,6 @@
 <?php
 
-class rep_user{
+class rep_user extends conexionDB{
 
 public function consulta_login($usuario,$contrasena){
     $consulta = 'SELECT * FROM tb_usuarios WHERE usuario = :usuario AND contrasena = :contrasena';
@@ -37,9 +37,9 @@ public function consulta_login($usuario,$contrasena){
   public function insertarenbdregistro($registrousuario){
     //$place_holders = implode(',', array_fill(0, count($registrousuario), '?')); // convierte una cadena en texto para la consulta con la funcion implode
        
-    $statement = $this->conexion->prepare("INSERT INTO tb_usuarios (nombre,usuario,clave,email,estado) VALUES (:nombre, :usuario ,:clave, :email, :estado)");
+    $statement = $this->conexion->prepare("INSERT INTO tb_usuarios (id,nombre,usuario,clave,email,estado) VALUES (:id,:nombre, :usuario ,:clave, :email, :estado)");
    
-    $result=$statement->execute($registrousuario);
+    $result=$statement->execute((array)$registrousuario);
     //$resultado = $statement->fetchall();
     
    

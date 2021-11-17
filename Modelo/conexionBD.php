@@ -31,7 +31,7 @@ Abstract class conexionDB{
     $dsn = 'mysql:host=localhost;dbname='.$this->basedatos[$numbd];
    
     try{
-      $this->conexion = new PDO($dsn,$this->usuario,$this->contrasena);
+      $this->conexion = new PDO($dsn,$this->usuariobd,$this->contrasena);
       $this->conexion->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
       }catch(PDOException $prueba_error){
           echo "Error: " . $prueba_error->getMessage();
