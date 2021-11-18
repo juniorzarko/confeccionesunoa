@@ -1,16 +1,20 @@
 <?php
-
 include_once "Controlador/RestUtils.php";
 include_once "confecciones/api/servicios.php";
+
+
 class controlador extends RestUtils{
 
 
 public $url;
 protected $rest;
 protected $servUser;
+public $sessionuser;
+
 function __construct(){
 
     $this->servUser=new servicios();
+   // $this->sessionuser=new Sessionuser();
     $this->url ="";
    // $this->rest = RestUtils::processRequest();
 
@@ -46,9 +50,21 @@ public function recibirdatos($url){
                 case 'user/ingresar/':
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
+                   
                     // echo(RestUtils::getStatusCodeMessage($status));
                     $resultado=$this->servUser->ingresarunoA($datos['usuario']);
-                    RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                    
+                    if ($resultado){
+                        session_start();
+                        $_SESSION['usuario']=$resultado['usuario'];
+                        RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                        
+                    }else{
+                        //var_dump($resultado);
+                        RestUtils::sendResponse(205, json_encode("Usuario no existe"), 'application/json');
+
+                    }
+                  
                    // print_r($datos['usuario']);
                     break;    
                 default:{

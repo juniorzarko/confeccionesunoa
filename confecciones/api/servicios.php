@@ -28,8 +28,9 @@ public function ingresarunoA($usuario){
     $this->tb_user= new UserModel();
     $conebd=$this->iniconexionbd(1);
     $resultado=$this->consulta_registro($usuario);
+    
     return $resultado;
-  //  var_dump($resultado);
+ 
 }
 
 

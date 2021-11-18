@@ -44,6 +44,7 @@ function iniciarsesion(){
             console.log(respuesta);
             $("#mensajes").html("llego respuesta");
             $("#mensajes").hide(1000);
+            window.location.replace("http://localhost/confeccionesunoa/principal.php");
             //recibe el arreglo 'items' de la respuesta a la petición
            // listarRespuesta(respuesta);
         },
