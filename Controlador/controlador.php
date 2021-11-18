@@ -52,11 +52,18 @@ public function recibirdatos($url){
                     $datos=$this_rest->getData();
                    
                     // echo(RestUtils::getStatusCodeMessage($status));
+                   
+                   // $usuario = $datos->getUser();
+                   // $contrasena = $datos->getClave();
+                   // $contrasena = hash('sha512', $contrasena);
+
                     $resultado=$this->servUser->ingresarunoA($datos['usuario']);
                     
                     if ($resultado){
                         session_start();
                         $_SESSION['usuario']=$resultado['usuario'];
+                        $_SESSION['estado']=$resultado['estado'];
+                        $_SESSION['nombre']=$resultado['nombre'];
                         RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
                         
                     }else{

@@ -1,9 +1,8 @@
 <?php
-//session_start();
 include_once 'Controlador/controlador.php';
 
 $control = new controlador();
-    
+
 if(isset($_SESSION['usuario'])) {
   header('location: principal.php');
  }else if($_SERVER['REQUEST_URI']){
@@ -14,6 +13,9 @@ if(isset($_SESSION['usuario'])) {
     $control->recibirdatos($url);
  }else{
     $error = '';
+
+    
+
  }
 ?>
 

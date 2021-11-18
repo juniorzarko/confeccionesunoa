@@ -1,19 +1,6 @@
 <?php
 include_once "confecciones/sessionuser.php";
-session_start();
-if(isset($_SESSION['usuario']) == null) {
-  header('location: index.php');
- }else if($_SERVER['REQUEST_URI']){
 
-    $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    $url = explode( '/', $url ); 
-    
-    //$control->recibirdatos($url);
- }else{
-    $error = '';
- }
-$usuario=$_SESSION['usuario'];
-$resultado = $_SESSION;
 
 ?>
 
@@ -23,11 +10,12 @@ $resultado = $_SESSION;
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="iconos/bootstrap-icons.css">
+   
     <title>Confecciones Uno A</title>   
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" >
-    <link rel="stylesheet" href="iconos/bootstrap-icons.css">   
+       
     <!-- Custom styles for this template -->
       <link href="css/dashboard.css" rel="stylesheet">
   </head>
@@ -38,7 +26,7 @@ $resultado = $_SESSION;
          <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
          </button>
-         <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Search" value="<?php print_r($resultado);?>">
+         <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Search">
           <div class="navbar-nav">
             <div class="nav-item text-nowrap">
                      <a class="nav-link px-3" href="#">Salir</a>
@@ -51,38 +39,38 @@ $resultado = $_SESSION;
                   <h4 class="text-primary text-center "> Modulo Nomina</h4>	
                   <div class="input-group">
                       <span><svg class="bi text-primary mt-2 m-3" width="16" height="16" fill="currentColor">
-                          <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
+                          <use xlink:href="../iconos/bootstrap-icons.svg#person-badge"/></svg>
                       </span>                   
-                      <label for="Funcionario" class="border-bottom border-info  mt-2" value=""><?php print_r($usuario);?></label>
+                      <label for="Funcionario" class="border-bottom border-info  mt-2"> Hector Ivan Holguin Urrego</label>
                   </div>
                   <div class="input-group">
                     <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-                        <use xlink:href="iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
+                        <use xlink:href="../iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
                     </span>Operación: 
                     <label for="" class="border-bottom border-info  m-3 mt-1">Jeans</label>
                   </div>
                   <div class="input-group">
                       <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-                       <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                       <use xlink:href="../iconos/bootstrap-icons.svg#journal-richtext"/>
                         </svg></span>Nombre Lote: 
                     <label for="" class="border-bottom border-info  m-3 mt-1">Lote  AO320</label>
                   </div>
                   <div class="input-group">
                     <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-                      <use xlink:href="iconos/bootstrap-icons.svg#calculator-fill"/>
+                      <use xlink:href="../iconos/bootstrap-icons.svg#calculator-fill"/>
                     </svg></span>Cantidad Lote: 
                     <label for="" class="border-bottom border-info  m-3 mt-1">400 Uds</label>
                   </div>
                   <div class="input-group">
                     <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-                      <use xlink:href="iconos/bootstrap-icons.svg#calendar-date-fill"/>
+                      <use xlink:href="../iconos/bootstrap-icons.svg#calendar-date-fill"/>
                       </svg>
                     </span>Fecha inicio: 
                     <label for="" class="border-bottom border-info  m-3 mt-1">15-12-2021</label>
                   </div>
                   <div class="input-group">
                      <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-                       <use xlink:href="iconos/bootstrap-icons.svg#calendar-date-fill"/>
+                       <use xlink:href="../iconos/bootstrap-icons.svg#calendar-date-fill"/>
                      </svg>
                     </span>Fecha Corte: 
                      <label for="" class="border-bottom border-info m-3 mt-1">15-12-2021</label>
@@ -97,13 +85,13 @@ $resultado = $_SESSION;
                       </li>
                       <li class="nav-item">
                       <div class="input-group">
-                       <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"         fill="currentColor"><use xlink:href="iconos/bootstrap-icons.svg#people"/>
+                       <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"         fill="currentColor"><use xlink:href="../iconos/bootstrap-icons.svg#people"/>
                              </svg>
                        </span>Creacion Usuarios: 
              
                        <div class="input-group">
               <div class=""><span><svg class="bi text-primary mt-2 m-2" width="16" height="16"      fill="currentColor">
-                <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                <use xlink:href="../iconos/bootstrap-icons.svg#journal-richtext"/>
                  </svg></span>Creación de lotes 
               </div>
                   
@@ -112,14 +100,14 @@ $resultado = $_SESSION;
                       <li class="nav-item">
                          <div class="input-group">
                             <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"      fill="currentColor">
-                             <use xlink:href="iconos/bootstrap-icons.svg#tools"/></svg>
+                             <use xlink:href="../iconos/bootstrap-icons.svg#tools"/></svg>
                             </span>Creacion de Operación               
                          </div>
                       </li>
                       <li class="nav-item">
                         <div class="input-group">
                           <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"      fill="currentColor">
-                           <use xlink:href="iconos/bootstrap-icons.svg#upc-scan"/>
+                           <use xlink:href="../iconos/bootstrap-icons.svg#upc-scan"/>
                           </svg>
                           </span>Modulo de Operaciones
                         </div>
@@ -132,7 +120,7 @@ $resultado = $_SESSION;
                   <li class="nav-item">
                     <div class="input-group">
                        <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"      fill="currentColor">
-                       <use xlink:href="iconos/bootstrap-icons.svg#toggle2-on"/>
+                       <use xlink:href="../iconos/bootstrap-icons.svg#toggle2-on"/>
                         </svg>
                        </span>Inicio de Proceso                
                    </div>
@@ -141,7 +129,7 @@ $resultado = $_SESSION;
                   <li class="nav-item">
             <div class="input-group">
               <div class=""><span><svg class="bi text-primary mt-2 m-2" width="16" height="16"      fill="currentColor">
-                <use xlink:href="iconos/bootstrap-icons.svg#vector-pen"/>
+                <use xlink:href="../iconos/bootstrap-icons.svg#vector-pen"/>
                  </svg></span>Liquidaciones
               </div>
                  
@@ -150,7 +138,7 @@ $resultado = $_SESSION;
                   <li class="nav-item">
             <div class="input-group">
               <div class=""><span><svg class="bi text-primary mt-2 m-2" width="16" height="16"      fill="currentColor">
-                <use xlink:href="iconos/bootstrap-icons.svg#vinyl-fill"/>
+                <use xlink:href="../iconos/bootstrap-icons.svg#vinyl-fill"/>
                  </svg></span>Trazabilidad
               </div>
                  
@@ -169,7 +157,7 @@ $resultado = $_SESSION;
           </div>
           <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
             <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"      fill="currentColor">
-              <use xlink:href="iconos/bootstrap-icons.svg#stack-overflow"/>
+              <use xlink:href="../iconos/bootstrap-icons.svg#stack-overflow"/>
                </svg></span>
             Informes Quincenales
           </button>
@@ -307,9 +295,8 @@ $resultado = $_SESSION;
   
 
   <script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/funciones.js"></script>
-<script src="js/oper_principal.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
     
 </body>
