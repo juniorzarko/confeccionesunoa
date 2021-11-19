@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `BD_confeccionesunoa`
 --
-CREATE DATABASE IF NOT EXISTS `BD_confeccionesunoa` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci;
+CREATE DATABASE IF NOT EXISTS `BD_confeccionesunoa` ;
 USE `BD_confeccionesunoa`;
 
 -- --------------------------------------------------------
@@ -33,7 +33,7 @@ USE `BD_confeccionesunoa`;
 DROP TABLE IF EXISTS `tb_lote`;
 CREATE TABLE `tb_lote` (
   `id` int NOT NULL,
-  `codigoLote` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `codigoLote` varchar(30)  NOT NULL,
   `nombre` int NOT NULL,
   `cantidad` int NOT NULL,
   `fechaCreacion` date NOT NULL
@@ -99,12 +99,12 @@ CREATE TABLE `tb_operacion` (
 DROP TABLE IF EXISTS `tb_operario`;
 CREATE TABLE `tb_operario` (
   `id` int NOT NULL,
-  `Nombre` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `apellido` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `direccion` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `telefono` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `cargo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+  `Nombre` varchar(50)  NOT NULL,
+  `apellido` varchar(100)  NOT NULL,
+  `direccion` varchar(500) NOT NULL,
+  `telefono` varchar(15)  NOT NULL,
+  `cargo` varchar(100)  NOT NULL,
+  `email` varchar(100)  NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
