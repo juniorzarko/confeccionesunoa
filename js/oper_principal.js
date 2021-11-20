@@ -50,6 +50,7 @@ class Manejomodulos{
             }
         });
 
+<<<<<<< HEAD
         
 
     }
@@ -68,6 +69,12 @@ function desplegarlote(){
 function desplegarusuarios(){
 
     $("#idPrincipal").load("front/mod_usuarios.php");
+=======
+
+
+    }
+
+>>>>>>> acb4c2e83317e6fc3a0c0482860cafeaccb0e063
 
 }
 
