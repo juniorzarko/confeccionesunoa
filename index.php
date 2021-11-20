@@ -4,7 +4,7 @@ include_once 'Controlador/controlador.php';
 $control = new controlador();
 
 if(isset($_SESSION['usuario'])) {
-  header('location: principal.php');
+  header('location: ../dashboard/principal.php');
  }else if($_SERVER['REQUEST_URI']){
 
     $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

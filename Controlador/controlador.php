@@ -10,6 +10,7 @@ public $url;
 protected $rest;
 protected $servUser;
 public $sessionuser;
+public $servlote;
 
 function __construct(){
 
@@ -73,7 +74,15 @@ public function recibirdatos($url){
                     }
                   
                    // print_r($datos['usuario']);
-                    break;    
+                    break; 
+                    
+                case 'lote/ingresar/':
+                    $this_rest = RestUtils::processRequest();
+                    $datos=$this_rest->getData();
+                    $this->servlote->insertar($datos);
+                 break;  
+
+
                 default:{
                    // RestUtils::sendResponse(200,'', 'application/json');
                 }
