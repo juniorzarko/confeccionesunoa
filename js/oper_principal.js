@@ -49,14 +49,57 @@ class Manejomodulos{
                 console.log("entro por complete");
             }
         });
-
-
+      
 
     }
 
 
 }
 
-var controlweb = new Manejomodulos(); 
+function inicializarmod(){
 
-$("#visualizar_form").load("front/mod_alote.php");
+    $("#idPrincipal").hide();
+    $(".data-bs-toggle").val("true");
+
+}
+
+function desplegarusuarios1(){
+    $("#idPrincipal").show(500);
+
+   $("#idPrincipal").load("front/mod_usuarios.php");
+  
+    }
+    function desplegarusuarios2(){
+        $("#idPrincipal").show(500);
+        $("#usuarios").load("front/mod_usuarios.php");
+        
+         }
+     
+
+function desplegarlote1(){
+    $("#idPrincipal").show(500);
+   
+    $("#idPrincipal").load("front/mod_alote.php");
+    
+}
+function desplegarlote2(){
+
+    $("#lotes").load("front/mod_alote.php");
+}
+
+
+function desplegaroperaciones1(){
+    $("#idPrincipal").show(500);
+     $("#idPrincipal").load("front/mod_operaciones.php");
+            
+    }
+    function desplegaroperaciones2(){
+    
+        $("#operaciones").load("front/mod_operaciones.php");
+               
+       }
+    
+
+//var controlweb = new Manejomodulos(); 
+
+//$("#visualizar_form").load("front/mod_alote.php");
