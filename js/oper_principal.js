@@ -66,11 +66,11 @@ function inicializarmod(){
 function desplegarusuarios1(){
     $("#idPrincipal").show(500);
 
-   $("#idPrincipal").load("front/mod_operador.php");
+   $("#idPrincipal").load("front/mod_usuarios.php");
   
     }
     function desplegarusuarios2(){
-        $("#idPrincipal").show(500);
+    
         $("#usuarios").load("front/mod_operador.php");
         
          }
@@ -83,7 +83,7 @@ function desplegarlote1(){
     
 }
 function desplegarlote2(){
-    $("#idPrincipal").show(500);
+   
     $("#lotes").load("front/mod_alote.php");
 }
 
