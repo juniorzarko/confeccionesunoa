@@ -35,7 +35,11 @@
           </div> 
       </div>
       <div class="col-3 offset-2 mb-2">
-                <button type="button" class="btn btn-primary btn-block">Registrar</button>
+      <div class="input-group">
+     <span class="input-group-text">First and last name</span>
+  <input type="text" aria-label="First name" class="form-control">
+  <input type="text" aria-label="Last name" class="form-control">
+</div>
       </div>
       
     </form>
