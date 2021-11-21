@@ -115,10 +115,14 @@
                 <button class="btn btn-sm btn-outline-primary" type="button">Trazabilidad</button>
                 </p>
                 <div class="collapse" id="collapse-usuarios">
-                   <div class="container" id="usuarios"></div>
+                   <div class="container">
+                     <div  id="usuarios"></div>
+                   </div>
                 </div>
                 <div class="collapse" id="collapse-lotes">
-                   <div class="container" id="lotes"></div>
+                   <div class="container">
+                     <div  id="lotes"></div>
+                   </div>
                 </div>
                 <div class="collapse" id="collapse-operaciones">
                    <div class="container" id="operaciones"></div>
@@ -152,6 +156,7 @@
 
       <script src="js/jquery-3.6.0.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      
       <script src="js/oper_principal.js"></script>
       <script src="bootstrap/js/bootstrap.js"></script>
 

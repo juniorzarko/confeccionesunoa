@@ -35,15 +35,16 @@
           </div> 
       </div>
       <div class="col-3 offset-2 mb-2">
-                <button type="button" class="btn btn-primary btn-block" onclick="controlweb.  registrarlote()">Registrar</button>
+                <button type="button" class="btn btn-primary btn-block">Registrar</button>
       </div>
       
     </form>
     <nav class="navbar navbar-light bg-light">
        <form class="container-fluid justify-content-center">
-          <button class="btn btn-sm btn-outline-primary" type="button">Crear</button>
+         
           <button class="btn btn-sm btn-outline-primary" type="button">Editar</button>
           <button class="btn btn-sm btn-outline-primary" type="button">Eliminar</button>
+          <button class="btn btn-sm btn-outline-primary" type="button">Guardar</button>
        </form>
     </nav>
 </div>
