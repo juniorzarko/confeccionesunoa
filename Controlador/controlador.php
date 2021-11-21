@@ -82,6 +82,14 @@ public function recibirdatos($url){
                     $this->servlote->insertar($datos);
                  break;  
 
+                 case 'lote/ingresar/':
+                    $this_rest = RestUtils::processRequest();
+                    $datos=$this_rest->getData();
+                    $this->servlote->insertar($datos);
+                 break;  
+   
+
+
 
                 default:{
                    // RestUtils::sendResponse(200,'', 'application/json');

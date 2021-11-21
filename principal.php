@@ -1,3 +1,22 @@
+<?php
+include_once 'Controlador/controlador.php';
+
+$control = new controlador();
+
+if(isset($_SESSION['usuario'])) {
+  header('location: principal.php');
+ }else if($_SERVER['REQUEST_URI']){
+
+    $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $url = explode( '/', $url ); 
+    
+    $control->recibirdatos($url);
+ }else{
+    $error = '';
+
+ }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -128,15 +147,12 @@
                    <div class="container" id="operaciones"></div>
                 </div>
 
-<<<<<<< HEAD
               </div>
             </div>
           </div>      
         </nav>
         <main class="col-md-9 col-lg-10 ms-sm-auto px-md-4">
           <section class="flex bg-primary" id="visualizar_form">
-=======
->>>>>>> 3558d8a142ebe1c736588cf9548b14e3a5215c1c
 
 
 
@@ -163,18 +179,6 @@
       
     </div> 
 
-      <script src="js/jquery-3.6.0.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-      
-      <script src="js/oper_principal.js"></script>
-      <script src="bootstrap/js/bootstrap.js"></script>
-
-<<<<<<< HEAD
-
-        
-      </div>    
-    </div>
-
 
             <script src="js/jquery-3.6.0.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
@@ -184,7 +188,4 @@
             <script src="js/oper_principal.js"></script>
             <script src="js/bootstrap.bundle.min.js"></script>
           </body>
-=======
-  </body>
->>>>>>> 3558d8a142ebe1c736588cf9548b14e3a5215c1c
 </html>
