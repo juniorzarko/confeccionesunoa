@@ -49,35 +49,57 @@ class Manejomodulos{
                 console.log("entro por complete");
             }
         });
+      
 
-<<<<<<< HEAD
+    }
+
+
+}
+
+function inicializarmod(){
+
+    $("#idPrincipal").hide();
+    $(".data-bs-toggle").val("true");
+
+}
+
+function desplegarusuarios1(){
+    $("#idPrincipal").show(500);
+
+   $("#idPrincipal").load("front/mod_usuarios.php");
+  
+    }
+    function desplegarusuarios2(){
+        $("#idPrincipal").show(500);
+        $("#usuarios").load("front/mod_usuarios.php");
         
+         }
+     
 
-    }
-
-
-}
-
-
-function desplegarlote(){
-
+function desplegarlote1(){
+    $("#idPrincipal").show(500);
+   
     $("#idPrincipal").load("front/mod_alote.php");
+    
+}
+function desplegarlote2(){
 
-
+    $("#lotes").load("front/mod_alote.php");
 }
 
-function desplegarusuarios(){
 
-    $("#idPrincipal").load("front/mod_usuarios.php");
-=======
-
-
+function desplegaroperaciones1(){
+    $("#idPrincipal").show(500);
+     $("#idPrincipal").load("front/mod_operaciones.php");
+            
     }
+    function desplegaroperaciones2(){
+    
+        $("#operaciones").load("front/mod_operaciones.php");
+               
+       }
+    
 
->>>>>>> acb4c2e83317e6fc3a0c0482860cafeaccb0e063
+//var controlweb = new Manejomodulos(); 
 
-}
-
-var controlweb = new Manejomodulos(); 
-
-$("#visualizar_form").load("front/mod_alote.php");
+//$("#visualizar_form").load("front/mod_alote.php");
