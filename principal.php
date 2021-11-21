@@ -125,8 +125,8 @@ $resultado = $_SESSION;
             </div>
           </div>      
         </nav>
-        <main class="flex col-md-9  col-lg-10 ms-sm-auto px-md-4">
-          <section class="col bg-primary" id="visualizar_form">
+        <main class="col-md-9 col-lg-10 ms-sm-auto px-md-4">
+          <section class="flex bg-primary" id="visualizar_form">
 
 
           </section>
@@ -152,6 +152,5 @@ $resultado = $_SESSION;
             <script src="js/funciones.js"></script>
             <script src="js/oper_principal.js"></script>
             <script src="js/bootstrap.bundle.min.js"></script>
-           como hago l copiaseleccione todo y lo pega en una carpeta pero ya cono alcanzo dame 10 min, lo espero entonces si ya le escrubo biec
-    </body>
+          </body>
 </html>
