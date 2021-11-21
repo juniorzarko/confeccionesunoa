@@ -125,7 +125,7 @@ if(isset($_SESSION['usuario'])) {
               <form class="container-fluid justify-content-center d-grid-flex gap-2 d-md-block">
                 <p>
                 <a><button class="btn btn-sm btn-outline-primary active" aria-current="page" type="button" href="" role="button" onClick="inicializarmod();">Inicio</button></a>
-                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-usuarios" aria-expanded="false" aria-controls="collapse-usuarios" onClick="desplegarusuarios2();">Usuarios</button>
+                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-usuarios" aria-expanded="false" aria-controls="collapse-usuarios" onClick="desplegarusuarios2();">Operador</button>
                 <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse"  data-bs-target="#collapse-lotes" aria-expanded="false" aria-controls="collapse-lotes"  onClick="desplegarlote2();">Lotes</button>
                 <button class="btn btn-sm btn-outline-primary" type="button">Operación</button>
                 <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse"  data-bs-target="#collapse-operaciones" aria-expanded="false" aria-controls="collapse-operaciones"  onClick="desplegaroperaciones2();">Modulo Operaciones</button>
@@ -161,17 +161,20 @@ if(isset($_SESSION['usuario'])) {
 
          
                 <div class="row justify-content-md-center">
-                  <div class="col col-lg-2" id="idInformacion1">
-                     Div de Informacion 1 
-                  </div>
-                  <div class="col-md-auto" id="idPrincipal">
+                  <!-- <div class="col col-lg-2" id="idInformacion1">
+                    
+                  </div> -->
+                  <div class="col-auto" id="idPrincipal">
                    <div class="container">
                      Div de Trabajo
                    </div>
                   </div>
-                  <div class="col col-lg-2" id="idInformacion2">
-                     Div de Informacion 2
-                  </div>
+                  <!-- <div class="col col-lg-2" id="idInformacion2">
+                
+                  </div> -->
+                </div>
+                <div class="" id="listar_contenidos">
+                  
                 </div>
           </div>
         </main>
