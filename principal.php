@@ -101,7 +101,7 @@ if(isset($_SESSION['usuario'])) {
                   <ul class=" dropdown-menu" aria-labelledby="btnGroupDrop1">
                     <li><a class="dropdown-item" onClick="desplegarusuarios1();"  href="#">Creación de Usuarios</a></li>
                     <li><a class="btn btn-link dropdown-item" onClick="desplegarlote1();" href="#">Creacion de Lotes</a></li>
-                    <li><a class="btn btn-link dropdown-item" href="#">Creacion de Operación</a></li>
+                    <li><a class="btn btn-link dropdown-item" onClick="desplegaroperacion1();" href="#">Creacion de Operación</a></li>
                     <li><a class="btn btn-link dropdown-item" onClick="desplegaroperaciones1();" href="#">Modulo de Operaciones</a></li>
                   </ul>
                </div>
@@ -123,8 +123,8 @@ if(isset($_SESSION['usuario'])) {
           <div class="container">
             <nav class="navbar navbar-light bg-light">
               <form class="container-fluid justify-content-center d-grid-flex gap-2 d-md-block">
-                <p>
                 <a><button class="btn btn-sm btn-outline-primary active" aria-current="page" type="button" href="" role="button" onClick="inicializarmod();">Inicio</button></a>
+<<<<<<< HEAD
                 <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-usuarios" aria-expanded="false" aria-controls="collapse-usuarios" onClick="desplegarusuarios2();">Operador</button>
                 <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse"  data-bs-target="#collapse-lotes" aria-expanded="false" aria-controls="collapse-lotes"  onClick="desplegarlote2();">Lotes</button>
                 <button class="btn btn-sm btn-outline-primary" type="button">Operación</button>
@@ -156,8 +156,17 @@ if(isset($_SESSION['usuario'])) {
 
 
 
+=======
+                  <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegarusuarios2();">Operador</button>
+                  <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegarlote2();">Lotes</button>
+                  <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegaroperacion2();">Operación</button>
+                  <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegaroperaciones2();">Modulo Operaciones</button>
+                  <button class="btn btn-sm btn-outline-primary" type="button">Inicio Operacion</button>
+                  <button class="btn btn-sm btn-outline-primary" type="button">Liquidaciones</button>
+                  <button class="btn btn-sm btn-outline-primary" type="button">Trazabilidad</button>            
+>>>>>>> e44719c5d0d9acd8b3953ba58a834d0e29674480
             </form>
-              </nav>    
+          </nav>    
 
          
                 <div class="row justify-content-md-center">

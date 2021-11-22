@@ -161,7 +161,7 @@ class Manejomodulos{
 function inicializarmod(){
 
     $("#idPrincipal").hide();
-    $(".data-bs-toggle").val("true");
+  
 
 }
 
@@ -172,8 +172,8 @@ function desplegarusuarios1(){
   
     }
     function desplegarusuarios2(){
-    
-        $("#usuarios").load("front/mod_operador.php");
+        $("#idPrincipal").show(500);
+        $("#idPrincipal").load("front/mod_operador.php");
         
          }
      
@@ -185,19 +185,19 @@ function desplegarlote1(){
     
 }
 function desplegarlote2(){
-   
-    $("#lotes").load("front/mod_alote.php");
+    $("#idPrincipal").show(500);
+    $("#idPrincipal").load("front/mod_alote.php");
 }
 
 
 function desplegaroperaciones1(){
-    $("#idPrincipal").show(500);
+   
      $("#idPrincipal").load("front/mod_operaciones.php");
             
     }
     function desplegaroperaciones2(){
-    
-        $("#operaciones").load("front/mod_operaciones.php");
+        $("#idPrincipal").show(500);
+        $("#idPrincipal").load("front/mod_operaciones.php");
                
        }
 
@@ -215,6 +215,16 @@ function listarRespuesta(respuesta){
 
 }
     
+       function desplegaroperacion1(){
+   
+        $("#idPrincipal").load("front/mod_operacion.php");
+               
+       }
+       function desplegaroperacion2(){
+           $("#idPrincipal").show(500);
+           $("#idPrincipal").load("front/mod_operacion.php");
+                  
+          }
 
 //var controlweb = new Manejomodulos(); 
 
