@@ -5,14 +5,14 @@
             <div class="col-4 offset-2 mt-2">
                 <div class="input-group">
                     <div class="input-group-text">Nombre</div>
-                          <input type="text" class="form-control" id="cantidad" placeholder="Nombre">
+                          <input type="text" class="form-control" id="nombreOperario" placeholder="Nombre">
                 </div>
             </div>          
             <div class="col-4 mt-2">
                <div class="input-group">
                     <div class="input-group-text">Apellido:
                     </div>
-                       <input type="text" class="form-control" id="fecha" placeholder="Apellido">
+                       <input type="text" class="form-control" id="apellidOperario" placeholder="Apellido">
                 </div>
             </div> 
         </div>
@@ -20,14 +20,14 @@
             <div class="col-4 offset-2 mt-2">
                 <div class="input-group">
                     <div class="input-group-text">Dirección</div>
-                          <input type="text" class="form-control" id="cantidad" placeholder="Dirección">
+                          <input type="text" class="form-control" id="direccionOperario" placeholder="Dirección">
                 </div>
             </div>          
             <div class="col-4 mt-2">
                <div class="input-group">
                     <div class="input-group-text">Teléfono:
                     </div>
-                       <input type="number" class="form-control" id="" placeholder="Teléfono">
+                       <input type="number" class="form-control" id="telefonOperario" placeholder="Teléfono">
                 </div>
             </div> 
         </div>
@@ -35,14 +35,14 @@
             <div class="col-4 offset-2 mt-2">
                 <div class="input-group">
                     <div class="input-group-text">Cargo</div>
-                          <input type="text" class="form-control" id="" placeholder="Cargo">
+                          <input type="text" class="form-control" id="cargOperario" placeholder="Cargo">
                 </div>
             </div>          
             <div class="col-4 mt-2">
                <div class="input-group">
                     <div class="input-group-text">Email:
                     </div>
-                       <input type="email" class="form-control" id="" placeholder="Email">
+                       <input type="email" class="form-control" id="emailOperario" placeholder="Email">
                 </div>
             </div> 
         </div>
@@ -60,7 +60,7 @@
          
           <button class="btn btn-sm btn-outline-primary" type="button">Editar</button>
           <button class="btn btn-sm btn-outline-primary" type="button">Eliminar</button>
-          <button class="btn btn-sm btn-outline-primary" type="button">Guardar</button>
+          <button class="btn btn-sm btn-outline-primary" onClick="guardarOperador();" type="button">Guardar</button>
        </form>
     </nav>
 </div>

@@ -738,7 +738,7 @@ class tb_operacion{
 class tb_operario{
 
 	public $id;
-	public $Nombre;
+	public $nombre;
 	public $apellido;
 	public $direccion;
 	public $telefono;
@@ -749,6 +749,16 @@ class tb_operario{
 
 		$this->id=null;//$id;
 	
+	}
+
+	function tb_operario($operario){
+		$this->id=null;//$id;
+		$this->nombre=$operario['nombre'];
+		$this->apellido=$operario['apellido'];
+		$this->direccion=$operario['direccion'];
+		$this->telefono=$operario['telefono'];
+		$this->cargo=$operario['cargo'];
+		$this->email=$operario['email'];
 	}
 				/**
 				 * Get the value of id

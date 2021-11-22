@@ -1,6 +1,7 @@
 <?php
 include_once "Controlador/RestUtils.php";
 include_once "confecciones/api/servicios.php";
+include_once "confecciones/api/serviciosOperario.php";
 
 
 class controlador extends RestUtils{
@@ -11,10 +12,12 @@ protected $rest;
 protected $servUser;
 public $sessionuser;
 public $servlote;
+public $servOperario;
 
 function __construct(){
 
     $this->servUser=new servicios();
+    $this->servOperario= new serviciosOperario();
    // $this->sessionuser=new Sessionuser();
     $this->url ="";
    // $this->rest = RestUtils::processRequest();
@@ -82,12 +85,18 @@ public function recibirdatos($url){
                     $this->servlote->insertar($datos);
                  break;  
 
-                 case 'lote/ingresar/':
+                 case 'Operario/registrar/':
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
-                    $this->servlote->insertar($datos);
+                    $this->servOperario->insertar($datos);
                  break;  
-   
+
+                 case 'Operario/listar/':
+                    $this_rest = RestUtils::processRequest();
+                  //  $datos=$this_rest->getData();
+                    $resultado=$this->serviciosOperario->getAll();
+                    RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                 break; 
 
 
 
