@@ -49,9 +49,9 @@
         <div class="row">
             <div class="col-md-5  mt-2">
                  <div class="input-group">
-                    <span class="input-group-text">Cod. y Nombre</span>
+                    <span class="input-group-text">Codigo Operario</span>
                       <input type="text" aria-label="Codigo Operador" class="form-control">
-                      <input type="text" aria-label="Nombre" class="form-control">
+                     
                  </div>
             </div>
         </div>
@@ -61,13 +61,11 @@
        <form class="container-fluid justify-content-center">
          
           <button class="btn btn-sm btn-outline-primary" type="button">Editar</button>
-<<<<<<< HEAD
-          <button class="btn btn-sm btn-outline-primary" type="button">Eliminar</button>
-          <button class="btn btn-sm btn-outline-primary" onClick="guardarOperador();" type="button">Guardar</button>
-=======
+
           <button class="btn btn-sm btn-outline-primary mx-3" type="button">Eliminar</button>
-          <button class="btn btn-sm btn-outline-primary" type="button">Guardar</button>
->>>>>>> e44719c5d0d9acd8b3953ba58a834d0e29674480
+          <button class="btn btn-sm btn-outline-primary" onClick="guardarOperador();" type="button">Guardar</button>
+
+         
        </form>
     </nav>
   

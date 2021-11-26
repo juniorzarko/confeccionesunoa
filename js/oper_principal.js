@@ -200,6 +200,12 @@ function desplegaroperaciones1(){
         $("#idPrincipal").load("front/mod_operaciones.php");
                
        }
+       
+    function procesosLotes1(){
+        $("#idPrincipal").show(500);
+        $("#idPrincipal").load("front/mod_procesos_lote.php");
+               
+       } 
 
 function guardarOperador(){
         var objMOdulos = new Manejomodulos();
@@ -226,6 +232,5 @@ function listarRespuesta(respuesta){
                   
           }
 
-//var controlweb = new Manejomodulos(); 
 
-//$("#visualizar_form").load("front/mod_alote.php");
+gsap 
