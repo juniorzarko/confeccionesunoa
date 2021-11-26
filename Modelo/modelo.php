@@ -791,7 +791,7 @@ class tb_operario{
 				 */
 				public function getNombre()
 				{
-					return $this->Nombre;
+					return $this->nombre;
 				}
 
 				/**
@@ -803,7 +803,7 @@ class tb_operario{
 				 */
 				public function setNombre($Nombre)
 				{
-					$this->Nombre = $Nombre;
+					$this->nombre = $Nombre;
 
 					return $this;
 				}

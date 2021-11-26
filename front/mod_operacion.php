@@ -40,8 +40,8 @@
       <nav class="navbar navbar-light bg-light">
        <form class="container-fluid justify-content-center">
          
-          <button class="btn btn-sm btn-outline-primary" type="button">Editar</button>
-          <button class="btn btn-sm btn-outline-primary mx-3" type="button">Eliminar</button>
+          <button class="btn btn-sm btn-outline-primary" type="button">Actualizar</button>
+          <button class="btn btn-sm btn-outline-primary mx-3" type="button">Listar</button>
           <button class="btn btn-sm btn-outline-primary" type="button">Guardar</button>
        </form>
     </nav>

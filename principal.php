@@ -5,18 +5,28 @@ $control = new controlador();
 
 if(isset($_SESSION['usuario'])) {
   header('location: principal.php');
- }else if($_SERVER['REQUEST_URI']){
+ }
+
+ if($_SERVER['REQUEST_URI']){
 
     $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
     $url = explode( '/', $url ); 
     
-    $control->recibirdatos($url);
+    if (!$control->recibirdatos($url))
+         $msj=$control->formarurl($url);
+    
+    //$msj=$control->formarurl($url);
+   // print_r($url);
  }else{
-    $error = '';
+   
 
  }
+ 
+ function isAjax(){
+  return !empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+  strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
+}
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,7 +36,6 @@ if(isset($_SESSION['usuario'])) {
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <title>Confeccioes Uno A</title>    
-
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">       
     <!-- Custom styles for this template -->
@@ -39,14 +48,13 @@ if(isset($_SESSION['usuario'])) {
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" id="mensaje" value="<?php print_r($msj); ?>" aria-label="Search">
        <div class="navbar-nav">
        <div class="nav-item text-nowrap">
        <a class="nav-link px-3" href="#">Salir</a>
        </div>
        </div>
     </header>
-
     <div class="container-fluid"> 
       <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-3 d-md-block bg-light sidebar collapse">
@@ -118,45 +126,16 @@ if(isset($_SESSION['usuario'])) {
                </div> 
             </div>
           </div>                  
-        </nav>       
+        </nav>  
+        <div class="" id="consolaphp">
+      
+
+        </div>     
         <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4"> 
           <div class="container">
             <nav class="navbar navbar-light bg-light">
               <form class="container-fluid justify-content-center d-grid-flex gap-2 d-md-block">
                 <a><button class="btn btn-sm btn-outline-primary active" aria-current="page" type="button" href="" role="button" onClick="inicializarmod();">Inicio</button></a>
-<<<<<<< HEAD
-                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-usuarios" aria-expanded="false" aria-controls="collapse-usuarios" onClick="desplegarusuarios2();">Operador</button>
-                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse"  data-bs-target="#collapse-lotes" aria-expanded="false" aria-controls="collapse-lotes"  onClick="desplegarlote2();">Lotes</button>
-                <button class="btn btn-sm btn-outline-primary" type="button">Operación</button>
-                <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="collapse"  data-bs-target="#collapse-operaciones" aria-expanded="false" aria-controls="collapse-operaciones"  onClick="desplegaroperaciones2();">Modulo Operaciones</button>
-                <button class="btn btn-sm btn-outline-primary" type="button">Inicio Operacion</button>
-                <button class="btn btn-sm btn-outline-primary" type="button">Liquidaciones</button>
-                <button class="btn btn-sm btn-outline-primary" type="button">Trazabilidad</button>
-                </p>
-                <div class="collapse" id="collapse-usuarios">
-                   <div class="container">
-                     <div  id="usuarios"></div>
-                   </div>
-                </div>
-                <div class="collapse" id="collapse-lotes">
-                   <div class="container">
-                     <div  id="lotes"></div>
-                   </div>
-                </div>
-                <div class="collapse" id="collapse-operaciones">
-                   <div class="container" id="operaciones"></div>
-                </div>
-
-              </div>
-            </div>
-          </div>      
-        </nav>
-        <main class="col-md-9 col-lg-10 ms-sm-auto px-md-4">
-          <section class="flex bg-primary" id="visualizar_form">
-
-
-
-=======
                   <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegarusuarios2();">Operador</button>
                   <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegarlote2();">Lotes</button>
                   <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegaroperacion2();">Operación</button>
@@ -164,10 +143,8 @@ if(isset($_SESSION['usuario'])) {
                   <button class="btn btn-sm btn-outline-primary" type="button">Inicio Operacion</button>
                   <button class="btn btn-sm btn-outline-primary" type="button">Liquidaciones</button>
                   <button class="btn btn-sm btn-outline-primary" type="button">Trazabilidad</button>            
->>>>>>> e44719c5d0d9acd8b3953ba58a834d0e29674480
             </form>
           </nav>    
-
          
                 <div class="row justify-content-md-center">
                   <!-- <div class="col col-lg-2" id="idInformacion1">
@@ -183,21 +160,17 @@ if(isset($_SESSION['usuario'])) {
                   </div> -->
                 </div>
                 <div class="" id="listar_contenidos">
-                  
+                
                 </div>
           </div>
         </main>
       </div> 
       
     </div> 
-
-
-            <script src="js/jquery-3.6.0.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-            <script src="bootstrap/js/bootstrap.js"></script>          
-           
-            <script src="js/funciones.js"></script>
-            <script src="js/oper_principal.js"></script>
-            <script src="js/bootstrap.bundle.min.js"></script>
-          </body>
+      <script src="js/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+      
+      <script src="js/oper_principal.js"></script>
+      <script src="bootstrap/js/bootstrap.js"></script>
+  </body>
 </html>

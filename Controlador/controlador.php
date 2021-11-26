@@ -13,34 +13,50 @@ protected $servUser;
 public $sessionuser;
 public $servlote;
 public $servOperario;
+public $msj;
 
 function __construct(){
-
+    $this->msj="";
     $this->servUser=new servicios();
     $this->servOperario= new serviciosOperario();
-   // $this->sessionuser=new Sessionuser();
     $this->url ="";
-   // $this->rest = RestUtils::processRequest();
+
 
 }
 
 public function recibirdatos($url){
-    $url_pet='';
+    $id='';
    
     $status = http_response_code();
     
-    $tam= count($url);
-           
-    for ($i=3;$i<$tam;$i++){
-      $url_pet .=$url[$i] . '/'  ;
+    if ($url=="")
+     return null;
+     
+    $tam=count($url);
+    $url_pet="";
+
+     switch ($tam){
+         case '5':
+             $url_pet =$url[$tam-2].'/';
+             $url_pet .=$url[$tam-1].'/';
+             
+             break;
+         
+         case '6':
+             $id=$url[$tam-1]; 
+             $url_pet =$url[$tam-3].'/';
+             $url_pet .=$url[$tam-2].'/';
+             
+             break;
      }
-    
-     /***
-      * Evaluamos la API y llamamos el servicio correspondiente en nuestra clase servicios de cada tabla
-      */
-    
+     
+ 
     switch ($url_pet){
-                case 'confeccionesunoa':
+                case 'confeccionesunoa//':
+                    
+                break;
+                
+                case 'confeccionesunoa/principal.php/':
                     
                     break;
                 case 'user/registrar/':
@@ -54,13 +70,6 @@ public function recibirdatos($url){
                 case 'user/ingresar/':
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
-                   
-                    // echo(RestUtils::getStatusCodeMessage($status));
-                   
-                   // $usuario = $datos->getUser();
-                   // $contrasena = $datos->getClave();
-                   // $contrasena = hash('sha512', $contrasena);
-
                     $resultado=$this->servUser->ingresarunoA($datos['usuario']);
                     
                     if ($resultado){
@@ -71,12 +80,10 @@ public function recibirdatos($url){
                         RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
                         
                     }else{
-                        //var_dump($resultado);
+                     
                         RestUtils::sendResponse(205, json_encode("Usuario no existe"), 'application/json');
 
                     }
-                  
-                   // print_r($datos['usuario']);
                     break; 
                     
                 case 'lote/ingresar/':
@@ -89,26 +96,86 @@ public function recibirdatos($url){
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
                     $this->servOperario->insertar($datos);
+                    RestUtils::sendResponse(204, json_encode($datos), 'application/json');
                  break;  
 
                  case 'Operario/listar/':
+                    $this->setMsj($url_pet);
                     $this_rest = RestUtils::processRequest();
-                  //  $datos=$this_rest->getData();
-                    $resultado=$this->serviciosOperario->getAll();
+                    $resultado=$this->servOperario->getAll();
                     RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
                  break; 
 
+                 case 'Operario/buscarxid/':
+                    $this_rest = RestUtils::processRequest();
+                    $resultado=$this->servOperario->buscarId($id);
+                    RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                 break; 
 
-
+                 case 'Operario/actualizar/':
+                    $this_rest = RestUtils::processRequest();
+                    $datos=$this_rest->getData();
+                    $resultado=$this->servOperario->actualizarRegistro($datos,$id);
+                    RestUtils::sendResponse(http_response_code(202), json_encode($resultado), 'application/json');
+                 break; 
+                 case 'Operario/eliminar/':
+                    $this_rest = RestUtils::processRequest();
+                    $resultado=$this->servOperario->eliminar($id);
+                   // var_dump($resultado);
+                      RestUtils::sendResponse(http_response_code(204), json_encode($resultado), 'application/json');
+                 break; 
                 default:{
-                   // RestUtils::sendResponse(200,'', 'application/json');
+                 
+                  $this->setMsj($url_pet);
+                   
                 }
             }
+        
   
-}
-public function setrest(){
-    return $this->rest;
-}
+            }
 
+            public function formarurl($url){
+                $resp=[];
+                $tam=count($url);
+                $url_pet="";
+
+                switch ($tam){
+                    case '5':
+                        $url_pet =$url[$tam-2].'/';
+                        $url_pet .=$url[$tam-1].'/';
+                        
+                        break;
+                    
+                    case '6':
+                        $id=$url[$tam-1]; 
+                        $url_pet =$url[$tam-3].'/';
+                        $url_pet .=$url[$tam-2].'/';
+                        
+                        break;
+
+
+                }
+                
+                return ($url_pet);
+            }
+            /**
+             * Get the value of msj
+             */
+            public function getMsj()
+            {
+            return $this->msj;
+            }
+
+            /**
+             * Set the value of msj
+             *
+             * @return self
+             */
+            public function setMsj($msj)
+            {
+            $this->msj = $msj;
+
+           // return $this->msj;
+            }
 }
 ?>
