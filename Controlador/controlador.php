@@ -2,6 +2,7 @@
 include_once "Controlador/RestUtils.php";
 include_once "confecciones/api/servicios.php";
 include_once "confecciones/api/serviciosOperario.php";
+include_once "confecciones/api/servicioslote.php";
 
 
 class controlador extends RestUtils{
@@ -19,6 +20,7 @@ function __construct(){
     $this->msj="";
     $this->servUser=new servicios();
     $this->servOperario= new serviciosOperario();
+    $this->servlote = new ServiciosLote();
     $this->url ="";
 
 
@@ -86,12 +88,38 @@ public function recibirdatos($url){
                     }
                     break; 
                     
-                case 'lote/ingresar/':
+                case 'lote/registrar/':
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
+                    //print_r($datos);
                     $this->servlote->insertar($datos);
                  break;  
-
+                 
+                 case 'lote/listar/':
+                    
+                    $this_rest = RestUtils::processRequest();
+                    $resultado=$this->servlote->getAll();
+                    RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                 break; 
+                
+                 case 'lote/buscarxid/':
+                    $this_rest = RestUtils::processRequest();
+                    $resultado=$this->servlote->buscarxIdlote($id);
+                    RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                 break;
+                 case 'lote/actualizar/':
+                    $this_rest = RestUtils::processRequest();
+                    $datos=$this_rest->getData();
+                    $resultado=$this->servlote->actualizarRegistro($datos,$id);
+                    RestUtils::sendResponse(http_response_code(202), json_encode($resultado), 'application/json');
+                 break;   
+                 
+                 case 'lote/eliminar/':
+                    $this_rest = RestUtils::processRequest();
+                    $resultado=$this->servlote->eliminarxid($id);
+                   // var_dump($resultado);
+                      RestUtils::sendResponse(http_response_code(204), json_encode($resultado), 'application/json');
+                 break; 
                  case 'Operario/registrar/':
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();

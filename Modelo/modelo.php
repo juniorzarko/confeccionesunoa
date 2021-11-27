@@ -88,7 +88,7 @@ function __construct(){
 }
 
 function tb_loteParams($param){
-	$this->id = $param['id'];
+//	$this->id = $param['id'];
 	$this->codigoLote = $param['codigoLote'];
 	$this->nombre = $param['nombre'];
 	$this->cantidad = $param['cantidad'];
