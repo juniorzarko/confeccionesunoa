@@ -13,7 +13,7 @@
           <div class="col-md-5 ">
                 <div class="input-group">
                   <div class="input-group-text">Nombre</div>
-                     <input type="text" class="form-control" id="nombre_lote" placeholder="Nombre">
+                     <input type="text" class="form-control" id="nombreLote" placeholder="Nombre">
                 </div>
           </div> 
       </div> 
@@ -23,7 +23,7 @@
                   <div class="input-group-text">
                     Cantidad
                   </div>
-                  <input type="text" class="form-control" id="cantidad" placeholder="Cantidad">
+                  <input type="text" class="form-control" id="cantidadLote" placeholder="Cantidad">
               </div>
           </div>          
           <div class="col-md-5 mt-2">
@@ -33,6 +33,14 @@
                   <input type="date" class="form-control" id="fecha" placeholder="">
             </div>
           </div> 
+          <div class="row">
+            <div class="col-md-5  mt-2">
+                 <div class="input-group">
+                    <span class="input-group-text">Codigoid</span>
+                      <input type="text" aria-label="Codigo Operador" id="codigoIdlote" class="form-control">
+                 </div>
+            </div>
+        </div>
       </div>
       
       
@@ -40,9 +48,10 @@
     <nav class="navbar navbar-light bg-light">
        <form class="container-fluid justify-content-center">
          
-          <button class="btn btn-sm btn-outline-primary" type="button">Editar</button>
-          <button class="btn btn-sm btn-outline-primary mx-3" type="button">Eliminar</button>
-          <button class="btn btn-sm btn-outline-primary" type="button">Guardar</button>
+       <button class="btn btn-sm btn-outline-primary" onClick="actualizaOperario()" type="button">Actualizar</button>
+          <button class="btn btn-sm btn-outline-primary" onClick="listarRespuestalote()" type="button">Listar</button>
+          <button class="btn btn-sm btn-outline-primary" onClick="guardarlote();" type="button">Guardar</button>
+
        </form>
     </nav>
 </div>

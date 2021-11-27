@@ -49,9 +49,8 @@
         <div class="row">
             <div class="col-md-5  mt-2">
                  <div class="input-group">
-                    <span class="input-group-text">Codigo Operario</span>
-                      <input type="text" aria-label="Codigo Operador" class="form-control">
-                     
+                    <span class="input-group-text">Codigo</span>
+                      <input type="text" aria-label="Codigo Operador" id="codigoId" class="form-control">
                  </div>
             </div>
         </div>
@@ -60,12 +59,10 @@
     <nav class="navbar navbar-light bg-light">
        <form class="container-fluid justify-content-center">
          
-          <button class="btn btn-sm btn-outline-primary" type="button">Editar</button>
-
-          <button class="btn btn-sm btn-outline-primary mx-3" type="button">Eliminar</button>
+          <button class="btn btn-sm btn-outline-primary" onClick="actualizaOperario()" type="button">Actualizar</button>
+          <button class="btn btn-sm btn-outline-primary" onClick="listarRespuesta()" type="button">Listar</button>
           <button class="btn btn-sm btn-outline-primary" onClick="guardarOperador();" type="button">Guardar</button>
 
-         
        </form>
     </nav>
   

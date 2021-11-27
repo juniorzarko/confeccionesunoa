@@ -2,21 +2,28 @@
       <form class="  gx-3 gy-2 ">
         <div class="col-md-12"> <h2 class="text-center">Creación de Operaciones</h2></div> 
         <div class="row"> 
-             <div class="col-md-5 ">
-                <div class="input-group">
-                 <div class="input-group-text">Fecha:
-                 </div>
-                  <input type="date" class="form-control" id="fecha" placeholder="">
-                </div>
+            <div class="col-md-4 ">
+              <div class="input-group">
+                <div class="input-group-text">Fecha: </div>
+                      <input type="date" class="form-control" id="fecha" placeholder="">
               </div>
-                 <div class="col-md-5 ">
+            </div>
+             <div class="col-md-4 ">
                 <div class="input-group">
                   <div class="input-group-text">Nombre</div>
-                     <input type="text" class="form-control" id="nombre_lote" placeholder="Nombre">
+                     <input type="text" class="form-control" id="" placeholder="">
                 </div>
             </div> 
+            <div class="col-md-4 ">
+              <div class="input-group">
+                  <div class="input-group-text">
+                   Costo X Prenda $
+                  </div>
+                  <input type="number" class="form-control" id="cantidad" placeholder="">
+              </div>
+          </div>  
         </div> 
-        <div class="row">   
+        <!-- <div class="row">   
           <div class="col-md-5 mt-2">
               <div class="input-group">
                   <div class="input-group-text">
@@ -32,7 +39,7 @@
                   <input type="number" class="form-control" id="" placeholder="Costo">
             </div>
           </div>
-        </div>    
+        </div>     -->
          
       </form>
 

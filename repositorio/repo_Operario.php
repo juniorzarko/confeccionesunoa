@@ -6,7 +6,7 @@ public function listarAll(){
 
     try{
      
-      $sentencia = " SELECT * FROM tb_Operador";
+      $sentencia = " SELECT * FROM tb_operario";
     
       $statement = $this->conexion->prepare($sentencia);
       $result=$statement->execute();   
@@ -39,7 +39,62 @@ public function listarAll(){
     
       }
     
+      public function editarxID($id){
+        $consulta = 'SELECT * FROM tb_operario WHERE id = :id LIMIT 1';
+    
+         $statement = $this->conexion->prepare($consulta);
 
+         $statement->execute(array(
+          ':id' => $id,
+          ));
+           
+          $resultado = $statement->fetch();
+          $this->cerrarbd();        
+          return $resultado;
+
+
+      }
+
+      public function actualizarRegistroBD($datos){
+      
+       
+        try{
+        //print_r($datos);
+        $consulta = "UPDATE `tb_operario` SET `nombre` = :nombre, `apellido` = :apellido, `direccion` = :direccion, `telefono` = :telefono,`cargo` = :cargo, `email` = :email WHERE `tb_operario`.`id` = :id"; 
+    
+         $statement = $this->conexion->prepare($consulta);
+
+         $resultado= $statement->execute((array)$datos);
+           
+        }catch(PDOException $e){
+
+         print_r ("Error: " . $e->getMessage());
+       }
+          $this->cerrarbd();        
+          return $resultado;
+
+      }
+      
+      public function eliminarregistro($id){
+        $id3 = $id->getId();
+        
+        try{
+       // print_r($id3); 
+       // $id=json_decode($id);
+        //print_r($id); 
+        $consulta = "DELETE FROM `tb_operario` WHERE `tb_operario`.`id` =".$id3;
+        $statement = $this->conexion->prepare($consulta);
+
+        $resultado= $statement->execute();
+       // $resultado = $statement->fetch();
+       }catch(PDOException $e){
+
+        print_r ("Error: " . $e->getMessage());
+      }
+         $this->cerrarbd();        
+         return $resultado;
+
+      }
 
 }
 

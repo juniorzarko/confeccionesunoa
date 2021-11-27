@@ -1,3 +1,32 @@
+<?php
+include_once 'Controlador/controlador.php';
+
+$control = new controlador();
+
+if(isset($_SESSION['usuario'])) {
+  header('location: principal.php');
+ }
+
+ if($_SERVER['REQUEST_URI']){
+
+    $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $url = explode( '/', $url ); 
+    
+    if (!$control->recibirdatos($url))
+         $msj=$control->formarurl($url);
+    
+    //$msj=$control->formarurl($url);
+   // print_r($url);
+ }else{
+   
+
+ }
+ 
+ function isAjax(){
+  return !empty($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+  strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,11 +36,11 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
     <title>Confeccioes Uno A</title>    
-
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">       
     <!-- Custom styles for this template -->
     <link href="dashboard/dashboard.css" rel="stylesheet">
+    <link href="css/gsap.css" rel="stylesheet">
   </head>
   <body>
       <!-- Cabecera principal de Informacion -->
@@ -20,15 +49,14 @@
       <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Search" id="mensaje" value="<?php print_r($msj); ?>" aria-label="Search">
        <div class="navbar-nav">
        <div class="nav-item text-nowrap">
        <a class="nav-link px-3" href="#">Salir</a>
        </div>
        </div>
     </header>
-    <!-- contenido Principal  -->
-    <div class="container-fluid">      
+    <div class="container-fluid"> 
       <div class="row">
         <!-- Cuadro de Informacion Barra Lateral y menu vertical -->
         <nav id="sidebarMenu" class="col-md-3 col-lg-3 d-md-block bg-light sidebar collapse">
@@ -39,7 +67,7 @@
                <h4 class="text-primary text-center "> Confecciones Uno A</h4>	
                   <div class="d-flex justify-content-center ">
                     <div class="logo-title">
-                        <img src="img/confeccion.jpg" class="img-fluid img-thumbnail rounded-circle" alt="Confecciones Uno A">                        
+                        <img src="img/confeccion.jpg" class="img-fluid img-thumbnail rounded-circle ima-1" alt="Confecciones Uno A">                        
                     </div>
                   </div>
                   <!-- Label de informacion usuario  -->
@@ -67,36 +95,58 @@
                     <li><a class="dropdown-item" onClick="desplegarusuarios1();"  href="#">Creación de Usuarios</a></li>
                     <li><a class="btn btn-link dropdown-item" onClick="" href="#">Salir</a></li>
                   </ul>
-              </div>               
-             </div>  
-          </div>                     
+               </div>
+              <div class="btn-group d-grid gap-2 mt-3" role="group">
+                   <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+               Procesos
+                </button>
+                  <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+               <li><a class="dropdown-item" href="#">Inicio de Operacion</a></li>
+               <li><a class="dropdown-item" href="#">Liquidaciones</a></li>
+                <li><a class="dropdown-item" href="#">Trazabilidad</a></li>
+              
+               </ul>
+               </div> 
+            </div>
+          </div>                  
         </nav>  
-        <!-- Contenedor de Trabajo principal      -->
+        <div class="" id="consolaphp">
+      
+
+        </div>     
         <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4"> 
           <div class="container">
             <!-- Menu Horizontal de Trabajo en Principal -->
             <nav class="navbar navbar-light bg-light">
               <form class="container-fluid justify-content-center d-grid-flex gap-2 d-md-block">
-                <a><button class="btn btn-sm btn-outline-primary active" aria-current="page" type="button" href="" role="button" onClick="inicializarmod();">Inicio</button></a>
-                  <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegarusuarios2();">Operador</button>
-                  <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegarlote2();">Lotes</button>
-                  <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegaroperacion2();">Operación</button>
-                  <button class="btn btn-sm btn-outline-primary" type="button" onClick="desplegaroperaciones2();">Modulo Operaciones</button>
-                  <button class="btn btn-sm btn-outline-primary" type="button" onClick="procesosLotes1();">Procesos de Lotes</button>
-                  <button class="btn btn-sm btn-outline-primary" type="button">Liquidaciones</button>
-                  <button class="btn btn-sm btn-outline-primary" type="button">Trazabilidad</button>            
-              </form>
-            </nav> 
-            <!-- Espacio de visualizacion de trabajo          -->
-            <div class="row justify-content-md-center">
-               <!-- <div class="col col-lg-2" id="idInformacion1"></div> -->
-                <div class="col-auto" id="idPrincipal"></div>          
-               <!-- <div class="col col-lg-2" id="idInformacion2"></div> -->
-            </div>
-            <!-- Espacio de Visualizacion de Informes -->
-            <div class="" id="listar_contenidos">
-            </div>
-          </div>               
+                <a><button class="btn btn-sm btn-outline-primary btn-1 active" aria-current="page" type="button" href="" role="button" onClick="inicializarmod();">Inicio</button></a>
+                  <button class="btn btn-sm btn-outline-primary btn-2" type="button" onClick="desplegarusuarios2();">Operador</button>
+                  <button class="btn btn-sm btn-outline-primary btn-3" type="button" onClick="desplegarlote2();">Lotes</button>
+                  <button class="btn btn-sm btn-outline-primary btn-4" type="button" onClick="desplegaroperacion2();">Operación</button>
+                  <button class="btn btn-sm btn-outline-primary btn-5" type="button" onClick="desplegaroperaciones2();">Modulo Operaciones</button>
+                  <button class="btn btn-sm btn-outline-primary btn-6" type="button" onClick="procesosLotes1();">Procesos de Lotes</button>
+                  <button class="btn btn-sm btn-outline-primary btn-7" type="button">Liquidaciones</button>
+                  <button class="btn btn-sm btn-outline-primary btn-8" type="button">Trazabilidad</button>            
+            </form>
+          </nav>    
+         
+                <div class="row justify-content-md-center">
+                  <!-- <div class="col col-lg-2" id="idInformacion1">
+                    
+                  </div> -->
+                  <div class="col-auto" id="idPrincipal">
+                   <div class="container">
+                     Div de Trabajo
+                   </div>
+                  </div>
+                  <!-- <div class="col col-lg-2" id="idInformacion2">
+                
+                  </div> -->
+                </div>
+                <div class="" id="listar_contenidos">
+                
+                </div>
+          </div>
         </main>
       </div>       
     </div> 
@@ -105,7 +155,7 @@
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
       <script src = "gsap-public/minified/gsap.min.js" > </script> 
       <script src="js/oper_principal.js"></script>
-      
+      <script src="js/gsap.js"></script>      
       <script src="bootstrap/js/bootstrap.js"></script>
 
   </body>
