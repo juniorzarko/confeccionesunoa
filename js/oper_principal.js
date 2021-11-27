@@ -8,12 +8,8 @@ class Manejomodulos{
         return;
     }
 
-<<<<<<< HEAD
-    
-=======
    
 
->>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
     registrarOperario(){
 
         let datos={
@@ -276,17 +272,6 @@ class Manejomodulos{
 }
 
 class Manejolotes{
-<<<<<<< HEAD
-   
-   
-registrarlote(){
-        let datos={
-            codigoLote:$("#codigoLote").val(),
-            nombre:$("#nombreLote").val(),
-            cantidad:$("#cantidadLote").val(),
-            fechaCreacion:$("#fecha").val(),
-         
-=======
 
     registrarlote(){
         let datos={
@@ -295,7 +280,6 @@ registrarlote(){
             cantidad:$("#cantidad").val(),
             fechaCreacion:$("#fecha").val(),
           // password:$("#password").val()
->>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
     
         }
         
@@ -305,24 +289,13 @@ registrarlote(){
             url: "http://localhost/confeccionesunoa/principal.php/lote/registrar",
            
             data : datos,
-<<<<<<< HEAD
-            //GET : consultar POST: Insertar PUT: Actualizar DELETE : Borrar
             type: 'POST',
             dataType: 'json',
-          
-=======
-            type: 'POST',
-            dataType: 'json',
->>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
             success: function (respuesta) {
                 //escribe en la consola del desarrollador para efectos de depuración
                 console.log(respuesta);
                 console.log("Llego la respuesta por success");
                 alert("Usuario ha sido creado");
-<<<<<<< HEAD
-                
-=======
->>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
                 //rec   ibe el arreglo 'items' de la respuesta a la petición
                // listarRespuesta(respuesta);
             },
@@ -343,64 +316,6 @@ registrarlote(){
         });
       
 
-<<<<<<< HEAD
-}
-
-listarLote(){
-
-    $.ajax({
-        // la URL para la petición (url: "url al recurso o endpoint")
-       // url: "http://localhost:8080/api/Cabin/all",
-        url: "http://localhost/confeccionesunoa/principal.php/lote/listar",
-        // la información a enviar
-        // (también es posible utilizar una cadena de datos)
-        //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
-       // data : datos,
-
-        // especifica el tipo de petición http: POST, GET, PUT, DELETE
-        type: 'GET',
-
-        // el tipo de información que se espera de respuesta
-        dataType: 'json',
-
-        // código a ejecutar si la petición es satisfactoria;
-        // la respuesta es pasada como argumento a la función
-        success: function (respuesta) {
-            //escribe en la consola del desarrollador para efectos de depuración
-            console.log("entro por success listar");
-            //console.log(respuesta);
-            $("#mensajes").html("llego respuesta");
-            $("#mensajes").hide(1000);
-           
-            //recibe el arreglo 'items' de la respuesta a la petición
-           mostrarinformacion(respuesta);
-        },
-
-        // código a ejecutar si la petición falla;
-        // son pasados como argumentos a la función
-        // el objeto de la petición en crudo y código de estatus de la petición
-        error: function (xhr, status) {
-            $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
-            //$("#mensajes").hide(1000);
-            console.log("entro por error listar");
-            console.log(status);
-        },
-
-        // código a ejecutar sin importar si la petición falló o no
-        complete: function (xhr, status) {
-            $("#mensajes").html("Usuario no existe");
-            //$("#mensajes").hide(1000);
-            console.log("entro por complete listar");
-            console.log(status);
-        }
-    });
-
-    }
-
-}
-
-/**metodos generales de manejo pagina */
-=======
     }
 
     listarlote(){
@@ -612,7 +527,6 @@ listarLote(){
 }
 
 /**METODO PARA CARGAR TODOS LOS IDS cuando se inicia el documento */
->>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
 $(document).ready(function () {
     //configura el aspecto inicial de la pagina
     $("#mensaje").html("principal.php");
@@ -889,40 +803,6 @@ function eliminaroperario(id){
 
 }
 
-<<<<<<< HEAD
-// Manejo modulo de lote
-
-function guardarlote(){
-    var objLote = new Manejolotes();
-    objLote.registrarlote();
-
-}
-
-function enviaridlote(id) //,Codigo lote,Nombre,Cantidad,fecha)
-{
-   
-    $("#codigoIdlote").val(id);
-   
-    var objMOdulos = new Manejomodulos();
-    
-
-    objMOdulos.consultarOperarioxId(id);
-
-
-}
-
-function llenarcamposlote(datos){
-
-$("#codigoLote").val(datos.codigoLote);
-$("#nombre_lote").val(datos.nombre_lote);
-$("#cantidad_lote").val(datos.cantidad_lote);
-$("#codigoIdlote").val(datos.codigoIdlote);
-
-}
-
-
-
-=======
 function registrarlote(){
 
     let objLote = new Manejolotes();
@@ -972,4 +852,3 @@ function actualizarlote(){
     objlote.actualizarlotexid(id);
 
 }
->>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754

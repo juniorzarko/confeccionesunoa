@@ -3,10 +3,6 @@ include_once "Controlador/RestUtils.php";
 include_once "confecciones/api/servicios.php";
 include_once "confecciones/api/serviciosOperario.php";
 include_once "confecciones/api/servicioslote.php";
-<<<<<<< HEAD
-=======
-
->>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
 
 class controlador extends RestUtils{
 
@@ -23,11 +19,7 @@ function __construct(){
     $this->msj="";
     $this->servUser=new servicios();
     $this->servOperario= new serviciosOperario();
-<<<<<<< HEAD
-    $this->servlote = new servicioslote();
-=======
     $this->servlote = new ServiciosLote();
->>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
     $this->url ="";
 
 
@@ -95,9 +87,6 @@ public function recibirdatos($url){
                     }
                     break; 
                     
-<<<<<<< HEAD
-                case 'Operario/registrar/':
-=======
                 case 'lote/registrar/':
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
@@ -131,7 +120,6 @@ public function recibirdatos($url){
                       RestUtils::sendResponse(http_response_code(204), json_encode($resultado), 'application/json');
                  break; 
                  case 'Operario/registrar/':
->>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
                     $this->servOperario->insertar($datos);
