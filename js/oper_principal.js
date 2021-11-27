@@ -8,7 +8,12 @@ class Manejomodulos{
         return;
     }
 
+<<<<<<< HEAD
     
+=======
+   
+
+>>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
     registrarOperario(){
 
         let datos={
@@ -271,6 +276,7 @@ class Manejomodulos{
 }
 
 class Manejolotes{
+<<<<<<< HEAD
    
    
 registrarlote(){
@@ -280,6 +286,16 @@ registrarlote(){
             cantidad:$("#cantidadLote").val(),
             fechaCreacion:$("#fecha").val(),
          
+=======
+
+    registrarlote(){
+        let datos={
+            codigoLote:$("#codigoLote").val(),
+            nombre:$("#nombre_lote").val(),
+            cantidad:$("#cantidad").val(),
+            fechaCreacion:$("#fecha").val(),
+          // password:$("#password").val()
+>>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
     
         }
         
@@ -289,16 +305,24 @@ registrarlote(){
             url: "http://localhost/confeccionesunoa/principal.php/lote/registrar",
            
             data : datos,
+<<<<<<< HEAD
             //GET : consultar POST: Insertar PUT: Actualizar DELETE : Borrar
             type: 'POST',
             dataType: 'json',
           
+=======
+            type: 'POST',
+            dataType: 'json',
+>>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
             success: function (respuesta) {
                 //escribe en la consola del desarrollador para efectos de depuración
                 console.log(respuesta);
                 console.log("Llego la respuesta por success");
                 alert("Usuario ha sido creado");
+<<<<<<< HEAD
                 
+=======
+>>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
                 //rec   ibe el arreglo 'items' de la respuesta a la petición
                // listarRespuesta(respuesta);
             },
@@ -319,6 +343,7 @@ registrarlote(){
         });
       
 
+<<<<<<< HEAD
 }
 
 listarLote(){
@@ -375,6 +400,219 @@ listarLote(){
 }
 
 /**metodos generales de manejo pagina */
+=======
+    }
+
+    listarlote(){
+
+        $.ajax({
+            // la URL para la petición (url: "url al recurso o endpoint")
+           // url: "http://localhost:8080/api/Cabin/all",
+            url: "http://localhost/confeccionesunoa/principal.php/lote/listar",
+            // la información a enviar
+            // (también es posible utilizar una cadena de datos)
+            //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
+           // data : datos,
+    
+            // especifica el tipo de petición http: POST, GET, PUT, DELETE
+            type: 'GET',
+    
+            // el tipo de información que se espera de respuesta
+            dataType: 'json',
+    
+            // código a ejecutar si la petición es satisfactoria;
+            // la respuesta es pasada como argumento a la función
+            success: function (respuesta) {
+                //escribe en la consola del desarrollador para efectos de depuración
+                console.log("entro por success listar");
+                //console.log(respuesta);
+                $("#mensajes").html("llego respuesta");
+                $("#mensajes").hide(1000);
+               
+                //recibe el arreglo 'items' de la respuesta a la petición
+               mostrarinformacionlote(respuesta);
+            },
+    
+            // código a ejecutar si la petición falla;
+            // son pasados como argumentos a la función
+            // el objeto de la petición en crudo y código de estatus de la petición
+            error: function (xhr, status) {
+                $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
+                //$("#mensajes").hide(1000);
+                console.log("entro por error listar");
+                console.log(status);
+            },
+    
+            // código a ejecutar sin importar si la petición falló o no
+            complete: function (xhr, status) {
+                $("#mensajes").html("Usuario no existe");
+                //$("#mensajes").hide(1000);
+                console.log("entro por complete listar");
+                console.log(status);
+            }
+        });
+    
+        }
+        consultarlotexId(id){
+
+            $.ajax({
+                // la URL para la petición (url: "url al recurso o endpoint")
+               // url: "http://localhost:8080/api/Cabin/all",
+                url: "http://localhost/confeccionesunoa/principal.php/lote/buscarxid/"+id,
+                // la información a enviar
+                // (también es posible utilizar una cadena de datos)
+                //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
+               // data : datos,
+        
+                // especifica el tipo de petición http: POST, GET, PUT, DELETE
+                type: 'GET',
+        
+                // el tipo de información que se espera de respuesta
+                dataType: 'json',
+        
+                // código a ejecutar si la petición es satisfactoria;
+                // la respuesta es pasada como argumento a la función
+                success: function (respuesta) {
+                    //escribe en la consola del desarrollador para efectos de depuración
+                    console.log("entro por success listar de actualizar");
+                    //console.log(respuesta);
+                    $("#mensaje").html("llego respuesta");
+                    $("#mensaje").hide(1000);
+                   
+                    //recibe el arreglo 'items' de la respuesta a la petición
+                   llenarcamposlote(respuesta);
+                   console.log(respuesta);
+                },
+        
+                // código a ejecutar si la petición falla;
+                // son pasados como argumentos a la función
+                // el objeto de la petición en crudo y código de estatus de la petición
+                error: function (xhr, status) {
+                    $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
+                    //$("#mensajes").hide(1000);
+                    console.log("entro por error listar");
+                    console.log(status);
+                },
+        
+                // código a ejecutar sin importar si la petición falló o no
+                complete: function (xhr, status) {
+                    $("#mensajes").html("Usuario no existe");
+                    //$("#mensajes").hide(1000);
+                    console.log("entro por complete listar");
+                    console.log(status);
+                }
+            });
+        }
+    
+        actualizarlotexid(id){
+    
+            let datos={
+                codigoLote:$("#codigoLote").val(),
+                nombre:$("#nombre_lote").val(),
+                cantidad:$("#cantidad").val(),
+                fechaCreacion:$("#fecha").val()    
+            }
+    
+        //    let datos = JSON.stringify(datos_vect);
+            $.ajax({
+               
+                url: "http://localhost/confeccionesunoa/principal.php/lote/actualizar/"+id,
+          
+    
+                data : datos,
+        
+                // especifica el tipo de petición http: POST, GET, PUT, DELETE
+                type: 'PUT',
+        
+                // el tipo de información que se espera de respuesta
+                contentType: "application/JSON",
+        
+                // código a ejecutar si la petición es satisfactoria;
+                // la respuesta es pasada como argumento a la función
+                success: function (respuesta) {
+                    //escribe en la consola del desarrollador para efectos de depuración
+                    console.log("entro por success listar de actualizar con valores nuevos");
+                    //console.log(respuesta);
+                    $("#mensaje").html("llego respuesta actualizar con valores nuevos");
+                    $("#mensaje").hide(1000);
+                   
+                    //recibe el arreglo 'items' de la respuesta a la petición
+                  // mostrarinformacionlote();
+                  
+                },
+        
+                // código a ejecutar si la petición falla;
+                // son pasados como argumentos a la función
+                // el objeto de la petición en crudo y código de estatus de la petición
+                error: function (xhr, status) {
+                    $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
+                    //$("#mensajes").hide(1000);
+                    console.log("entro por error listar");
+                    console.log(status);
+                },
+        
+                // código a ejecutar sin importar si la petición falló o no
+                complete: function (xhr, status) {
+                    $("#mensajes").html("Usuario no existe");
+                    //$("#mensajes").hide(1000);
+                    console.log("entro por complete listar");
+                    console.log(status);
+                }
+            });
+    
+        }
+    
+        eliminarlote(id){
+    
+            $.ajax({
+                // la URL para la petición (url: "url al recurso o endpoint")
+               // url: "http://localhost:8080/api/Cabin/all",
+                url: "http://localhost/confeccionesunoa/principal.php/lote/eliminar/"+id,
+           
+        
+                // especifica el tipo de petición http: POST, GET, PUT, DELETE
+                type: 'DELETE',
+        
+                // el tipo de información que se espera de respuesta
+                dataType: 'json',
+        
+                // código a ejecutar si la petición es satisfactoria;
+                // la respuesta es pasada como argumento a la función
+                success: function (respuesta) {
+                    //escribe en la consola del desarrollador para efectos de depuración
+                    console.log("entro por success de eliminar");
+                    //console.log(respuesta);
+                    $("#mensaje").html("llego respuesta");
+                    $("#mensaje").hide(1000);
+                    alert("Usuario eliminado");
+                    //recibe el arreglo 'items' de la respuesta a la petición
+              
+                },
+    
+                error: function (xhr, status) {
+                    $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
+                    //$("#mensajes").hide(1000);
+                    console.log("entro por error listar");
+                    console.log(status);
+                },
+        
+                // código a ejecutar sin importar si la petición falló o no
+                complete: function (xhr, status) {
+                    $("#mensajes").html("Usuario no existe");
+                    //$("#mensajes").hide(1000);
+                    console.log("entro por complete listar");
+                    console.log(status);
+                }
+            });
+        }
+
+
+
+
+}
+
+/**METODO PARA CARGAR TODOS LOS IDS cuando se inicia el documento */
+>>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
 $(document).ready(function () {
     //configura el aspecto inicial de la pagina
     $("#mensaje").html("principal.php");
@@ -398,7 +636,7 @@ function desplegarusuarios1(){
   
     }
 
-    function desplegarusuarios2(){
+function desplegarusuarios2(){
         $("#idPrincipal").show(500);
         $("#idPrincipal").load("front/mod_operador.php");
         
@@ -562,16 +800,62 @@ function mostrarinformacionlote(vecitems){
 
 /** ACCIONES DE BOTONES DE MANEJO FORMULAROS **/
 
+    
+function mostrarinformacionlote(vecitems){
+                $("#listar_contenidos").html("");
+                $("#listar_contenidos").show(500);
+                
+                var tabla = `
+                <div class="table-responsive">
+                 <table class="table table-striped table-sm">
+              
+                        <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Codigo Lote</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Fecha Creacion</th>
+                           
+                                </tr>
+                              </thead>`;
+            
+                //recorre el arreglo de 'items' y construye dinamicamente la fila de datos de la tabla for (var i = 0; i < items2.length; i++)
+                 
+                vecitems.forEach((items)=>{
+                   // console.log(items);
+                    tabla += `<tr>
+                    <th scope="row">${items['id']}</th>
+                              <td>${items['codigoLote']}</td>
+                              <td>${items['nombre']}</td>
+                              <td>${items['cantidad']}</td>
+                              <td>${items['fechaCreacion']}</td>
+                             
+                              <td id="id-boton"><button id="boton-primary" class="btn btn-primary btn-sm" onclick="listarlotexid(${items.id});">Editar</td>
+                              <td id="id-boton"><button type="button" class="btn btn-dark btn-sm" onclick="eliminarlotexid(${items.id});">Borrar</button></td>                
+                               </tr>`;
+                
+                               
+                //cierra tabla agregando el tag adecuado
+                
+            
+                //accede al elemento con id 'listado' y adiciona la tabla de datos a su html
+               
+                 });
+                 tabla += `</table></div>`;
+                 $("#listar_contenidos").html(tabla);
+                }
+
 function enviaridoperario(id) //,nombre,apellido,direccion,telefono,cargo,email)
 {
    
     $("#codigoId").val(id);
    // $("#apellidOperario").val(id);
 
-    var objMOdulos = new Manejomodulos();
+    var objModulos = new Manejomodulos();
     
 
-    objMOdulos.consultarOperarioxId(id);
+    objModulos.consultarOperarioxId(id);
 
 
 }
@@ -605,6 +889,7 @@ function eliminaroperario(id){
 
 }
 
+<<<<<<< HEAD
 // Manejo modulo de lote
 
 function guardarlote(){
@@ -637,3 +922,54 @@ $("#codigoIdlote").val(datos.codigoIdlote);
 
 
 
+=======
+function registrarlote(){
+
+    let objLote = new Manejolotes();
+    objLote.registrarlote();
+}
+
+
+function listarlotes(){
+
+    let objLote = new Manejolotes();
+    objLote.listarlote();
+    
+}
+
+function listarlotexid(id){
+   
+   
+    $("#idlote").val(id);
+    // $("#apellidOperario").val(id);
+ 
+     var objlote = new Manejolotes();
+     objlote.consultarlotexId(id);
+      
+
+}
+
+function llenarcamposlote(datos){
+    $("#codigoLote").val(datos.codigoLote);
+    $("#nombre_lote").val(datos.nombre);
+    $("#cantidad").val(datos.cantidad);
+    $("#fecha").val(datos.fechaCreacion);
+}
+
+function eliminarlotexid(id){
+    var objlote = new Manejolotes();
+      objlote.eliminarlote(id);
+      
+
+
+}
+
+function actualizarlote(){
+    var objlote = new Manejolotes();
+    //objlote.consultarlotexId(id);
+    let id=$("#idlote").val();
+    console.log(id);
+    objlote.actualizarlotexid(id);
+
+}
+>>>>>>> 983e4212c4a41df23934416a16c4727bcfb3c754
