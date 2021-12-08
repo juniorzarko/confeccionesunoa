@@ -1,3 +1,5 @@
+
+
 class Manejomodulos{
 
     DOMprincipal;
@@ -366,7 +368,7 @@ class Manejolotes{
         });
     
         }
-        consultarlotexId(id){
+    consultarlotexId(id){
 
             $.ajax({
                 // la URL para la petición (url: "url al recurso o endpoint")
@@ -417,7 +419,7 @@ class Manejolotes{
             });
         }
     
-        actualizarlotexid(id){
+    actualizarlotexid(id){
     
             let datos={
                 codigoLote:$("#codigoLote").val(),
@@ -475,7 +477,7 @@ class Manejolotes{
     
         }
     
-        eliminarlote(id){
+    eliminarlote(id){
     
             $.ajax({
                 // la URL para la petición (url: "url al recurso o endpoint")
@@ -893,7 +895,24 @@ $(document).ready(function () {
 
 });
 
+// *****Enlaes de paginas Principal *******
+function inicioGeneral(){
+    window.location.replace("http://localhost/confeccionesunoa/principal.php");
+    
+}
 
+function ir_a_pagnomina(){
+    window.location.replace("http://localhost/confeccionesunoa/principal-nom.php");
+    
+}
+function ir_a_pageinventarios(){
+    window.location.replace("http://localhost/confeccionesunoa/principal-inv.php");
+        
+}
+function ir_a_pagefacturacion() {
+    window.location.replace("http://localhost/confeccionesunoa/principal-fac.php");
+
+}
 function inicializarmod(){
 
     $("#idPrincipal").hide();
@@ -902,21 +921,19 @@ function inicializarmod(){
   
 
 }
-
 function desplegarusuarios1(){
     $("#idPrincipal").show(500);
 
    $("#idPrincipal").load("front/mod_usuarios.php");
   
-    }
-
+}
 function desplegarusuarios2(){
         $("#idPrincipal").show(500);
         $("#idPrincipal").load("front/mod_operador.php");
-        
-         }
-     
+        inicializar_form();
 
+        
+}
 function desplegarlote1(){
     $("#idPrincipal").show(500);
    
@@ -926,32 +943,32 @@ function desplegarlote1(){
 function desplegarlote2(){
     $("#idPrincipal").show(500);
     $("#idPrincipal").load("front/mod_alote.php");
+
 }
-
-
 function desplegaroperaciones1(){
    
      $("#idPrincipal").load("front/mod_operaciones.php");
             
-    }
-    function desplegaroperaciones2(){
+}
+function desplegaroperaciones2(){
         $("#idPrincipal").show(500);
         $("#idPrincipal").load("front/mod_operaciones.php");
                
-       }
-       
-    function procesosLotes1(){
+}    
+function procesosLotes1(){
         $("#idPrincipal").show(500);
         $("#idPrincipal").load("front/mod_procesos_lote.php");
                
-       } 
-
+} 
 function guardarOperador(){
         var objMOdulos = new Manejomodulos();
 
         respuesta=objMOdulos.registrarOperario();
   
 }
+// *****Enlaes de paginas Principal-nom *******
+// *****Enlaes de paginas Principal-inv *******
+// *****Enlaes de paginas Principal-fac *******
 
 function listarRespuesta(){
 
@@ -962,7 +979,6 @@ function listarRespuesta(){
     //objMOdulos.mostrarinformacion(datos);
 
 }
-
 function listarRespuestalote(){
 
     var objMOdulos = new Manejomodulos();
@@ -971,18 +987,17 @@ function listarRespuestalote(){
    // console.log(datos);
     //objMOdulos.mostrarinformacion(datos);
 
-}
-    
+}    
 function desplegaroperacion1(){
    
         $("#idPrincipal").load("front/mod_operacion.php");
                
-       }
+}
 function desplegaroperacion2(){
            $("#idPrincipal").show(500);
            $("#idPrincipal").load("front/mod_operacion.php");
                   
-          }
+}
 function mostrarinformacion(vecitems){
             $("#listar_contenidos").html("");
             $("#listar_contenidos").show(500);
@@ -1028,7 +1043,7 @@ function mostrarinformacion(vecitems){
              });
              tabla += `</table></div>`;
              $("#listar_contenidos").html(tabla);
-            }
+}
 function mostrarinformacionlote(vecitems){
                 $("#listar_contenidos").html("");
                 $("#listar_contenidos").show(500);
@@ -1070,7 +1085,7 @@ function mostrarinformacionlote(vecitems){
                  });
                  tabla += `</table></div>`;
                  $("#listar_contenidos").html(tabla);
-                }
+}
 
 /** ACCIONES DE BOTONES DE MANEJO FORMULAROS **/
 
@@ -1137,6 +1152,12 @@ function  mostrarinformacionoperaciones(items){
                   
                    </tr>
                   </thead>`;
+}
+function enviaridoperario(id) //,nombre,apellido,direccion,telefono,cargo,email)
+{
+   
+    $("#codigoId").val(id);
+   // $("#apellidOperario").val(id);
 
     //recorre el arreglo de 'items' y construye dinamicamente la fila de datos de la tabla for (var i = 0; i < items2.length; i++)
      
@@ -1172,6 +1193,8 @@ function enviaridoperario(id) //,nombre,apellido,direccion,telefono,cargo,email)
     objModulos.consultarOperarioxId(id);
 }
 
+//$("#consolaphp").html();
+
 function llenarcampos(datos){
 
 $("#nombreOperario").val(datos.nombre);
@@ -1182,7 +1205,6 @@ $("#cargOperario").val(datos.cargo);
 $("#emailOperario").val(datos.email);
 
 }
-
 function actualizaOperario(){
 
     var objMOdulos = new Manejomodulos();
@@ -1191,7 +1213,6 @@ function actualizaOperario(){
     objMOdulos.actualizarOperario(id);
 
 }
-
 function eliminaroperario(id){
 
     var objMOdulos = new Manejomodulos();
@@ -1199,39 +1220,31 @@ function eliminaroperario(id){
         objMOdulos.eliminar(id);
 
 }
-
-/**INICIO DE METODOS DE LA TABLA LOTE */
-
 function registrarlote(){
 
     let objLote = new Manejolotes();
     objLote.registrarlote();
 }
-
-
 function listarlotes(){
     let objLote = new Manejolotes();
     objLote.listarlote(); 
 }
-
 function listarlotexid(id){
     $("#idlote").val(id);
     var objlote = new Manejolotes();
     objlote.consultarlotexId(id);
 }
-
 function llenarcamposlote(datos){
     $("#codigoLote").val(datos.codigoLote);
     $("#nombre_lote").val(datos.nombre);
     $("#cantidad").val(datos.cantidad);
     $("#fecha").val(datos.fechaCreacion);
 }
-
 function eliminarlotexid(id){
     var objlote = new Manejolotes();
       objlote.eliminarlote(id);
+      
 }
-
 function actualizarlote(){
     var objlote = new Manejolotes();
     //objlote.consultarlotexId(id);
@@ -1319,3 +1332,48 @@ function eliminaroperaciones(id){
 
 
 
+function validarOperario () {
+	let nombreOperario, apellidOperario, direccionOperario, telefonOperario, cargOperario, emailOperario, codigoId, expresiones;
+
+	nombreOperario = document.getElementById("nombreOperario").value;
+	apellidOperario = document.getElementById("apellidOperario").value;
+	direccionOperario = document.getElementById("direccionOperario").value;
+	telefonOperario = document.getElementById("telefonOperario").value;
+	cargOperario = document.getElementById("cargOperario").value;
+	emailOperario = document.getElementById("emailOperario").value;
+	codigoId = document.getElementById("codigoId").value;
+
+	if(nombreOperario === "" || apellidOperario === "" || direccionOperario === "" || telefonOperario === "" || cargOperario === "" || emailOperario === "" || codigoId === "" ) {
+		alert ("Todos los campos son Obligatorios");
+        return false;
+	}
+    else if (nombreOperario.length>50) {
+        alert("El Nombre del Operario es muy largo");
+        return false;
+    }
+    else if (apellidOperario.length>100) {
+        alert("El Nombre del Apellido es muy largo");
+        return false;
+    }
+    else if (direccionOperario.length>500) {
+        alert("La direccion es muy largo");
+        return false;
+    }
+    else if (telefonOperario.length>15) {
+        alert("Numero telefonico muy largo");
+        return false;
+    }
+    else if (isNaN(tlefonOperario)) {
+        alert("Entrada no es un Número");
+        return false;
+    }
+    else if (cargOperario.length>100) {
+        alert("El Nombre del Cargo es muy largo");
+        return false;
+    }
+    else if (emailOperario.length>100) {
+        alert("El Correo electronico es muy largo");
+        return false;
+    }
+
+}

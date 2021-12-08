@@ -40,7 +40,6 @@ if(isset($_SESSION['usuario'])) {
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">       
     <!-- Custom styles for this template -->
     <link href="dashboard/dashboard.css" rel="stylesheet">
-    <!-- <link href="css/estilos1.css" rel="stylesheet">  -->
     <link href="css/gsap.css" rel="stylesheet">
   </head>
   <body>
@@ -89,11 +88,11 @@ if(isset($_SESSION['usuario'])) {
               <!-- Menu Administrativo y salida -->
              <div class="container shadow bg-transparent rounded  mt-3">
              <div class="d-grid">
-                <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary" onClick="inicio-general();">Inicio General
+                <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary" onClick="inicioGeneral();">Inicio General
 
                 </button>
              </div> 
-              <div class="btn-group d-grid gap-2 mt-2" role="group">
+             <div class="btn-group d-grid gap-2 mt-2" role="group">
                     <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   Administración
                   </button>
@@ -107,33 +106,30 @@ if(isset($_SESSION['usuario'])) {
                Modulos del Sistema
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                     <li><a class="dropdown-item" href="#" onClick=" ir_a_pagnomina();">Nomina</a></li>
-                     <li><a class="dropdown-item" href="#" onClick="ir_a_pageinventarios();">Inventarios</a></li>
-                    <li><a class="dropdown-item" href="#" onClick="ir_a_pagefacturacion();">Facturación</a></li>              
+                     <li><a class="dropdown-item" href="#">Nomina</a></li>
+                     <li><a class="dropdown-item" href="#">Inventarios</a></li>
+                    <li><a class="dropdown-item" href="#">Facturación</a></li>              
                 </ul>
                </div> 
-             </div>
+            </div>
           </div>                  
         </nav>  
         <div class="" id="consolaphp">
       
 
-      </div>     
+        </div>     
         <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4"> 
           <div class="container">
             <!-- Menu Horizontal de Trabajo en Principal -->
             <nav class="navbar navbar-light bg-light">
               <form class="container-fluid justify-content-center d-grid-flex gap-2 d-md-block">
                 <a><button class="btn btn-sm btn-outline-primary btn-1 active" aria-current="page" type="button" href="" role="button" onClick="inicializarmod();">Inicio</button></a>
-                  <button class="btn btn-sm btn-outline-primary btn-2" type="button" onClick="desplegarusuarios2();">Operador</button>
-                  <button class="btn btn-sm btn-outline-primary btn-3" type="button" onClick="desplegarlote2();">Lotes</button>
-                  <button class="btn btn-sm btn-outline-primary btn-4" type="button" onClick="desplegaroperacion2();">Operación</button>
-                  <button class="btn btn-sm btn-outline-primary btn-5" type="button" onClick="desplegaroperaciones2();">Modulo Operaciones</button>
-                  <button class="btn btn-sm btn-outline-primary btn-6" type="button" onClick="procesosLotes1();">Procesos de Lotes</button>
-                  <button class="btn btn-sm btn-outline-primary btn-7" type="button">Liquidaciones</button>
-                  <button class="btn btn-sm btn-outline-primary btn-8" type="button">Trazabilidad</button>            
-              </form>
-            </nav>    
+                  <button class="btn btn-sm btn-outline-primary btn-2" type="button" onClick="desplegarusuarios2();">Entrada</button>
+                  <button class="btn btn-sm btn-outline-primary btn-3" type="button" onClick="desplegarlote2();">Salida</button>
+                 
+                     
+            </form>
+          </nav>    
          
                 <div class="row justify-content-md-center">
                   <!-- <div class="col col-lg-2" id="idInformacion1">
@@ -158,8 +154,7 @@ if(isset($_SESSION['usuario'])) {
 
       <script src="js/jquery-3.6.0.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-      <script src ="gsap-public/minified/gsap.min.js" > </script> 
-      <script src="js/formulario.js"></script>
+      <script src = "gsap-public/minified/gsap.min.js" > </script> 
       <script src="js/oper_principal.js"></script>
       <script src="js/gsap.js"></script>      
       <script src="bootstrap/js/bootstrap.js"></script>

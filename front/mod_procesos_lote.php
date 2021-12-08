@@ -1,7 +1,7 @@
-  <div class="container">
+  <div class="container shadow bg-transparent rounded ">
   
     <!-- Boton modal lote -->
-    <div class="">  
+    <div class="container d-flex justify-content-center ">  
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Selecciones el lote a trabajar</button>
           <!-- Modal -->
@@ -29,11 +29,10 @@
             </div>     
         </div>
     </div>
-
     <!-- formulario de entrada de datos proceso lotes -->
-    <div class="container flex p-2 shadow bg-transparent rounded">
+    <div class="container flex p-2 ">
       <form class="needs-validation novalidate gx-3 ">
-        <div class="col-md-12"> <h2 class="text-center">Entrada de Datos</h2></div> 
+        <div class="col-md-12"> <h2 class="text-center">Entrada de Datos</h2> </div> 
         <div class="row"> 
             <div class="col-md-5 mx-auto mt-2 ">
                 <div class="input-group">
@@ -57,15 +56,16 @@
                       <option value="1">Ojalar</option>    
                       <option value="2">Prender Garra</option>                      
                     </select>  
-                </div>
-              </div> 
-            </div> 
+                  </div>
+                </div> 
+            </div>
+           
         <div class="row">   
           <div class="col-md-5 mx-auto mt-2">
             <div class="input-group">
               <div class="input-group-text">Cod. Operador:
               </div>
-                  <input type="number" class="form-control is-valid" requiered id="" placeholder="">
+                  <input type="number" class="form-control " requiered id="" placeholder="">
                   <div class="valid-feedback">Codigo Aceptado!</div>
             </div>
           </div>         
@@ -74,110 +74,447 @@
                   <div class="input-group-text">
                    Unidades X Día
                   </div>
-                  <input type="number" class="form-control" id="cantidad" placeholder="">
-                  <div class="valid-feedback">
-                     Numero Aceptado
-                  </div>
+                  <input type="number" class="form-control " requiered  id="cantidad" placeholder="">
+                  <div class="valid-feedback">Numero Aceptado</div>
               </div>
           </div>         
         </div>        
       </form>
+   
       <nav class="navbar navbar-light bg-light">
         <form class="container-fluid justify-content-center">
          
-          <button class="btn btn-sm btn-outline-primary" type="button">Editar</button>
-          <button class="btn btn-sm btn-outline-primary mx-3" type="button">Eliminar</button>
+          <button class="btn btn-sm btn-outline-primary" type="button">Actualizar</button>
+          <button class="btn btn-sm btn-outline-primary mx-3" type="button">Listar</button>
           <button class="btn btn-sm btn-outline-primary" type="button">Guardar</button>
         </form>
       </nav>
-    </div>
-    <!-- Modulo de Visualizacion -->
-    <div class="container">
-      <div class="row ">
-        <div class="col-auto">
-          <div class="input-group">
-              <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-              <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
-              </span>                   
-              <label for="Funcionario" class="border-bottom border-info  mt-2"> Hector Ivan Holguin Urrego </label>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="input-group">
-            <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"  fill="currentColor">
-            <use xlink:href="iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
-            </span>
-            <label for="" class="border-bottom border-info  m-3 mt-1">Jeans</label>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="input-group">
-            <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-            <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
-            </svg></span>
-            <label for="" class="border-bottom border-info  m-3 mt-1">Lote  AO320</label>                       
-          </div>                
-        </div>
-      </div>               
-      <div class="row">
-        <div class="col-auto">
-          <div class="input-group">
-            <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-            <use xlink:href="iconos/bootstrap-icons.svg#calculator-fill"/>
-            </svg></span>
-            <label for="" class="border-bottom border-info  m-3 mt-1">400 Uds</label>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="input-group">
-             <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-             <use xlink:href="iconos/bootstrap-icons.svg#calendar-date-fill"/>
-             </svg>
-             </span>Inicio:
-             <label for="" class="border-bottom border-info  m-3 mt-1">15-12-2021</label>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="input-group">
-            <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-            <use xlink:href="iconos/bootstrap-icons.svg#calendar-date-fill"/>
-            </svg>
-            </span>Corte: 
-            <label for="" class="border-bottom border-info m-3 mt-1">15-12-2021</label>
-          </div>
-        </div>
-      </div>                
-             
-    </div>   
-        <!-- Tabla de Informes -->
-    <div class="table-responsive">                 
-      <table class="table table-striped table-sm">
-        <thead>
-          <tr>
-            <th scope="col">Proceso</th>
-            <th scope="col">Operación</th>
-            <th scope="col">Costo por Prenda</th>
-            <th scope="col">Cod. Operador</th>
-             <th scope="col">Operario</th>
-            <th scope="col">Und Total x Día</th>
-            <th scope="col">Salario Día $</th>
-            <th scope="col">Total $</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Presentación</td>
-            <td>Ojalar</td>
-            <td>$ 30</td>
-            <td>24</td>
-            <td>Hector Holguin</td>
-            <td>100</td>
-            <td>3000</td>
-            <td>30000</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+    </div>    
+    <!-- Modulo de Visualizacion -->    
+        <div class="accordion-flush accordion-padding-y:5rem;" id="accordionExample">         
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <strong>Información del Lote</strong>
+                </button>
+              </h2>
+                <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="flush-headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                      <div class="row ">
+                         <!-- primer cuadro del acordeon -->
+                        <div class="col-6 shadow bg-transparent rounded">
+                          <div class="col-auto">
+                            <div class="input-group">
+                             <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                              <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
+                             </span>                   
+                               <label for="Funcionario" class="border-bottom border-info  mt-2"> Prenda: Jean Clasico </label>
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <div class="input-group">
+                               <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"  fill="currentColor">
+                                 <use xlink:href="iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
+                               </span>
+                                  <label for="" class="border-bottom border-info mt-1">Fecha de Inicio: 12-12-2021</label>
+                             </div>
+                          </div>                        
+                          <div class="col-auto">
+                            <div class="input-group">
+                              <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                <label for="" class="border-bottom border-info  mt-1">Fecha de Corte: 12-12-2021</label>                       
+                            </div>                
+                          </div>
+                        </div>
+                         <!-- Segundo cuadro del acordeon -->
+                        <div class="col-6 shadow bg-transparent rounded">
+                          <div class="col-auto">
+                            <div class="input-group">
+                             <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                              <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
+                             </span>                   
+                               <label for="Funcionario" class="border-bottom border-info  mt-2">Total Unidades Lote: 400 unds</label>
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <div class="input-group">
+                               <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"  fill="currentColor">
+                                 <use xlink:href="iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
+                               </span>
+                                  <label for="" class="border-bottom border-info mt-1">Presentacion: 100 unds </label>
+                             </div>
+                          </div>                        
+                          <div class="col-auto">
+                            <div class="input-group">
+                              <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                <label for="" class="border-bottom border-info mt-1">Delantero: 100 unds</label>                       
+                            </div>                
+                          </div>
+                          <div class="col-auto">
+                            <div class="input-group">
+                              <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                <label for="" class="border-bottom border-info mt-1">Trasero: 200 unds</label>                       
+                            </div>                
+                          </div>
+                          <div class="col-auto">
+                            <div class="input-group">
+                              <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                <label for="" class="border-bottom border-info mt-1">Pretina: 100 unds</label>                       
+                            </div>                
+                          </div>
+                          <div class="col-auto">
+                            <div class="input-group">
+                              <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                <label for="" class="border-bottom border-info mt-1">Pasadores: 200 unds</label>                       
+                            </div>                
+                          </div>
+                        </div>
+                      </div>       
+                  </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <strong>Informe Produccion Lote</strong>
+                  </button>
+              </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body">
+                    <div class="row">
+                    <div class="col-6 shadow bg-transparent rounded">
+                          <div class="col-auto">
+                            <div class="input-group">
+                             <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                              <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
+                             </span>                   
+                               <label for="Funcionario" class="border-bottom border-info  mt-2"> Codigo #:1 </label>
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <div class="input-group">
+                             <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                              <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
+                             </span>                   
+                               <label for="Funcionario" class="border-bottom border-info  mt-2"> Operario: Junior </label>
+                            </div>
+                          </div>
+                          <div class="col-auto">
+                            <div class="input-group">
+                               <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"  fill="currentColor">
+                                 <use xlink:href="iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
+                               </span>
+                                  <label for="" class="border-bottom border-info mt-1">Prenda: Jean Clasico</label>
+                             </div>
+                          </div>                        
+                          <div class="col-auto">
+                            <div class="input-group">
+                              <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                <label for="" class="border-bottom border-info  mt-1">Lote: AD 1815</label>                       
+                            </div>                
+                          </div>
+                          <div class="col-auto">
+                            <div class="input-group">
+                              <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                <label for="" class="border-bottom border-info  mt-1">Cantidad: 400 unds</label>                       
+                            </div>                
+                          </div>
+                    </div>
+                         <!-- Segundo cuadro del acordeon -->
+                    <div class="col-6 shadow bg-transparent rounded">
+                        <div role="tabpanel">                           
+                            <ul class="nav nav-tabs" >
+                                <li class="nav-item">
+                                   <a class="nav-link active" href="#seccion1" data-bs-toggle="tab" >Presentación</a>
+                                 </li>
+                                <li class="nav-item">
+                                   <a class="nav-link" href="#seccion2"  data-bs-toggle="tab">Delantero</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#seccion3"  data-bs-toggle="tab">Trasero</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#seccion4"  data-bs-toggle="tab">Pretina</a>
+                                 </li>
+                                 <li class="nav-item">
+                                    <a class="nav-link" href="#seccion5"  data-bs-toggle="tab">Pasadores</a>
+                                 </li>
+                            </ul>                           
+                            <div class="tab-content">
+                              <div class="tab-pane active " id="seccion1">
+                                 <div class="col-auto">
+                                   <div class="input-group">
+                                     <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                     <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
+                                     </span>                   
+                                      <label for="Funcionario" class="border-bottom border-info  mt-2">Unidades x Hacer: 300 unds</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"  fill="currentColor">
+                                    <use xlink:href="iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
+                                   </span>
+                                      <label for="" class="border-bottom border-info mt-1">Proceso:Presentación</label>
+                                </div>
+                                 </div>                        
+                                  <div class="col-auto">
+                                 <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                   <label for="" class="border-bottom border-info mt-1">Operación:Ojalar</label>                       
+                                 </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                   <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                   </svg></span>
+                                   <label for="" class="border-bottom border-info mt-1">Costo x Prenda: 30 unds</label>                       
+                                </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                 <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                  <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                    </svg></span>
+                                  <label for="" class="border-bottom border-info mt-1">Unidades x Día: 100 unds</label>                       
+                                </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                 <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                    </svg></span>
+                                    <label for="" class="border-bottom border-info mt-1">Salario x día $: 3000 unds</label>                       
+                                  </div>                
+                                 </div>
+                              </div>
+                              <div class="tab-pane" id="seccion2">
+                                 <div class="col-auto">
+                                   <div class="input-group">
+                                     <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                     <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
+                                     </span>                   
+                                      <label for="Funcionario" class="border-bottom border-info  mt-2">Unidades x Hacer: 200 unds</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"  fill="currentColor">
+                                    <use xlink:href="iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
+                                   </span>
+                                      <label for="" class="border-bottom border-info mt-1">Proceso: Delantero</label>
+                                </div>
+                                 </div>                        
+                                  <div class="col-auto">
+                                 <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                   <label for="" class="border-bottom border-info mt-1">Operación:Ojalar</label>                       
+                                 </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                   <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                   </svg></span>
+                                   <label for="" class="border-bottom border-info mt-1">Costo x Prenda:100 unds</label>                       
+                                </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                 <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                  <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                    </svg></span>
+                                  <label for="" class="border-bottom border-info mt-1">Unidades x Día: 100 unds</label>                       
+                                </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                 <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                    </svg></span>
+                                    <label for="" class="border-bottom border-info mt-1">Salario x día $: 10000 unds</label>                       
+                                  </div>                
+                                 </div>
+                              </div>
+                              <div class="tab-pane" id="seccion3">
+                                 <div class="col-auto">
+                                   <div class="input-group">
+                                     <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                     <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
+                                     </span>                   
+                                      <label for="Funcionario" class="border-bottom border-info  mt-2">Unidades x Hacer: 300 unds</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"  fill="currentColor">
+                                    <use xlink:href="iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
+                                   </span>
+                                      <label for="" class="border-bottom border-info mt-1">Proceso: Trasero</label>
+                                </div>
+                                 </div>                        
+                                  <div class="col-auto">
+                                 <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                   <label for="" class="border-bottom border-info mt-1">Operación:Ojalar</label>                       
+                                 </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                   <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                   </svg></span>
+                                   <label for="" class="border-bottom border-info mt-1">Costo x Prenda:50 unds</label>                       
+                                </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                 <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                  <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                    </svg></span>
+                                  <label for="" class="border-bottom border-info mt-1">Unidades x Día: 200 unds</label>                       
+                                </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                 <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                    </svg></span>
+                                    <label for="" class="border-bottom border-info mt-1">Salario x día $: 10000 unds</label>                       
+                                  </div>                
+                                 </div>
+                              </div>
+                              <div class="tab-pane" id="seccion4">
+                                 <div class="col-auto">
+                                   <div class="input-group">
+                                     <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                     <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
+                                     </span>                   
+                                      <label for="Funcionario" class="border-bottom border-info  mt-2">Unidades x Hacer: 400 unds</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"  fill="currentColor">
+                                    <use xlink:href="iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
+                                   </span>
+                                      <label for="" class="border-bottom border-info mt-1">Proceso:Pretina</label>
+                                </div>
+                                 </div>                        
+                                  <div class="col-auto">
+                                 <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                   <label for="" class="border-bottom border-info mt-1">Operación:Ojalar</label>                       
+                                 </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                   <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                   </svg></span>
+                                   <label for="" class="border-bottom border-info mt-1">Costo x Prenda:150 unds</label>                       
+                                </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                 <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                  <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                    </svg></span>
+                                  <label for="" class="border-bottom border-info mt-1">Unidades x Día: 0 unds</label>                       
+                                </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                 <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                    </svg></span>
+                                    <label for="" class="border-bottom border-info mt-1">Salario x día $:0 </label>                       
+                                  </div>                
+                                 </div>
+                              </div>
+                              <div class="tab-pane" id="seccion5">
+                                 <div class="col-auto">
+                                   <div class="input-group">
+                                     <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                     <use xlink:href="iconos/bootstrap-icons.svg#person-badge"/></svg>
+                                     </span>                   
+                                      <label for="Funcionario" class="border-bottom border-info  mt-2">Unidades x Hacer: 150 unds</label>
+                                    </div>
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16"  fill="currentColor">
+                                    <use xlink:href="iconos/bootstrap-icons.svg#gear-wide-connected"/></svg>
+                                   </span>
+                                      <label for="" class="border-bottom border-info mt-1">Proceso:Pasadores</label>
+                                </div>
+                                 </div>                        
+                                  <div class="col-auto">
+                                 <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                  </svg></span>
+                                   <label for="" class="border-bottom border-info mt-1">Operación:Ojalar</label>                       
+                                 </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                   <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                   </svg></span>
+                                   <label for="" class="border-bottom border-info mt-1">Costo x Prenda:200 unds</label>                       
+                                </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                <div class="input-group">
+                                 <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                  <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                    </svg></span>
+                                  <label for="" class="border-bottom border-info mt-1">Unidades x Día: 100 unds</label>                       
+                                </div>                
+                                 </div>
+                                 <div class="col-auto">
+                                 <div class="input-group">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16"      height="16" fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#journal-richtext"/>
+                                    </svg></span>
+                                    <label for="" class="border-bottom border-info mt-1">Salario x día $: 20.000 </label>                       
+                                  </div>                
+                                 </div>
+                              </div>       
+                            </div>
+                          </div>
+                           
+                        </div>                   
+                    </div>    
+                  </div>
+            </div>
+        </div>  
 
- 
+                          
+
+       
+        
