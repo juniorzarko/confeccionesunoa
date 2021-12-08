@@ -1,8 +1,8 @@
-* {
+/* {
 	box-sizing: border-box;
 }
 
-body {
+ body {
 	font-family: 'Roboto', sans-serif;
 	background: #E5E5E5;
 }
@@ -13,7 +13,7 @@ main {
 	width: 90%;
 	margin: auto;
 	padding: 40px;
-}
+} */
 
 .formulario {
 	display: grid;

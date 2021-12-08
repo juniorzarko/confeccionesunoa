@@ -40,7 +40,6 @@ if(isset($_SESSION['usuario'])) {
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">       
     <!-- Custom styles for this template -->
     <link href="dashboard/dashboard.css" rel="stylesheet">
-    <!-- <link href="css/estilos1.css" rel="stylesheet">  -->
     <link href="css/gsap.css" rel="stylesheet">
   </head>
   <body>
@@ -89,7 +88,7 @@ if(isset($_SESSION['usuario'])) {
               <!-- Menu Administrativo y salida -->
              <div class="container shadow bg-transparent rounded  mt-3">
              <div class="d-grid">
-                <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary" onClick="inicio-general();">Inicio General
+                <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary" onClick="inicioGeneral();">Inicio General
 
                 </button>
              </div> 
@@ -107,18 +106,18 @@ if(isset($_SESSION['usuario'])) {
                Modulos del Sistema
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                     <li><a class="dropdown-item" href="#" onClick=" ir_a_pagnomina();">Nomina</a></li>
-                     <li><a class="dropdown-item" href="#" onClick="ir_a_pageinventarios();">Inventarios</a></li>
-                    <li><a class="dropdown-item" href="#" onClick="ir_a_pagefacturacion();">Facturación</a></li>              
+                     <li><a class="dropdown-item" href="#">Nomina</a></li>
+                     <li><a class="dropdown-item" href="#">Inventarios</a></li>
+                    <li><a class="dropdown-item" href="#">Facturación</a></li>              
                 </ul>
                </div> 
-             </div>
+            </div>
           </div>                  
         </nav>  
         <div class="" id="consolaphp">
       
 
-      </div>     
+        </div>     
         <main class="col-md-9 ms-sm-auto col-lg-9 px-md-4"> 
           <div class="container">
             <!-- Menu Horizontal de Trabajo en Principal -->
@@ -132,8 +131,8 @@ if(isset($_SESSION['usuario'])) {
                   <button class="btn btn-sm btn-outline-primary btn-6" type="button" onClick="procesosLotes1();">Procesos de Lotes</button>
                   <button class="btn btn-sm btn-outline-primary btn-7" type="button">Liquidaciones</button>
                   <button class="btn btn-sm btn-outline-primary btn-8" type="button">Trazabilidad</button>            
-              </form>
-            </nav>    
+            </form>
+          </nav>    
          
                 <div class="row justify-content-md-center">
                   <!-- <div class="col col-lg-2" id="idInformacion1">
@@ -158,8 +157,7 @@ if(isset($_SESSION['usuario'])) {
 
       <script src="js/jquery-3.6.0.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-      <script src ="gsap-public/minified/gsap.min.js" > </script> 
-      <script src="js/formulario.js"></script>
+      <script src = "gsap-public/minified/gsap.min.js" > </script> 
       <script src="js/oper_principal.js"></script>
       <script src="js/gsap.js"></script>      
       <script src="bootstrap/js/bootstrap.js"></script>
