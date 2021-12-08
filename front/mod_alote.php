@@ -30,7 +30,7 @@
             <div class="input-group">
               <div class="input-group-text">Fecha:
                </div>
-                  <input type="date" class="form-control" id="fecha" placeholder="">
+                  <input type="date" class="form-control" id="fechalote" placeholder="">
             </div>
           </div> 
           <div class="col-md-5 mt-2">

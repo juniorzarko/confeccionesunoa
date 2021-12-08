@@ -1,13 +1,13 @@
 <?php
 include_once "Modelo/modelo.php";
-include_once "repositorio/repo_lote.php";
+include_once "repositorio/repo_Operaciones.php";
 
-class ServiciosLote extends rep_lote {
-    public $tb_lote;
+class ServiciosOperaciones extends repo_operaciones {
+    public $tb_modulos;
 
 public function getAll(){
     $conebd=$this->iniconexionbd(1);
-    $respuesta=$this->lotegetAll();
+    $respuesta=$this->listarAll();
     $this->cerrarbd();
     return $respuesta;
 
@@ -17,21 +17,20 @@ public function getAll(){
 
 public function insertar($datos){
     /**creo el objeto e inserto datos en los atributos del objeto */
-    $this->tb_lote= new Tb_lote();
-    $this->tb_lote->tb_loteParams($datos);
-   // print_r($datos);
+    $this->tb_modulos= new Tb_modulos();
+    $this->tb_modulos->ParamModulos($datos);  
     /** Inicio la base de datos para hacer la insersion */
     $conebd=$this->iniconexionbd(1);
-    $this->insertarenbdregistro($this->tb_lote);
+    $this->insertarenbdregistro($this->tb_modulos);
     $this->cerrarbd();
 }
 
 
 
-public function buscarxIdlote($id){
-    $this->tb_lote= new Tb_lote();
+public function buscarxId($id){
+    $this->tb_modulos= new Tb_modulos();
     $conebd=$this->iniconexionbd(1);
-    $resultado=$this->listarxID($id);
+    $resultado=$this->editarxID($id);
     $this->cerrarbd();
    // $this->tb_lote->tb_lote($resultado);
     return $resultado;
@@ -41,24 +40,24 @@ public function buscarxIdlote($id){
 public function actualizarRegistro($datos,$id){
   
     //  $datos=array('id'=>$id);
-      $this->tb_lote= new Tb_lote();
-      //var_dump($datos);
-      $this->tb_lote->tb_loteParams($datos);
-      $this->tb_lote->setId($id);
+      $this->tb_modulos= new Tb_modulos();
+
+      $this->tb_modulos->ParamModulos($datos);
+      $this->tb_modulos->setId($id);
       
       $conebd=$this->iniconexionbd(1);
-      $this->actualizarRegistroBD($this->tb_lote);
+      $this->actualizarRegistroBD($this->tb_modulos);
       $this->cerrarbd();
   }
 
 public function eliminarxid($id){
-    $this->tb_lote= new Tb_lote();
+    $this->tb_modulos= new Tb_modulos();
  
     
-    $this->tb_lote->setId($id);
+    $this->tb_modulos->setId($id);
     
     $conebd=$this->iniconexionbd(1);
-    $this->borrarlotexId($this->tb_lote);
+    $this->eliminarregistro($this->tb_modulos);
     $this->cerrarbd();
 
 

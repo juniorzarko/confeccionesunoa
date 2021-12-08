@@ -3,6 +3,8 @@ include_once "Controlador/RestUtils.php";
 include_once "confecciones/api/servicios.php";
 include_once "confecciones/api/serviciosOperario.php";
 include_once "confecciones/api/servicioslote.php";
+include_once "confecciones/api/ServiciosOperaciones.php";
+include_once "confecciones/api/ServiciosOperacion.php";
 
 class controlador extends RestUtils{
 
@@ -13,6 +15,8 @@ protected $servUser;
 public $sessionuser;
 public $servlote;
 public $servOperario;
+public $servOperacion;
+public $servOperaciones;
 public $msj;
 
 function __construct(){
@@ -20,8 +24,10 @@ function __construct(){
     $this->servUser=new servicios();
     $this->servOperario= new serviciosOperario();
     $this->servlote = new ServiciosLote();
+    $this->servOperacion = new ServiciosOperacion();
+    $this->servOperaciones = new ServiciosOperaciones();
     $this->url ="";
-
+   
 
 }
 
@@ -90,7 +96,7 @@ public function recibirdatos($url){
                 case 'lote/registrar/':
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
-                    //print_r($datos);
+                    print_r($datos);
                     $this->servlote->insertar($datos);
                  break;  
                  
@@ -119,7 +125,7 @@ public function recibirdatos($url){
                    // var_dump($resultado);
                       RestUtils::sendResponse(http_response_code(204), json_encode($resultado), 'application/json');
                  break; 
-                 case 'Operario/registrar/':
+                 case 'Operario/registrar/': 
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
                     $this->servOperario->insertar($datos);
@@ -151,18 +157,48 @@ public function recibirdatos($url){
                    // var_dump($resultado);
                       RestUtils::sendResponse(http_response_code(204), json_encode($resultado), 'application/json');
                  break;
-                 case 'Operario/eliminar/':
-                    $this_rest = RestUtils::processRequest();
-                    $resultado=$this->servOperario->eliminar($id);
-                   // var_dump($resultado);
-                      RestUtils::sendResponse(http_response_code(204), json_encode($resultado), 'application/json');
-                 break;
-                    
-                 /*** API-CRUD PARA CONTROLAR LOTE */
-                 case 'lote/registrar/':
+                  
+                 /**MODULOS OPERACIONES */
+
+                 
+                 case 'operaciones/registrar/':
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
-                    $resultado=$this->servlote->insertar($datos);
+                    $this->servOperaciones->insertar($datos);
+                    RestUtils::sendResponse(204, json_encode("exitoso"), 'application/json');
+                 break;  
+                 
+                 case 'operaciones/listar/':
+                    
+                    $this_rest = RestUtils::processRequest();
+                    $resultado=$this->servOperaciones->getAll();
+                    RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                 break; 
+                
+                 case 'operaciones/buscarxid/':
+                    $this_rest = RestUtils::processRequest();
+                    $resultado=$this->servOperaciones->buscarxId($id);
+                    RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                 break;
+                 case 'operaciones/actualizar/':
+                    $this_rest = RestUtils::processRequest();
+                    $datos=$this_rest->getData();
+                    $resultado=$this->servOperaciones->actualizarRegistro($datos,$id);
+                    RestUtils::sendResponse(http_response_code(202), json_encode($resultado), 'application/json');
+                 break;   
+                 
+                 case 'operaciones/eliminar/':
+                    $this_rest = RestUtils::processRequest();
+                    $resultado=$this->servOperaciones->eliminarxid($id);
+                   // var_dump($resultado);
+                      RestUtils::sendResponse(http_response_code(204), json_encode($resultado), 'application/json');
+                 break; 
+
+                 /*** API-CRUD PARA CONTROLAR OPERACION */
+                 case 'operacion/registrar/':
+                    $this_rest = RestUtils::processRequest();
+                    $datos=$this_rest->getData();
+                    $resultado=$this->servOperacion->insertar($datos);
                     RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
                  break;  
                  case 'lote/listar/':
@@ -173,6 +209,8 @@ public function recibirdatos($url){
                     RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
                     
                  break; 
+
+
 
 
                 default:{

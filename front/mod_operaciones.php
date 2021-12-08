@@ -5,13 +5,13 @@
             <div class="col-md-4 ">
               <div class="input-group">
                 <div class="input-group-text">Fecha: </div>
-                      <input type="date" class="form-control" id="fecha" placeholder="">
+                      <input type="date" class="form-control" id="fechaOperaciones" placeholder="">
               </div>
             </div>
              <div class="col-md-4 ">
                 <div class="input-group">
                   <div class="input-group-text">Nombre</div>
-                     <input type="text" class="form-control" id="" placeholder="">
+                     <input type="text" class="form-control" id="nombreOperaciones" placeholder="">
                 </div>
             </div> 
             <div class="col-md-4 ">
@@ -19,36 +19,22 @@
                   <div class="input-group-text">
                    Costo X Prenda $
                   </div>
-                  <input type="number" class="form-control" id="cantidad" placeholder="">
+                  <input type="number" class="form-control" id="costoxprenda" placeholder="">
+                  <input type="hidden" class="form-control" id="idoperaciones" placeholder="">
+
               </div>
           </div>  
         </div> 
-        <!-- <div class="row">   
-          <div class="col-md-5 mt-2">
-              <div class="input-group">
-                  <div class="input-group-text">
-                    Cantidad
-                  </div>
-                  <input type="text" class="form-control" id="cantidad" placeholder="Cantidad">
-              </div>
-          </div>          
-          <div class="col-md-5 mt-2">
-            <div class="input-group">
-              <div class="input-group-text">Costo:
-              </div>
-                  <input type="number" class="form-control" id="" placeholder="Costo">
-            </div>
-          </div>
-        </div>     -->
+   
          
       </form>
 
       <nav class="navbar navbar-light bg-light">
        <form class="container-fluid justify-content-center">
          
-          <button class="btn btn-sm btn-outline-primary" type="button">Editar</button>
-          <button class="btn btn-sm btn-outline-primary mx-3" type="button">Eliminar</button>
-          <button class="btn btn-sm btn-outline-primary" type="button">Guardar</button>
+          <button class="btn btn-sm btn-outline-primary" onclick="actualizarmodoperaciones();" type="button">Actualizar</button>
+          <button class="btn btn-sm btn-outline-primary mx-3" onclick="listarmodoperaciones();" type="button">Listar</button>
+          <button class="btn btn-sm btn-outline-primary" onclick="guardarmodoperaciones();" type="button">Guardar</button>
        </form>
     </nav>
 </div>

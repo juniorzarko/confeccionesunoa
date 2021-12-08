@@ -180,13 +180,25 @@ function tb_loteParams($param){
 class Tb_modulos{
 
 public $id;
+public $fecha;
 public $descripcion;
+public $costoxprenda;
 
 function __construct (){
 
 	$this->id=null;//$id;
 
 }
+	function ParamModulos($param){
+	//	 $this->id=$param['id'];
+		 $this->fecha=$param['fecha'];
+		 $this->descripcion=$param['descripcion'];
+		 $this->costoxprenda=$param['costoxprenda'];
+
+	}
+
+
+
 		/**
 		 * Get the value of id
 		 */
@@ -226,6 +238,50 @@ function __construct (){
 
 		return $this;
 		}
+
+			/**
+			 * Get the value of fecha
+			 */
+			public function getFecha()
+			{
+			return $this->fecha;
+			}
+
+			/**
+			 * Set the value of fecha
+			 *
+			 * @return self
+			 */
+			public function setFecha($fecha)
+			{
+			$this->fecha = $fecha;
+
+			return $this;
+			}
+			
+			/**
+			 * Get the value of precioxprenda
+			 */
+			public function getPrecioxprenda()
+			{
+			return $this->precioxprenda;
+			}
+
+		/**
+		 * Set the value of precioxprenda
+		 *
+		 * @return self
+		 */
+		public function setCostoxprenda($costoxprenda)
+		{
+		$this->costoxprenda = $costoxprenda;
+
+		return $this;
+		}
+		
+				
+
+		
 }
 
 class tb_mod_prendas{
@@ -563,7 +619,8 @@ class tb_operacion{
 	 */
 	function __construct (){
 
-		$this->id=null;//$id;
+		$this->id=null;
+		$this->id_modulo=new Tb_modulos(); //$id;
 	
 	}
 				/**
@@ -1090,7 +1147,12 @@ function __construct (){
 				$this->id_modulo = $id_modulo;
 
 				return $this;
+
+
 				}
-}
+
+
+			}
+
 
 ?>
