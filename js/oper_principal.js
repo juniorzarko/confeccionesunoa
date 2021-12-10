@@ -1317,17 +1317,6 @@ function eliminaroperaciones(id){
     objoperaciones.eliminaroperaciones(id);
 }
 
-
-
-
-
-
-
-
-
-
-
-
                  
 
 
