@@ -56,20 +56,28 @@
                       <option value="1">Ojalar</option>    
                       <option value="2">Prender Garra</option>                      
                     </select>  
-                  </div>
-                </div> 
-            </div>
-           
-        <div class="row">   
-          <div class="col-md-5 mx-auto mt-2">
-            <div class="input-group">
-              <div class="input-group-text">Cod. Operador:
+                </div>
+            </div> 
+        </div>            
+        <div class="row">  
+          <div class="col-md-4 mt-2">
+              <div class="input-group">
+                <div class="input-group-text">Fecha: </div>
+                      <input type="date" class="form-control" id="fechaOperaciones" placeholder="">
               </div>
-                  <input type="number" class="form-control " requiered id="" placeholder="">
-                  <div class="valid-feedback">Codigo Aceptado!</div>
-            </div>
-          </div>         
-          <div class="col-md-5 mx-auto mt-2">
+            </div> 
+          <div class="col-md-4 mx-auto  mt-2">
+                <div class="input-group">
+                  <div class="input-group-text">Operacion</div>
+                    <select class="form-select form-select-sm" requiered aria-label=".form-select-sm example">
+                      <option selected>Seleccione la Operación</option>
+                      <option value="1">Ojalar</option>    
+                      <option value="2">Prender Garra</option>                      
+                    </select>  
+                </div>
+          </div> 
+             
+          <div class="col-md-4 mx-auto mt-2">
               <div class="input-group">
                   <div class="input-group-text">
                    Unidades X Día
@@ -512,7 +520,25 @@
                     </div>    
                   </div>
             </div>
-        </div>  
+        </div>
+        <div class="table-responsive">
+                 <table class="table table-striped table-sm">
+              
+                        <thead class="thead-dark">
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Fecha Movimiento</th>
+                                <th scope="col">Lote</th>
+                                <th scope="col">Operario</th>
+                                <th scope="col">Operación</th>
+                                <th scope="col">Proceso</th>
+                                <th scope="col">Unidad x Día</th>
+                                <th scope="col">Observacioones</th>
+                           
+                                </tr>
+                              </thead>
+                </table>  
+        </div>
 
                           
 

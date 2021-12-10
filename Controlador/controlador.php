@@ -96,7 +96,7 @@ public function recibirdatos($url){
                 case 'lote/registrar/':
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
-                    print_r($datos);
+                  //  print_r($datos);
                     $this->servlote->insertar($datos);
                  break;  
                  
