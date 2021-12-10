@@ -37,7 +37,7 @@
             <div class="input-group">
               <div class="input-group-text">Id:
                </div>
-                  <input type="text" class="form-control" id="idlote" placeholder="">
+                  <input type="text" class="form-control" id="idlote" disabled>
             </div>
           </div> 
       </div>

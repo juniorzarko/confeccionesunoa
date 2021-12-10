@@ -15,7 +15,7 @@
                        <input name="apellido" type="text" class="form-control" id="apellidOperario" placeholder="Apellido">
                       
                 </div>
-            </|div> 
+            </div> 
         </div>
         <div class="row">       
             <div class="col-md-5  mt-2">
@@ -48,10 +48,10 @@
             </div> 
         </div>
         <div class="row">
-            <div class="col-md-5  mt-2">
+            <div class="col-md-3  mt-2">
                  <div class="input-group">
-                    <span class="input-group-text">Codigo</span>
-                      <input type="text" aria-label="Codigo Operador" id="codigoId" class="form-control">
+                    <span class="input-group-text" >Codigo</span>
+                      <input type="number" aria-label="Codigo Operador" id="codigoId" class="form-control" disabled>
                  </div>
             </div>
         </div>

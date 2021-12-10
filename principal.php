@@ -128,7 +128,7 @@ if(isset($_SESSION['usuario'])) {
                   <button class="btn btn-sm btn-outline-primary btn-2" type="button" onClick="desplegarusuarios2();">Operador</button>
                   <button class="btn btn-sm btn-outline-primary btn-3" type="button" onClick="desplegarlote2();">Lotes</button>
                   <button class="btn btn-sm btn-outline-primary btn-4" type="button" onClick="desplegaroperacion2();">Operación</button>
-                  <button class="btn btn-sm btn-outline-primary btn-5" type="button" onClick="desplegaroperaciones2();">Modulo Operaciones</button>
+                  <button class="btn btn-sm btn-outline-primary btn-5" type="button" onClick="desplegaroperaciones2();">Procesos</button>
                   <button class="btn btn-sm btn-outline-primary btn-6" type="button" onClick="procesosLotes1();">Procesos de Lotes</button>
                   <button class="btn btn-sm btn-outline-primary btn-7" type="button">Liquidaciones</button>
                   <button class="btn btn-sm btn-outline-primary btn-8" type="button">Trazabilidad</button>            
