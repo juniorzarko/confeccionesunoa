@@ -201,14 +201,20 @@ public function recibirdatos($url){
                     $resultado=$this->servOperacion->insertar($datos);
                     RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
                  break;  
-                 case 'lote/listar/':
+                 case 'operacion/listar/':
                    
                     $this->setMsj($url_pet);
                     $this_rest = RestUtils::processRequest();
-                    $resultado=$this->servlote->getAll();
+                    $resultado=$this->servOperacion->getAll();
                     RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
                     
                  break; 
+
+                 case 'operacion/editar':
+                  $this_rest = RestUtils::processRequest();
+                  $resultado=$this->servOperacion->buscarId($id);
+                  RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                  break;
 
 
 

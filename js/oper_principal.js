@@ -782,12 +782,9 @@ class ManejOperaciones{
 class ManejOperacion{
     registrarOperacion(){
         let datos={
-            codigoLote:$("#fechaOperacion").val(),
+            fecha:$("#fechaOperacion").val(),
             nombre:$("#nombreOperacion").val(),
-         //   cantidad:$("#costoOperacion").val(),
-           // unidades:$("#unidadesOperacion").val(),
-       //     fechaCreacion:$("#tiempoOperacion").val(),
-          // password:$("#password").val()
+       
     
         }
         
@@ -855,7 +852,7 @@ class ManejOperacion{
                 $("#mensajes").hide(1000);
                
                 //recibe el arreglo 'items' de la respuesta a la petición
-               mostrarinformacionlote(respuesta);
+               mostrarinformacionoperacion(respuesta);
             },
     
             // código a ejecutar si la petición falla;
@@ -884,9 +881,8 @@ class ManejOperacion{
 
 }
 
-
-
 /**METODO PARA CARGAR TODOS LOS IDS cuando se inicia el documento */
+
 $(document).ready(function () {
     //configura el aspecto inicial de la pagina
     $("#mensaje").html("principal.php");
@@ -1090,7 +1086,7 @@ function mostrarinformacionlote(vecitems){
 /** ACCIONES DE BOTONES DE MANEJO FORMULAROS **/
 
     
-function mostrarinformacionlote(items){
+function mostrarinformacionoperacion(items){
                 $("#listar_contenidos").html("");
                 $("#listar_contenidos").show(500);
                 
@@ -1101,11 +1097,9 @@ function mostrarinformacionlote(items){
                         <thead class="thead-dark">
                               <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Codigo Lote</th>
+                                <th scope="col">Fecha</th>
                                 <th scope="col">Nombre</th>
-                                <th scope="col">Cantidad</th>
-                                <th scope="col">Fecha Creacion</th>
-                           
+                                                          
                                 </tr>
                               </thead>`;
             
@@ -1115,10 +1109,9 @@ function mostrarinformacionlote(items){
                    // console.log(items);
                     tabla += `<tr>
                     <th scope="row">${items['id']}</th>
-                              <td>${items['codigoLote']}</td>
+                              <td>${items['fecha']}</td>
                               <td>${items['nombre']}</td>
-                              <td>${items['cantidad']}</td>
-                              <td>${items['fechaCreacion']}</td>
+                            
                              
                               <td id="id-boton"><button id="boton-primary" class="btn btn-primary btn-sm" onclick="listarlotexid(${items.id});">Editar</td>
                               <td id="id-boton"><button type="button" class="btn btn-dark btn-sm" onclick="eliminarlotexid(${items.id});">Borrar</button></td>                
@@ -1317,11 +1310,9 @@ function eliminaroperaciones(id){
     objoperaciones.eliminaroperaciones(id);
 }
 
-<<<<<<< HEAD
                  
 
 
-=======
 
 	// numeros: /^\d{10}$/, // Solo 10 numeros.
 	// usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
@@ -1338,7 +1329,6 @@ function eliminaroperaciones(id){
 // 	cargo:false,
 // 	email:false
 // }
->>>>>>> 6d82b6dd4037e436ac3b3b92521be174544ad89d
 
 function validarOperario () {
 	let nombreOperario, apellidOperario, direccionOperario, telefonOperario, cargOperario, emailOperario, codigoId, expresion;
