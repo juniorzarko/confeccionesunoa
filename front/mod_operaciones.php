@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-6 mt-2">
                 <div class="input-group">
-                 <div class="input-group-text">Proceso:</div>
+                 <div class="input-group-text">Operaciones:</div>
                   <select class="form-select form-select-sm" requiered aria-label=".form-select-sm example">
                       <option selected>Seleccione el Proceso</option>
                       <option value="1">Presentación</option>
@@ -37,17 +37,14 @@
                    Costo X Prenda $
                   </div>
                   <input type="number" class="form-control" id="costoxprenda" placeholder="">
-                  <input type="hidden" class="form-control" id="idoperaciones" placeholder="">
+                  
 
               </div>
            </div> 
         </div> 
         <div class="row">
         <div class="col-md-6 mt-2">
-                <div class="input-group">
-                  <div class="input-group-text">id Procesos</div>
-                     <input type="number" class="form-control" id="" disabled >
-                </div>
+               <input type="hidden" class="form-control" id="" disabled >
             </div> 
         </div>
         

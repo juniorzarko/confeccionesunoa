@@ -51,10 +51,7 @@
         </div>
         <div class="row">
             <div class="col-md-3  mt-2">
-                 <div class="input-group">
-                    <span class="input-group-text" >Codigo</span>
-                      <input type="number" aria-label="Codigo Operador" id="codigoId" class="form-control" disabled>
-                 </div>
+            <input type="hidden" aria-label="Codigo Operador" id="codigoId" class="form-control" disabled>
             </div>
         </div>
       
