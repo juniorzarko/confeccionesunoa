@@ -49,7 +49,7 @@
          
           <button class="btn btn-sm btn-outline-primary" onclick="actualizarlote();" type="button">Actualizar</button>
           <button class="btn btn-sm btn-outline-primary mx-3" onclick="listarlotes();" type="button">Listar</button>
-          <button class="btn btn-sm btn-outline-primary" onclick="registrarlote();" type="button">Guardar</button>
+          <button class="btn btn-sm btn-outline-primary" onclick="registrarloteguardarlote();" type="button">Guardar</button>
        </form>
     </nav>
 </div>

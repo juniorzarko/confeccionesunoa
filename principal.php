@@ -37,10 +37,11 @@ if(isset($_SESSION['usuario'])) {
     <meta name="generator" content="Hugo 0.88.1">
     <title>Confeccioes Uno A</title>    
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">       
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">     
     <!-- Custom styles for this template -->
     <link href="dashboard/dashboard.css" rel="stylesheet">
-    <!-- <link href="css/estilos1.css" rel="stylesheet">  -->
+    <link href="css/estilos1.css" rel="stylesheet"> 
     <link href="css/gsap.css" rel="stylesheet">
   </head>
   <body>
@@ -148,9 +149,7 @@ if(isset($_SESSION['usuario'])) {
                 
                   </div> -->
                 </div>
-                <div class="" id="listar_contenidos">
-                
-                </div>
+                <div class="" id="listar_contenidos"></div>
           </div>
         </main>
       </div>       
@@ -158,8 +157,7 @@ if(isset($_SESSION['usuario'])) {
 
       <script src="js/jquery-3.6.0.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-      <script src ="gsap-public/minified/gsap.min.js" > </script> 
-      <script src="js/formulario.js"></script>
+      <script src ="gsap-public/minified/gsap.min.js" > </script>      
       <script src="js/oper_principal.js"></script>
       <script src="js/gsap.js"></script>      
       <script src="bootstrap/js/bootstrap.js"></script>
