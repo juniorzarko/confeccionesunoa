@@ -14,19 +14,19 @@ class UserModel {
 
 	$this->id=null;//$id;
 
-}
+	}
 
 
-function UserModelParam($objUserModel){
+	function UserModelParam($objUserModel){
 
-	$this->id=null;//$id;
-	$this->nombre=$objUserModel['nombre'];
-	$this->usuario=$objUserModel['usuario'];
-	$this->clave=$objUserModel['clave'];
-	$this->email=$objUserModel['email'];
-	$this->estado=$objUserModel['estado'];
-//	var_dump($this->nombre);
-}
+		$this->id=null;//$id;
+		$this->nombre=$objUserModel['nombre'];
+		$this->usuario=$objUserModel['usuario'];
+		$this->clave=$objUserModel['clave'];
+		$this->email=$objUserModel['email'];
+		$this->estado=$objUserModel['estado'];
+	//	var_dump($this->nombre);
+	}
 
 
   public function setId($id){
@@ -76,25 +76,25 @@ function UserModelParam($objUserModel){
 
 class Tb_lote {
 
-public $id;
-public $codigoLote;
-public $nombre;
-public $cantidad;
-public $fechaCreacion;
+	public $id;
+	public $codigoLote;
+	public $nombre;
+	public $cantidad;
+	public $fechaCreacion;
 
-function __construct(){
-	$this->id = null;
+	function __construct(){
+		$this->id = null;
 
-}
+	}
 
-function tb_loteParams($param){
-//	$this->id = $param['id'];
-	$this->codigoLote = $param['codigoLote'];
-	$this->nombre = $param['nombre'];
-	$this->cantidad = $param['cantidad'];
-	$this->fechaCreacion =$param['fechaCreacion'];
+	function tb_loteParams($param){
+	//	$this->id = $param['id'];
+		$this->codigoLote = $param['codigoLote'];
+		$this->nombre = $param['nombre'];
+		$this->cantidad = $param['cantidad'];
+		$this->fechaCreacion =$param['fechaCreacion'];
 
-}
+	}
 
 		/**
 		 * Get the value of id
@@ -177,18 +177,119 @@ function tb_loteParams($param){
 		}
 }
 
-class Tb_modulos{
+class tb_operacion{
 
-public $id;
-public $fecha;
-public $descripcion;
-public $costoxprenda;
+	public $id;
+	public $fecha;
+	public $nombre;
 
-function __construct (){
 
-	$this->id=null;//$id;
+	/**
+	 * Constructores de clase.
+	 * 
+	 */
+	function __construct (){
+
+		$this->id=null;
+	//	$this->id_modulo=new Tb_modulos(); //$id;
+	
+	}
+
+	function tb_operacion($param){
+		$this->fecha = $param["fecha"];
+		$this->nombre = $param["nombre"];
+
+	}
+		/**
+		 * Get the value of id
+		 *
+		 * @return 	public
+		 */
+		public function getId()
+		{
+			return $this->id;
+		}
+
+		/**
+		 * Set the value of id
+		 *
+		 * @param public $id
+		 *
+		 * @return self
+		 */
+		public function setId($id)
+		{
+			$this->id = $id;
+
+			return $this;
+		}
+
+		/**
+		 * Get the value of fecha
+		 *
+		 * @return 	public
+		 */
+		public function getFecha()
+		{
+			return $this->fecha;
+		}
+
+		/**
+		 * Set the value of fecha
+		 *
+		 * @param public $fecha
+		 *
+		 * @return self
+		 */
+		public function setFecha($fecha)
+		{
+			$this->fecha = $fecha;
+
+			return $this;
+		}
+
+		/**
+		 * Get the value of nombre
+		 *
+		 * @return 	public
+		 */
+		public function getNombre()
+		{
+			return $this->nombre;
+		}
+
+		/**
+		 * Set the value of nombre
+		 *
+		 * @param public $nombre
+		 *
+		 * @return self
+		 */
+		public function setNombre($nombre)
+		{
+			$this->nombre = $nombre;
+
+			return $this;
+		}
+
 
 }
+
+class Tb_modulos{
+
+	public $id;
+	public $fecha;
+	public $descripcion;
+	public $costoxprenda;
+	public $id_operacion;
+
+
+	function __construct (){
+
+		$this->id=null;//$id;
+		$this->id_operacion= new tb_operacion;
+
+	}
 	function ParamModulos($param){
 	//	 $this->id=$param['id'];
 		 $this->fecha=$param['fecha'];
@@ -600,197 +701,7 @@ class tb_mod_prendas{
 				}
 }
 
-class tb_operacion{
 
-
-
-	public $id;
-	public $fecha;
-	public $nombre;
-	public $costo;
-	public $unidades;
-	public $id_modulo;
-	public $tiempo_proceso;
-
-
-	/**
-	 * Constructores de clase.
-	 * 
-	 */
-	function __construct (){
-
-		$this->id=null;
-		$this->id_modulo=new Tb_modulos(); //$id;
-	
-	}
-				/**
-				 * Get the value of id
-				 *
-				 * @return 	public
-				 */
-				public function getId()
-				{
-					return $this->id;
-				}
-
-				/**
-				 * Set the value of id
-				 *
-				 * @param public $id
-				 *
-				 * @return self
-				 */
-				public function setId($id)
-				{
-					$this->id = $id;
-
-					return $this;
-				}
-
-				/**
-				 * Get the value of fecha
-				 *
-				 * @return 	public
-				 */
-				public function getFecha()
-				{
-					return $this->fecha;
-				}
-
-				/**
-				 * Set the value of fecha
-				 *
-				 * @param public $fecha
-				 *
-				 * @return self
-				 */
-				public function setFecha($fecha)
-				{
-					$this->fecha = $fecha;
-
-					return $this;
-				}
-
-				/**
-				 * Get the value of nombre
-				 *
-				 * @return 	public
-				 */
-				public function getNombre()
-				{
-					return $this->nombre;
-				}
-
-				/**
-				 * Set the value of nombre
-				 *
-				 * @param public $nombre
-				 *
-				 * @return self
-				 */
-				public function setNombre($nombre)
-				{
-					$this->nombre = $nombre;
-
-					return $this;
-				}
-
-				/**
-				 * Get the value of costo
-				 *
-				 * @return 	public
-				 */
-				public function getCosto()
-				{
-					return $this->costo;
-				}
-
-				/**
-				 * Set the value of costo
-				 *
-				 * @param public $costo
-				 *
-				 * @return self
-				 */
-				public function setCosto($costo)
-				{
-					$this->costo = $costo;
-
-					return $this;
-				}
-
-				/**
-				 * Get the value of unidades
-				 *
-				 * @return 	public
-				 */
-				public function getUnidades()
-				{
-					return $this->unidades;
-				}
-
-				/**
-				 * Set the value of unidades
-				 *
-				 * @param public $unidades
-				 *
-				 * @return self
-				 */
-				public function setUnidades($unidades)
-				{
-					$this->unidades = $unidades;
-
-					return $this;
-				}
-
-				/**
-				 * Get the value of id_modulo
-				 *
-				 * @return 	public
-				 */
-				public function getIdModulo()
-				{
-					return $this->id_modulo;
-				}
-
-				/**
-				 * Set the value of id_modulo
-				 *
-				 * @param public $id_modulo
-				 *
-				 * @return self
-				 */
-				public function setIdModulo($id_modulo)
-				{
-					$this->id_modulo = $id_modulo;
-
-					return $this;
-				}
-
-				/**
-				 * Get the value of tiempo_proceso
-				 *
-				 * @return 	public
-				 */
-				public function getTiempoProceso()
-				{
-					return $this->tiempo_proceso;
-				}
-
-				/**
-				 * Set the value of tiempo_proceso
-				 *
-				 * @param public $tiempo_proceso
-				 *
-				 * @return self
-				 */
-				public function setTiempoProceso($tiempo_proceso)
-				{
-					$this->tiempo_proceso = $tiempo_proceso;
-
-					return $this;
-				}
-}
 
 class tb_operario{
 
@@ -988,168 +899,158 @@ class tb_operario{
 
 class tb_transaccionesAPP{
 
-public $id;
-public $id_usuario;
-public $fecha;
-public $nombre;
-public $salario;
-public $unidades;
-public $id_modulo;
+	public $id;
+	public $id_usuario;
+	public $fecha;
+	public $nombre;
+	public $salario;
+	public $unidades;
+	public $id_modulo;
+
+	function __construct (){
+
+		$this->id=null;//$id;
+
+	}
 
 
-/**
- * Constructores de la tabla tb_trasaccionesAPP
- * 
- */
+		/**
+		 * Get the value of id
+		 */
+		public function getId()
+		{
+			return $this->id;
+		}
 
-function __construct (){
+		/**
+		 * Set the value of id
+		 */
+	
+		public function setId($id)
+		{
+		$this->id = $id;
 
-	$this->id=null;//$id;
+		return $this;
+		}
 
-}
+		/**
+		 * Get the value of id_usuario
+		 */
+		public function getIdUsuario()
+		{
+		return $this->id_usuario;
+		}
 
+		/**
+		 * Set the value of id_usuario
+		 *
+		 * @return self
+		 */
+		public function setIdUsuario($id_usuario)
+		{
+		$this->id_usuario = $id_usuario;
 
-				/**
-				 * Get the value of id
-				 */
-				public function getId()
-				{
-				return $this->id;
-				}
+		return $this;
+		}
 
-				/**
-				 * Set the value of id
-				 *
-				 * @return self
-				 */
-				public function setId($id)
-				{
-				$this->id = $id;
-
-				return $this;
-				}
-
-				/**
-				 * Get the value of id_usuario
-				 */
-				public function getIdUsuario()
-				{
-				return $this->id_usuario;
-				}
-
-				/**
-				 * Set the value of id_usuario
-				 *
-				 * @return self
-				 */
-				public function setIdUsuario($id_usuario)
-				{
-				$this->id_usuario = $id_usuario;
-
-				return $this;
-				}
-
-				/**
-				 * Get the value of fecha
-				 */
-				public function getFecha()
-				{
-				return $this->fecha;
-				}
-
-				/**
-				 * Set the value of fecha
-				 *
-				 * @return self
-				 */
-				public function setFecha($fecha)
-				{
-				$this->fecha = $fecha;
-
-				return $this;
-				}
-
-				/**
-				 * Get the value of nombre
-				 */
-				public function getNombre()
-				{
-				return $this->nombre;
-				}
-
-				/**
-				 * Set the value of nombre
-				 *
-				 * @return self
-				 */
-				public function setNombre($nombre)
-				{
-				$this->nombre = $nombre;
-
-				return $this;
-				}
-
-				/**
-				 * Get the value of salario
-				 */
-				public function getSalario()
-				{
-				return $this->salario;
-				}
-
-				/**
-				 * Set the value of salario
-				 *
-				 * @return self
-				 */
-				public function setSalario($salario)
-				{
-				$this->salario = $salario;
-
-				return $this;
-				}
-
-				/**
-				 * Get the value of unidades
-				 */
-				public function getUnidades()
-				{
-				return $this->unidades;
-				}
-
-				/**
-				 * Set the value of unidades
-				 *
-				 * @return self
-				 */
-				public function setUnidades($unidades)
-				{
-				$this->unidades = $unidades;
-
-				return $this;
-				}
-
-				/**
-				 * Get the value of id_modulo
-				 */
-				public function getIdModulo()
-				{
-				return $this->id_modulo;
-				}
-
-				/**
-				 * Set the value of id_modulo
-				 *
-				 * @return self
-				 */
-				public function setIdModulo($id_modulo)
-				{
-				$this->id_modulo = $id_modulo;
-
-				return $this;
+		/**
+		 * Get the value of fecha
+		 */
+		public function getFecha()
+		{
+		return $this->fecha;
+		}
 
 
-				}
+	
+		public function setFecha($fecha)
+		{
+		$this->fecha = $fecha;
+
+		return $this;
+		}
+
+		/**
+		 * Get the value of nombre
+		 */
+		public function getNombre()
+		{
+		return $this->nombre;
+		}
+
+		/**
+		 * Set the value of nombre
+		 *
+		 * @return self
+		 */
+		public function setNombre($nombre)
+		{
+		$this->nombre = $nombre;
+
+		return $this;
+		}
+
+		/**
+		 * Get the value of salario
+		 */
+		public function getSalario()
+		{
+		return $this->salario;
+		}
+
+		/**
+		 * Set the value of salario
+		 *
+		 * @return self
+		 */
+		public function setSalario($salario)
+		{
+		$this->salario = $salario;
+
+		return $this;
+		}
+
+		/**
+		 * Get the value of unidades
+		 */
+		public function getUnidades()
+		{
+		return $this->unidades;
+		}
+
+		/**
+		 * Set the value of unidades
+		 *
+		 * @return self
+		 */
+		public function setUnidades($unidades)
+		{
+		$this->unidades = $unidades;
+
+		return $this;
+		}
+
+		/**
+		 * Get the value of id_modulo
+		 */
+		public function getIdModulo()
+		{
+		return $this->id_modulo;
+		}
+
+		/**
+		 * Set the value of id_modulo
+		 *
+		 * @return self
+		 */
+		public function setIdModulo($id_modulo)
+		{
+		$this->id_modulo = $id_modulo;
+
+		return $this;
+
+
+		}
 
 
 			}
