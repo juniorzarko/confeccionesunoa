@@ -17,8 +17,8 @@ class rep_lote extends conexionDB {
         
         }
         
-        
         $contenido=  $statement->fetchall(); 
+        
          return $contenido;
         
         }

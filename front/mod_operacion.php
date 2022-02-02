@@ -19,7 +19,9 @@
         <div class="row mt-1" >            
             <div class="col-md-6 mt-2 ">
                 <div class="input-group">
-                <input type="hidden" class="form-control " id="idOperacion" disabled >
+                  <div class="input-group-text">Id Operación</div>
+                     <input type="number" class="form-control " id="" disabled >
+                  </div>
             </div>
             <!-- <div class="col-md-6 mt-2 ">
                 <div class="input-group">

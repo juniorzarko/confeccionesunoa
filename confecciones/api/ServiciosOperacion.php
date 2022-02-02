@@ -1,11 +1,9 @@
 <?php
 include_once "Modelo/modelo.php";
-include_once "repositorio/repo_operacion.php";
 //include_once "repositorio/repo_Operacion.php";
 
-class serviciosOperacion extends repo_operacion{
+class serviciosOperacion{
 
-    public $tb_operacion;
 
     public function getAll(){
         $conebd=$this->iniconexionbd(1);
@@ -18,55 +16,57 @@ class serviciosOperacion extends repo_operacion{
     
     public function insertar($datos){
         
-        $this->tb_operacion = new tb_operacion();
+        $this->tb_operacion= new Tb_Operacion();
         //var_dump($datos);
-        $this->tb_operacion->tb_operacion($datos);
+        $this->tb_operario->tb_operario($datos);
         
         $conebd=$this->iniconexionbd(1);
-        $this->insertarenbdregistro($this->tb_operacion);
+        $this->insertarenbdregistro($this->tb_operario);
         $this->cerrarbd();
         
     }
-   
+    
+  /*
+  
     public function buscarId($id){
        
-        $this->tb_operacion= new tb_operacion();
+        $this->tb_operario= new Tb_Operario();
         $conebd=$this->iniconexionbd(1);
         $resultado=$this->editarxID($id);
         $this->cerrarbd();
-        $this->tb_operacion->tb_operacion($resultado);
+        $this->tb_operario->tb_operario($resultado);
         return $resultado;
     
     }
     
     public function actualizarRegistro($datos,$id){
       
-     
-        $this->tb_operacion= new tb_operacion();
-        
-        $this->tb_operacion->tb_operacion($datos);
-        $this->tb_operacion->setId($id);
+      //  $datos=array('id'=>$id);
+        $this->tb_operario= new Tb_Operario();
+        //var_dump($datos);
+        $this->tb_operario->tb_operario($datos);
+        $this->tb_operario->setId($id);
         
         $conebd=$this->iniconexionbd(1);
-        $this->actualizarRegistroBD($this->tb_operacion);
+        $this->actualizarRegistroBD($this->tb_operario);
         $this->cerrarbd();
     }
     
     
-    public function eliminarxid($id){
-        $this->tb_operacion= new tb_operacion();
+    public function eliminar($id){
+        $this->tb_operario= new Tb_Operario();
         //var_dump($id);
         
-        $this->tb_operacion->setId($id);
+        $this->tb_operario->setId($id);
         
         $conebd=$this->iniconexionbd(1);
-        $this->eliminarregistro($this->tb_operacion);
+        $this->eliminarregistro($this->tb_operario);
         $this->cerrarbd();
         
     
     }
 
-
+*/
 }
 
 

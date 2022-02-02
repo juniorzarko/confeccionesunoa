@@ -26,7 +26,7 @@ class repo_operaciones extends conexionDB{
         public function insertarenbdregistro($registro){
             //$place_holders = implode(',', array_fill(0, count($registrousuario), '?')); // convierte una cadena en texto para la consulta con la funcion implode
                
-            $statement = $this->conexion->prepare("INSERT INTO tb_modulos (id,fecha,descripcion,costoxprenda,id_operacion) VALUES (:id,:fecha, :descripcion ,:costoxprenda,:id_operacion)");
+            $statement = $this->conexion->prepare("INSERT INTO tb_modulos (id,fecha,descripcion,costoxprenda) VALUES (:id,:fecha, :descripcion ,:costoxprenda)");
             //var_dump($registro);
             $result=$statement->execute((array)$registro);
             //$resultado = $statement->fetchall();

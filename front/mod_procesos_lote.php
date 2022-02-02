@@ -1,89 +1,91 @@
   <div class="container shadow bg-transparent rounded ">
   
+    <!-- Boton modal lote -->
+    <div class="container d-flex justify-content-center ">  
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Selecciones el lote a trabajar</button>
+          <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                   <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Procesamiento de Lotes</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                   <div class="modal-body">
+                        <div class="form-floating">
+                          <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                            <option selected>Seleccionar Lote</option>
+                            <option value="1">1815</option>
+                          </select>
+                          <label for="floatingSelect">Selecciona el lote a Trabajar</label>
+                        </div>
+                    </div>
+                   <div class="modal-footer">
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                     <button type="button" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>     
+        </div>
+    </div>
     <!-- formulario de entrada de datos proceso lotes -->
     <div class="container flex p-2 ">
       <form class="needs-validation novalidate gx-3 ">
         <div class="col-md-12"> <h2 class="text-center">Entrada de Datos</h2> </div> 
         <div class="row"> 
+            <div class="col-md-5 mx-auto mt-2 ">
+                <div class="input-group">
+                 <div class="input-group-text">Proceso:</div>
+                  <select class="form-select form-select-sm" requiered aria-label=".form-select-sm example">
+                      <option selected>Seleccione el Proceso</option>
+                      <option value="1">Presentación</option>
+                      <option value="2">Delantero<e/option>
+                      <option value="3">Trasero</option>
+                      <option value="4">Pretinas</option>
+                      <option value="5">Pasadores</option>
+                  </select>
+                  <div class="invalid-feedback">Ingrese un mensaje de texto</div>
+                </div>
+            </div>
+            <div class="col-md-5 mx-auto  mt-2">
+                <div class="input-group">
+                  <div class="input-group-text">Operacion</div>
+                    <select class="form-select form-select-sm" requiered aria-label=".form-select-sm example">
+                      <option selected>Seleccione la Operación</option>
+                      <option value="1">Ojalar</option>    
+                      <option value="2">Prender Garra</option>                      
+                    </select>  
+                </div>
+            </div> 
+        </div>            
+        <div class="row">  
           <div class="col-md-4 mt-2">
               <div class="input-group">
                 <div class="input-group-text">Fecha: </div>
                       <input type="date" class="form-control" id="fechaOperaciones" placeholder="">
               </div>
-          </div> 
-            <div class="col-md-4 mx-auto mt-2 ">
-                <div class="input-group">
-                <div class="input-group-text">Operador</div>
-                    <select class="form-select form-select-sm"  aria-label=".form-select-sm example">
-                    <option selected>Seleccione el Operador</option>
-                      <option value="1">Hector</option>
-                      <option value="2">juan<e/option>
-                      <option value="3">carlos</option>
-                      <option value="4">perrys</option>
-                      <option value="5">jean carlo</option>                     
-                    </select>  
-                </div> 
-                
-            </div>
-            <div class="col-md-4 mx-auto  mt-2">
-                <div class="input-group">
-                <div class="input-group-text">Número Lote:</div>
-                  <select class="form-select form-select-sm"  aria-label=".form-select-sm example">
-                      <option selected>Seleccione el Lote</option>
-                      <option value="1">ad1815</option>
-                      <option value="2">a123445<e/option>
-                      <option value="3">cx5434</option>
-                      <option value="4">f554</option>
-                      <option value="5">dg543446</option>
-                  </select>
-                </div>
             </div> 
-        </div>            
-        <div class="row">           
           <div class="col-md-4 mx-auto  mt-2">
                 <div class="input-group">
                   <div class="input-group-text">Operacion</div>
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
-                    <option selected>Seleccione La Operacion</option>
-                      <option value="1">Presentación</option>
-                      <option value="2">Delantero<e/option>
-                      <option value="3">Trasero</option>
-                      <option value="4">Pretinas</option>
-                      <option value="5">Pasadores</option>                      
-                    </select>  
-                </div>
-           </div> 
-          <div class="col-md-4 mx-auto  mt-2">
-                <div class="input-group">
-                  <div class="input-group-text">Procesos:</div>
                     <select class="form-select form-select-sm" requiered aria-label=".form-select-sm example">
-                      <option selected>Seleccione el Proceso</option>
+                      <option selected>Seleccione la Operación</option>
                       <option value="1">Ojalar</option>    
                       <option value="2">Prender Garra</option>                      
                     </select>  
                 </div>
-            </div>             
+          </div> 
+             
           <div class="col-md-4 mx-auto mt-2">
               <div class="input-group">
                   <div class="input-group-text">
                    Unidades X Día
                   </div>
-                  <input type="number" class="form-control " requiered  id="cantidad">    
+                  <input type="number" class="form-control " requiered  id="cantidad" placeholder="">
+                  <div class="valid-feedback">Numero Aceptado</div>
               </div>
-            </div>         
-           </div>
-        <div class="row">
-            <div class="col-md-0  mt-2">
-              <div class="input-group">
-              <input type="hidden" class="form-control " id="cantidad" disabled>                                 
-              </div>
-            </div>
-            <div class="col-md-12 mt-2" >
-               <div class="input-group">
-                  <span class="input-group-text">Observaciones</span>
-                  <textarea class="form-control" aria-label="With textarea"></textarea>
-               </div>     
-            </div>    
+          </div>         
         </div>        
       </form>
    
