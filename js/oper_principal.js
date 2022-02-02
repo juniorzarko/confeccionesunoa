@@ -1384,17 +1384,21 @@ function actualizarlote(){
 /**INICIO DE FUNCIONES DE LA TABLA OPERACION */
 function listarOperaciones (respuesta){
     let listaOperaciones = []
+    let idOPeraciones = []
     let operacionesSelect = document.getElementById('operacionesSelect');
     console.log(operacionesSelect)
     console.log("Se ejecuto la funcion listar Operaciones...")
     for (item of respuesta){
         listaOperaciones.push(item[2])
         console.log(listaOperaciones)
+        idOPeraciones.push(item.id)
     }
     
     for (value in listaOperaciones){
         var option = document.createElement("option");
         option.text = listaOperaciones[value];
+        option.value = idOPeraciones[value];
+        console.log(idOPeraciones[value]);
         operacionesSelect.add(option)
     }
 
