@@ -41,9 +41,9 @@ class serviciosOperacion extends repo_operacion{
     
     public function actualizarRegistro($datos,$id){
       
-     
+      //  $datos=array('id'=>$id);
         $this->tb_operacion= new tb_operacion();
-        
+        //var_dump($datos);
         $this->tb_operacion->tb_operacion($datos);
         $this->tb_operacion->setId($id);
         
@@ -53,7 +53,7 @@ class serviciosOperacion extends repo_operacion{
     }
     
     
-    public function eliminarxid($id){
+    public function eliminar($id){
         $this->tb_operacion= new tb_operacion();
         //var_dump($id);
         

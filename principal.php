@@ -142,6 +142,9 @@ if(isset($_SESSION['usuario'])) {
                   </div> -->
                   <div class="col-auto" id="idPrincipal">
                    <div class="container">
+
+                          
+                   
                      Div de Trabajo
                    </div>
                   </div>

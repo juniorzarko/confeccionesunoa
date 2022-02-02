@@ -11,13 +11,13 @@
             <div class="col-md-6 mt-2">
                 <div class="input-group">
                  <div class="input-group-text">Operaciones:</div>
-                  <select class="form-select form-select-sm" id ="selectorOperaciones"requiered aria-label=".form-select-sm example">
+                  <select id="operacionesSelect" class="form-select form-select-sm" requiered aria-label=".form-select-sm example">
                       <option selected>Seleccione el Proceso</option>
-                      <option value="1">Presentación</option>
+                      <!-- <option value="1">Presentación</option>
                       <option value="2">Delantero<e/option>
                       <option value="3">Trasero</option>
                       <option value="4">Pretinas</option>
-                      <option value="5">Pasadores</option>
+                      <option value="5">Pasadores</option> -->
                   </select>
                   <div class="invalid-feedback">Ingrese un mensaje de texto</div>
                 </div>
@@ -42,12 +42,12 @@
               </div>
            </div> 
         </div> 
+       
         <div class="row">
         <div class="col-md-6 mt-2">
-               <input type="hidden" class="form-control" id="idoperaciones" disabled >
+               <input type="hidden" class="form-control" id="" disabled >
             </div> 
         </div>
-        
    
          
       </form>
