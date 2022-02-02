@@ -11,7 +11,7 @@
             <div class="col-md-6 mt-2">
                 <div class="input-group">
                  <div class="input-group-text">Operaciones:</div>
-                  <select class="form-select form-select-sm" requiered aria-label=".form-select-sm example">
+                  <select class="form-select form-select-sm" id ="selectorOperaciones"requiered aria-label=".form-select-sm example">
                       <option selected>Seleccione el Proceso</option>
                       <option value="1">Presentación</option>
                       <option value="2">Delantero<e/option>
@@ -44,7 +44,7 @@
         </div> 
         <div class="row">
         <div class="col-md-6 mt-2">
-               <input type="hidden" class="form-control" id="" disabled >
+               <input type="hidden" class="form-control" id="idoperaciones" disabled >
             </div> 
         </div>
         

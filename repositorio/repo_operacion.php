@@ -83,7 +83,7 @@ class repo_operacion extends conexionDB{
            // print_r($id3); 
            // $id=json_decode($id);
             //print_r($id); 
-            $consulta = "DELETE FROM `tb_operario` WHERE `tb_operacion`.`id` =".$id3;
+            $consulta = "DELETE FROM `tb_operacion` WHERE `tb_operacion`.`id` =".$id3;
             $statement = $this->conexion->prepare($consulta);
     
             $resultado= $statement->execute();

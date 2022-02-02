@@ -287,7 +287,7 @@ class Tb_modulos{
 	function __construct (){
 
 		$this->id=null;//$id;
-		$this->id_operacion= new tb_operacion;
+	//	$this->id_operacion= new tb_operacion;
 
 	}
 	function ParamModulos($param){
@@ -295,6 +295,8 @@ class Tb_modulos{
 		 $this->fecha=$param['fecha'];
 		 $this->descripcion=$param['descripcion'];
 		 $this->costoxprenda=$param['costoxprenda'];
+		 $this->id_operacion=$param['id_operacion'];
+		 //$this->id_operacion->setId($param['id_operacion']);
 
 	}
 
@@ -313,7 +315,8 @@ class Tb_modulos{
 		 *
 		 * @return self
 		 */
-		public function setId($id)
+		
+		 public function setId($id)
 		{
 		$this->id = $id;
 

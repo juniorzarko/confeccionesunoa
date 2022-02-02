@@ -10,9 +10,9 @@ Abstract class conexionDB{
   
       function __construct()
         {
-          $this->usuariobd='userunoa';
-          $this->contrasena='kikitanflo';
-          $this->basedatos[1]='bd_confeccionesunoa';  //$_POST["db"];
+          $this->usuariobd='root';
+          $this->contrasena='phpadmin';
+          $this->basedatos[1]='BD_confeccionesunoa';  //$_POST["db"];
         
         }
        
