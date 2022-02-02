@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-4 mx-auto  mt-2">
                 <div class="input-group">
-                <div class="input-group-text">Proceso:</div>
+                <div class="input-group-text">Número Lote:</div>
                   <select class="form-select form-select-sm"  aria-label=".form-select-sm example">
                       <option selected>Seleccione el Lote</option>
                       <option value="1">ad1815</option>
@@ -55,7 +55,7 @@
            </div> 
           <div class="col-md-4 mx-auto  mt-2">
                 <div class="input-group">
-                  <div class="input-group-text">Operacion</div>
+                  <div class="input-group-text">Procesos:</div>
                     <select class="form-select form-select-sm" requiered aria-label=".form-select-sm example">
                       <option selected>Seleccione el Proceso</option>
                       <option value="1">Ojalar</option>    
@@ -73,15 +73,12 @@
             </div>         
            </div>
         <div class="row">
-            <div class="col-md-6  mt-2">
+            <div class="col-md-0  mt-2">
               <div class="input-group">
-                  <div class="input-group-text">
-                   Codigo Procesos lotes
-                  </div>
-                  <input type="number" class="form-control " id="cantidad" disabled>               
+              <input type="hidden" class="form-control " id="cantidad" disabled>                                 
               </div>
             </div>
-            <div class="col-md-6 mt-2" >
+            <div class="col-md-12 mt-2" >
                <div class="input-group">
                   <span class="input-group-text">Observaciones</span>
                   <textarea class="form-control" aria-label="With textarea"></textarea>
