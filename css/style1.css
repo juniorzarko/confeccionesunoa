@@ -41,11 +41,9 @@ body{
 
 .header{
     width: 100%;
-    height:100px;
+    height: 100px;
     background: #282638;
     position: relative;
-    margin-right: 0px;
-    margin-left: 0px;
 }
 
 .logo-title{

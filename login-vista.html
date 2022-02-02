@@ -1,712 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login / Register Radicador</title>
-    
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.
-0, minimum-scale=1.0">
-    
-    <link rel="stylesheet" href="css/bootstrap.min.css" >
-    <link rel="stylesheet" href="iconos/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/style1.css">
-    
-    
-</head>
-<body>
-    
-<div class="contenedor-form">
-    <div class="header ">
-        <div class="logo-title">
-            <img src="img/confeccion.jpg" class="img-fluid img-thumbnail rounded-circle" alt="">
-            <h2>Confecciones Uno A</h2>
-        </div>
-        <div class="menu">
-            <a href="login-vista.html"><li class="line-li ">Entrar</li></a>
-            <a href="p.html"><li class="line-li active">Registrarse</li></a>
-        </div>
-    </div>
-    <div class="contnainer">        
-        <form class="form">
-            <div class="welcome-form"><h2>Entrar al Sistema</h2></div>
-            <div class="form-row mt-2">                          
-                 <div class="input-group col-md-4 offset-4 ">
-                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
-                        <use xlink:href="iconos/bootstrap-icons.svg#person-square"/>
-                      </svg>
-                    </span>
-                    <div class="input-group-prepend  ">
-                        <input type="text" class="form-control" id="" -describedby="UsuarioHelp" placeholder="Usuario">
+    <head>
+     <!-- Required meta tags -->
+         <meta charset="utf-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="css/bootstrap.min.css">
+         <link rel="stylesheet" href="iconos/bootstrap-icons.css">
+         <link rel="stylesheet" href="css/style1.css">>
+
+        <title>Confecciones-Uno-A</title>
+    </head>
+
+    <body>
+
+        <div class=" contenedor-form">
+
+            <div class="row header">
+                <div class="col-sm-12 col-md-8  ">
+                    <div class="logo-title">
+                        <img src="img/confeccion.jpg" class="img-fluid img-thumbnail rounded-circle" alt="">
+                        <h2>Confecciones Uno A</h2>
                     </div>
-                 </div>             
+                </div>
+                <div class="col-sm-12 col-md-4 fondo3  ">
+                    <div class="menu">
+                        <a href="index.html"><li class="line-li ">Entrar</li></a>
+                        <a href=""><li class="line-li active">Registrarse</li></a>
+                    </div>
+                </div>
+                
             </div>
-            <div class="form-row mt-2">
-                <div class="input-group col-md-4 offset-4 ">
-                        <svg class="bi text-primary mt-2 m-2  " width="16" height="16" fill="currentColor">
-                            <use xlink:href="iconos/bootstrap-icons.svg#file-lock2-fill"/>
-                        </svg>
-                        <div class="input-group-prepend  ">
-                                 <input type="password" class="form-control" id="" -describedby="UsuarioHelp"   placeholder="Contraseña">                             
+
+            <div class="container">
+                        
+            <div class="row ">
+                <div class="col-md-12 ">
+                    <form class=" form-horizontal border-radius  form"  id="" method="" >
+                        <div class="welcome-form"><h2>Creaccion de Usuarios</h2></div>
+                        <div class="form-row d-flex flex-row-reverse">
+                            
+                                <div class="px-5 bd-highlight ">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="inactivo" value="inactivo" >
+                                   <label class="form-check-label" for="exampleRadios1">
+                                       Inactivo
+                                   </label>
+                                </div>
+                                <div class="px-1  bd-highlight">
+                                     <input class="form-check-input" type="radio" name="exampleRadios" id="activo" value="activo "checked>
+                                    <label class="form-check-label" for="exampleRadios2">
+                                     Activo
+                                      </label>
+                                </div>
+                            
                         </div>
-                </div>                   
-            </div>  
-            <div class="input-group col-md-12 ">                
-                <button type="submit">Registrarse<svg class="bi text-white ml-3" width="32" height="32"     fill="currentColor">
-                   <use xlink:href="iconos/bootstrap-icons.svg#arrow-right-circle-fill"/>
-                 </svg></button>                
-            </div>       
-        </form>
-    </div>
-
-</div>
+                        <div class="form-row mt-2">                          
+                            <div class=" input-group input-group-addon col-md-4" id="">                        
+                                <div class="input-group-prepand">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="iconos/bootstrap-icons.svg#gear-fill"/>
+                                      </svg>
+                                    </span> 
+                                </div>				
+                                    <input name="" type="hidden" class="form-control" id="" placeholder="Cod. Operador"></input>
+                                
+                            </div>
+                            <div class=" input-group input-group-addon col-md-4" id="">                        
+                                <div class="input-group-prepand">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="iconos/bootstrap-icons.svg#person-square"/>
+                                      </svg>
+                                    </span> 
+                                </div>				
+                                    <input name="" type="text" class="form-control" id="usuario" placeholder="Usuario"></input>
+                                
+                            </div>
+                            <div class=" input-group input-group-addon col-md-4" id="">                        
+                                <div class="input-group-prepand">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="iconos/bootstrap-icons.svg#fingerprint"/>
+                                      </svg>
+                                    </span> 
+                                </div>				
+                                    <input name="" type="number" class="form-control" id="cedula" placeholder="Cedula"></input>
+                                
+                            </div>                                 
+                        </div>
+                        <div class="form-row mt-2">                          
+                            <div class=" input-group input-group-addon col-md-4" id="">                        
+                                <div class="input-group-prepand">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="iconos/bootstrap-icons.svg#geo-alt-fill"/>
+                                      </svg>
+                                    </span> 
+                                </div>				
+                                    <input name="" type="text" class="form-control" id="clave" placeholder="Dirección"></input>
+                                
+                            </div>
+                            <div class=" input-group input-group-addon col-md-4" id="">                        
+                                <div class="input-group-prepand">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="iconos/bootstrap-icons.svg#phone-fill"/>
+                                      </svg>
+                                    </span> 
+                                </div>				
+                                    <input name="" type="number" class="form-control" id="" placeholder="Telefono"></input>
+                                
+                            </div>
+                            <div class=" input-group input-group-addon col-md-4" id="">                        
+                                <div class="input-group-prepand">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="iconos/bootstrap-icons.svg#person-lines-fill"/>
+                                      </svg>
+                                    </span> 
+                                </div>				
+                                    <input name="" type="text" class="form-control" id="" placeholder="Cargo"></input>
+                                
+                            </div>                                 
+                        </div>
+                        <div class="form-row mt-2">                          
+                            <div class=" input-group input-group-addon col-md-4" id="">                        
+                                <div class="input-group-prepand">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="iconos/bootstrap-icons.svg#envelope-check-fill"/>
+                                      </svg>
+                                    </span> 
+                                </div>				
+                                    <input name="" type="email" class="form-control" id="email" placeholder="Correo Electronico"></input>
+                                
+                            </div>
+                            <div class=" input-group input-group-addon col-md-4" id="">                        
+                                <div class="input-group-prepand">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="iconos/bootstrap-icons.svg#file-lock2-fill"/>
+                                      </svg>
+                                    </span> 
+                                </div>				
+                                    <input name="" type="password" class="form-control" id="clave" placeholder="Contraseña"></input>
+                                
+                            </div>
+                            <div class=" input-group input-group-addon col-md-4" id="">                        
+                                <div class="input-group-prepand">
+                                    <span><svg class="bi text-primary mt-2 m-2" width="16" height="16" fill="currentColor">
+                                        <use xlink:href="iconos/bootstrap-icons.svg#file-lock2-fill"/>
+                                      </svg>
+                                    </span> 
+                                </div>				
+                                    <input name="" type="password" class="form-control" id="" placeholder="Confirmar Contraseña"></input>
+                                
+                            </div>                                 
+                        </div>
+                        <div class="form-row mt-4">                          
+                            <div class="input-group col-md-4 ">                
+                                <button type="submit">Registrarse<svg class="bi text-white ml-3" width="32" onclick="" height="32"     fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#folder-symlink-fill"/>
+                                 </svg></button>                
+                            </div>       
+                            <div class="input-group col-md-4 ">                
+                                <button type="submit">Actualizar<svg class="bi text-white ml-3" width="32" height="32"     fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#bootstrap-reboot"/>
+                                 </svg></button>                
+                            </div>       
+                            <div class="input-group col-md-4 ">                
+                                <button type="submit">Eliminar<svg class="bi text-white ml-3" onclick="" width="32" height="32"     fill="currentColor">
+                                   <use xlink:href="iconos/bootstrap-icons.svg#x-circle-fill"/>
+                                 </svg></button>                
+                            </div>                                
+                        </div>
+                    </form>
+                </div>
+             </div>
+            </div>
+             
+        </div>
+        
+        
+        
+        
+        
+        
+        <script src="js/jQueryv3.6.0.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/funciones.js"></script>
+    </body>
     
-<script src="js/jQueryv3.6.0.js"></script>
-
-<script src="js/bootstrap.min.js"></script>
-</body>
 </html>
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-
-
-
-
-
-
