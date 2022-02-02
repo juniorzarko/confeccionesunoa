@@ -24,13 +24,13 @@
           <div class="col-md-4 mx-auto  mt-2">
               <div class="input-group">
               <div class="input-group-text">Proceso:</div>
-                <select class="form-select form-select-sm"  aria-label=".form-select-sm example">
+                <select id="operacion-general" class="form-select form-select-sm"  aria-label=".form-select-sm example">
                     <option selected>Seleccione el Lote</option>
-                    <option value="1">ad1815</option>
+                    <!-- <option value="1">ad1815</option>
                     <option value="2">a123445<e/option>
                     <option value="3">cx5434</option>
                     <option value="4">f554</option>
-                    <option value="5">dg543446</option>
+                    <option value="5">dg543446</option> -->
                 </select>
               </div>
           </div> 
