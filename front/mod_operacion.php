@@ -1,6 +1,6 @@
 <div class="container flex p-2 shadow bg-transparent rounded">
       <form class=" gx-1 gy-2 ">
-        <div class="col-md-12"> <h2 class="text-center"> Operaciones Generales</h2></div> 
+        <div class="col-md-12"> <h2 class="text-center"> Creación Operaciones Generales</h2></div> 
         <div class="row"> 
             <div class="col-md-6 mt-2">
               <div class="input-group">
@@ -11,24 +11,16 @@
             </div>
             <div class="col-md-6 mt-2 ">
                 <div class="input-group">
-                  <div class="input-group-text">Nombre</div>
-                     <input type="text" class="form-control" id="nombreOperacion" placeholder="Nombre">
+                  <div class="input-group-text">Nombre Operacion:</div>
+                     <input type="text" class="form-control" id="nombreOperacion" placeholder="Digite Nombre">
                   </div>
             </div>          
         </div>  
         <div class="row mt-1" >            
             <div class="col-md-6 mt-2 ">
                 <div class="input-group">
-                  <div class="input-group-text">Id Operación</div>
-                     <input type="number" class="form-control " id="" disabled >
-                  </div>
+                <input type="hidden" class="form-control " id="" disabled >
             </div>
-            <!-- <div class="col-md-6 mt-2 ">
-                <div class="input-group">
-                  <div class="input-group-text">Nombre</div>
-                     <input type="text" class="form-control" id="nombreOperacion" placeholder="Nombre">
-                  </div>
-            </div>            -->
         </div>             
       </form>
       <nav class="navbar navbar-light bg-light">

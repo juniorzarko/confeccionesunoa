@@ -1317,28 +1317,9 @@ function eliminaroperaciones(id){
     objoperaciones.eliminaroperaciones(id);
 }
 
-<<<<<<< HEAD
                  
 
 
-=======
-
-	// numeros: /^\d{10}$/, // Solo 10 numeros.
-	// usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
-	
-	// password: /^.{4,12}$/, // 4 a 12 digitos.
-	
-	
-
-// const campos = {
-// 	nombre: false,
-// 	apellido:false,
-// 	direccion:false,
-// 	telefono:false,
-// 	cargo:false,
-// 	email:false
-// }
->>>>>>> 6d82b6dd4037e436ac3b3b92521be174544ad89d
 
 function validarOperario () {
 	let nombreOperario, apellidOperario, direccionOperario, telefonOperario, cargOperario, emailOperario, codigoId, expresion;
@@ -1422,3 +1403,53 @@ function validarOperario () {
 
     
 }
+
+/**
+ * Draw color bar 
+ */
+ function drawPercentBar(percent)
+ { 
+ var color; 
+ if (percent <= 30)
+ {
+ color = "#FF0000";
+ }
+ else if (percent > 30 && percent <= 70)
+ {
+ color = "#FFFF00";
+ }
+ else
+ {
+ color = "#00FF00";
+ } 
+ return color;
+ }
+
+function display()
+ { 
+ $("#barSection").html(""); 
+ var html = "";
+
+ var percent1 = 16;
+ var color1 = drawPercentBar(percent1); 
+ html += "<div class='progress-bar'>";
+ html += "<div id ='percent' class='percent'>" + percent1 + "%</div>";
+ html += "<div class='bar' style='width: ";
+ html += percent1+ "px; background-color: " + color1 + ";'></div></div>";
+
+ var percent2 = 35;
+ var color2 = drawPercentBar(percent2); 
+ html += "<div class='progress-bar'>";
+ html += "<div id ='percent' class='percent'>" + percent2 + "%</div>";
+ html += "<div class='bar' style='width: ";
+ html += percent2+ "px; background-color: " + color2 + ";'></div></div>";
+
+ var percent3 = 81;
+ var color3 = drawPercentBar(percent3); 
+ html += "<div class='progress-bar'>";
+ html += "<div id ='percent' class='percent'>" + percent3 + "%</div>";
+ html += "<div class='bar' style='width: ";
+ html += percent3+ "px; background-color: " + color3 + ";'></div></div>";
+
+ $("#barSection").html(html);
+ }

@@ -40,7 +40,7 @@ if(isset($_SESSION['usuario'])) {
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">       
     <!-- Custom styles for this template -->
     <link href="dashboard/dashboard.css" rel="stylesheet">
-    <!-- <link href="css/estilos1.css" rel="stylesheet">  -->
+    <link href="css/estilos1.css" rel="stylesheet"> 
     <link href="css/gsap.css" rel="stylesheet">
   </head>
   <body>
