@@ -584,7 +584,8 @@ class ManejOperaciones{
                 $("#mensajes").hide(1000);
                console.log(respuesta)
                //Llenar el select de procesos con las operaciones
-               listarOperaciones(respuesta);
+               let select = document.getElementById('operacionesSelect');
+               listarOperaciones(respuesta, select);
             },
             error: function (xhr, status) {
                 $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
@@ -980,6 +981,35 @@ class ProcesoLotes{
         });
     }
 
+    //lista las operaciones generales: ejemplo (presentacion, ensamble, delanteros) en un select en la
+    //interfaz mod_procesos_lote
+    listaritem(){
+        $.ajax({
+            url: "http://localhost/confeccionesunoa/principal.php/operacion/listar",
+            type: 'GET',
+            dataType: 'json',
+            success: function (respuesta) {
+                console.log("entro por success listar");
+                $("#mensajes").html("llego respuesta");
+                $("#mensajes").hide(1000);
+               console.log(respuesta)
+               //Llenar el select de procesos con las operaciones
+               let select = document.getElementById('operacion-general');
+               listarOperaciones(respuesta, select);
+            },
+            error: function (xhr, status) {
+                $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
+                console.log("entro por error listar");
+                console.log(status);
+            },
+            complete: function (xhr, status) {
+                $("#mensajes").html("Usuario no existe");
+                console.log("entro por complete listar");
+                console.log(status);
+            }
+        });}
+    //fin
+
     //Insertar los procesos en el select de la interfaz procesos de lote
     listarProcesos(){
         $.ajax({
@@ -1085,6 +1115,7 @@ function procesosLotes1(){
         var objManejoProcesLotes = new ProcesoLotes;
         objManejoProcesLotes.listarOperario();
         objManejoProcesLotes.listarProcesos();
+        objManejoProcesLotes.listaritem();
         
                
 } 
@@ -1382,7 +1413,7 @@ function actualizarlote(){
 }
 
 /**INICIO DE FUNCIONES DE LA TABLA OPERACION */
-function listarOperaciones (respuesta){
+function listarOperaciones (respuesta, select){
     let listaOperaciones = []
     let idOPeraciones = []
     let operacionesSelect = document.getElementById('operacionesSelect');
