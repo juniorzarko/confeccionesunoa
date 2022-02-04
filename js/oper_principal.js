@@ -1,4 +1,4 @@
-/* Brayan esto se debe actulizar jj*/
+/* Brayan esto se debe actulizar jjj*/
 class Manejomodulos{ // clase que maneja las opciones de ingreso del operador
 
     DOMprincipal;
@@ -8,7 +8,7 @@ class Manejomodulos{ // clase que maneja las opciones de ingreso del operador
         let DOMprincipal = window.document.ready
         return;
     }
-    /* Alexis esto no se debe actualizar jj*/
+    /* Alexis esto no se debe actualizar jjj*/
 
     registrarOperario(){
 

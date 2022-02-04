@@ -1,4 +1,4 @@
-/* Funcionalidades ultima prueba, esto no debe ir en la  actualizacionde junior*/
+/* Funcionalidades jjj*/
 $(document).ready(function () {
     //configura el aspecto inicial de la pagina
     iniciarmodulos();
