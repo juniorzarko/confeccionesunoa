@@ -1,3 +1,4 @@
+/* Funcionalidades */
 $(document).ready(function () {
     //configura el aspecto inicial de la pagina
     iniciarmodulos();
