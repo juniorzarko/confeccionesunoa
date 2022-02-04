@@ -1415,18 +1415,22 @@ function actualizarlote(){
 /**INICIO DE FUNCIONES DE LA TABLA OPERACION */
 function listarOperaciones (respuesta, select){
     let listaOperaciones = []
-    /* let operacionesSelect = document.getElementById('operacionesSelect'); */
-    console.log(select)
+    let idOPeraciones = []
+    let operacionesSelect = document.getElementById('operacionesSelect');
+    console.log(operacionesSelect)
     console.log("Se ejecuto la funcion listar Operaciones...")
     for (item of respuesta){
         listaOperaciones.push(item[2])
         console.log(listaOperaciones)
+        idOPeraciones.push(item.id)
     }
     
     for (value in listaOperaciones){
         var option = document.createElement("option");
         option.text = listaOperaciones[value];
-        select.add(option)
+        option.value = idOPeraciones[value];
+        console.log(idOPeraciones[value]);
+        operacionesSelect.add(option)
     }
 
 }
