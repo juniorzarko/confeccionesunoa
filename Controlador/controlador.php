@@ -209,13 +209,26 @@ public function recibirdatos($url){
                     RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
                     
                  break; 
-
-                 case 'operacion/editar':
+                 case 'operacion/buscarxid/':
                   $this_rest = RestUtils::processRequest();
                   $resultado=$this->servOperacion->buscarId($id);
                   RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
                   break;
 
+                          
+                  case 'operacion/actualizar/':
+                     $this_rest = RestUtils::processRequest();
+                     $datos=$this_rest->getData();
+                     $resultado=$this->servOperacion->actualizarRegistro($datos,$id);
+                     RestUtils::sendResponse(http_response_code(202), json_encode($resultado), 'application/json');
+                  break;   
+                  
+                  case 'operacion/eliminar/':
+                     $this_rest = RestUtils::processRequest();
+                     $resultado=$this->servOperacion->eliminarxid($id);
+                    // var_dump($resultado);
+                       RestUtils::sendResponse(http_response_code(204), json_encode($resultado), 'application/json');
+                  break; 
 
 
 

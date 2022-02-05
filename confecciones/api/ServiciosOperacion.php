@@ -53,7 +53,7 @@ class serviciosOperacion extends repo_operacion{
     }
     
     
-    public function eliminar($id){
+    public function eliminarxid($id){
         $this->tb_operacion= new tb_operacion();
         //var_dump($id);
         

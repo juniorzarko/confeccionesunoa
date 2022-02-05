@@ -855,6 +855,7 @@ class ManejOperacion{
         });
       
 
+
     }
 
 
@@ -912,6 +913,160 @@ class ManejOperacion{
 
 
     }
+
+
+    consultaroperacionxId(id){
+
+        $.ajax({
+            // la URL para la petición (url: "url al recurso o endpoint")
+           // url: "http://localhost:8080/api/Cabin/all",
+            url: "http://localhost/confeccionesunoa/principal.php/operacion/buscarxid/"+id,
+            // la información a enviar
+            // (también es posible utilizar una cadena de datos)
+            //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
+           // data : datos,
+    
+            // especifica el tipo de petición http: POST, GET, PUT, DELETE
+            type: 'GET',
+    
+            // el tipo de información que se espera de respuesta
+            dataType: 'json',
+    
+            // código a ejecutar si la petición es satisfactoria;
+            // la respuesta es pasada como argumento a la función
+            success: function (respuesta) {
+                //escribe en la consola del desarrollador para efectos de depuración
+                console.log("entro por success listar de actualizar");
+                //console.log(respuesta);
+                $("#mensaje").html("llego respuesta");
+                $("#mensaje").hide(1000);
+               
+                //recibe el arreglo 'items' de la respuesta a la petición
+               llenarcamposoperacion(respuesta);
+              // console.log(respuesta);
+            },
+    
+            // código a ejecutar si la petición falla;
+            // son pasados como argumentos a la función
+            // el objeto de la petición en crudo y código de estatus de la petición
+            error: function (xhr, status) {
+                $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
+                //$("#mensajes").hide(1000);
+                console.log("entro por error listar");
+                console.log(status);
+            },
+    
+            // código a ejecutar sin importar si la petición falló o no
+            complete: function (xhr, status) {
+                $("#mensajes").html("Usuario no existe");
+                //$("#mensajes").hide(1000);
+                console.log("entro por complete listar");
+                console.log(status);
+            }
+        });
+    }
+
+    eliminaroperacionxid(id){
+    
+        $.ajax({
+            // la URL para la petición (url: "url al recurso o endpoint")
+           // url: "http://localhost:8080/api/Cabin/all",
+            url: "http://localhost/confeccionesunoa/principal.php/operacion/eliminar/"+id,
+       
+    
+            // especifica el tipo de petición http: POST, GET, PUT, DELETE
+            type: 'DELETE',
+    
+            // el tipo de información que se espera de respuesta
+            dataType: 'json',
+    
+            // código a ejecutar si la petición es satisfactoria;
+            // la respuesta es pasada como argumento a la función
+            success: function (respuesta) {
+                //escribe en la consola del desarrollador para efectos de depuración
+                console.log("entro por success de eliminar");
+                //console.log(respuesta);
+                $("#mensaje").html("llego respuesta");
+                $("#mensaje").hide(1000);
+                alert("Usuario eliminado");
+                //recibe el arreglo 'items' de la respuesta a la petición
+          
+            },
+
+            error: function (xhr, status) {
+                $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
+                //$("#mensajes").hide(1000);
+                console.log("entro por error operacion");
+                console.log(status);
+            },
+    
+            // código a ejecutar sin importar si la petición falló o no
+            complete: function (xhr, status) {
+                $("#mensajes").html("Usuario no existe");
+                //$("#mensajes").hide(1000);
+                console.log("entro por complete listar");
+                console.log(status);
+            }
+        });
+    }
+
+    actualizaroperacionxid(id){
+    
+        let datos={
+            fecha:$("#fechaOperacion").val(),
+            nombre:$("#nombreOperacion").val(),
+              
+        }
+
+    //    let datos = JSON.stringify(datos_vect);
+        $.ajax({
+           
+            url: "http://localhost/confeccionesunoa/principal.php/operacion/actualizar/"+id,
+      
+
+            data : datos,
+    
+            // especifica el tipo de petición http: POST, GET, PUT, DELETE
+            type: 'PUT',
+    
+            // el tipo de información que se espera de respuesta
+            contentType: "application/JSON",
+    
+            // código a ejecutar si la petición es satisfactoria;
+            // la respuesta es pasada como argumento a la función
+            success: function (respuesta) {
+                //escribe en la consola del desarrollador para efectos de depuración
+                console.log("entro por success listar de actualizar con valores nuevos");
+                //console.log(respuesta);
+                $("#mensaje").html("llego respuesta actualizar con valores nuevos");
+                $("#mensaje").hide(1000);
+               
+                //recibe el arreglo 'items' de la respuesta a la petición
+              // mostrarinformacionlote();
+              
+            },
+    
+            // código a ejecutar si la petición falla;
+            // son pasados como argumentos a la función
+            // el objeto de la petición en crudo y código de estatus de la petición
+            error: function (xhr, status) {
+                $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
+                //$("#mensajes").hide(1000);
+                console.log("entro por error listar");
+                console.log(status);
+            },
+    
+            // código a ejecutar sin importar si la petición falló o no
+            complete: function (xhr, status) {
+                $("#mensajes").html("Usuario no existe");
+                //$("#mensajes").hide(1000);
+                console.log("entro por complete listar");
+                console.log(status);
+            }
+        });
+
+    }
+
 
 
 }
