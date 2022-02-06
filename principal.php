@@ -174,15 +174,16 @@ if(isset($_SESSION['usuario'])) {
         </main>
       </div>       
     </div> 
-
       <script src="js/jquery-3.6.0.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
       <script src ="gsap-public/minified/gsap.min.js" > </script>    
       <script src="js/funcionesOperario.js"></script>  
       <script src="js/funcionesLotes.js"></script>
+      <script src="js/funcionesOperaciones.js"></script>
+      <script src="js/funcionesProcesos,js"></script>
+      <script src="js/funcionesProcesosLote.js"></script>
       <script src="js/oper_principal.js"></script>
       <script src="js/gsap.js"></script>      
       <script src="bootstrap/js/bootstrap.js"></script>
-
   </body>
 </html>

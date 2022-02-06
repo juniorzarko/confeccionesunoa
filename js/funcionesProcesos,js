@@ -1,22 +1,18 @@
-//lotes
-class Manejolotes{
+//procesos
+class ManejOperaciones{
 
-    
-    registrarlote(){
+    registrarModulo(){
         let datos={
-            codigoLote:$("#codigoLote").val(),
-            nombre:$("#nombreLote").val(),
-            cantidad:$("#cantidadLote").val(),
-            fechaCreacion:$("#fechalote").val(),
-          // password:$("#password").val()
-    
+            fecha:$("#fechaOperaciones").val(),
+            descripcion:$("#nombreOperaciones").val(),
+            costoxprenda:$("#costoxprenda").val(),
+              
         }
-        
-        
+
        $.ajax({
-            // la URL para la petición (url: "url al recurso o endpoint" mono )
+            // la URL para la petición (url: "url al recurso o endpoint")
       
-            url: "http://localhost/confeccionesunoa/principal.php/lote/registrar",
+            url: "http://localhost/confeccionesunoa/principal.php/operaciones/registrar",
            
             data : datos,
             type: 'POST',
@@ -25,7 +21,7 @@ class Manejolotes{
                 //escribe en la consola del desarrollador para efectos de depuración
                 console.log(respuesta);
                 console.log("Llego la respuesta por success");
-                alert("Usuario ha sido creado");
+                alert("Operacion guardada");
                 //rec   ibe el arreglo 'items' de la respuesta a la petición
                // listarRespuesta(respuesta);
             },
@@ -42,20 +38,48 @@ class Manejolotes{
                 $("#mensajes").html("Obteniendo lista...");
                 $("#mensajes").hide(500);
                 console.log("entro por complete");
-                listarlotes();
             }
         });
       
 
     }
 
+    
+    //inicio
+    listaritem(){
+        $.ajax({
+            url: "http://localhost/confeccionesunoa/principal.php/operacion/listar",
+            type: 'GET',
+            dataType: 'json',
+            success: function (respuesta) {
+                console.log("entro por success listar");
+                $("#mensajes").html("llego respuesta");
+                $("#mensajes").hide(1000);
+               console.log(respuesta)
+               //Llenar el select de procesos con las operaciones
+               let select = document.getElementById('operacionesSelect');
+               listarOperaciones(respuesta, select);
+            },
+            error: function (xhr, status) {
+                $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
+                console.log("entro por error listar");
+                console.log(status);
+            },
+            complete: function (xhr, status) {
+                $("#mensajes").html("Usuario no existe");
+                console.log("entro por complete listar");
+                console.log(status);
+            }
+        });}
+    //fin
 
-    listarlote(){
+
+    listarModulo(){
 
         $.ajax({
             // la URL para la petición (url: "url al recurso o endpoint")
            // url: "http://localhost:8080/api/Cabin/all",
-            url: "http://localhost/confeccionesunoa/principal.php/lote/listar",
+            url: "http://localhost/confeccionesunoa/principal.php/operaciones/listar",
             // la información a enviar
             // (también es posible utilizar una cadena de datos)
             //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
@@ -77,7 +101,7 @@ class Manejolotes{
                 $("#mensajes").hide(1000);
                
                 //recibe el arreglo 'items' de la respuesta a la petición
-               mostrarinformacionlote(respuesta);
+                mostrarinformacionoperaciones(respuesta);
             },
     
             // código a ejecutar si la petición falla;
@@ -100,12 +124,12 @@ class Manejolotes{
         });
     
         }
-    consultarlotexId(id){
+        consultaroperacionesxId(id){
 
             $.ajax({
                 // la URL para la petición (url: "url al recurso o endpoint")
                // url: "http://localhost:8080/api/Cabin/all",
-                url: "http://localhost/confeccionesunoa/principal.php/lote/buscarxid/"+id,
+                url: "http://localhost/confeccionesunoa/principal.php/operaciones/buscarxid/"+id,
                 // la información a enviar
                 // (también es posible utilizar una cadena de datos)
                 //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
@@ -127,7 +151,7 @@ class Manejolotes{
                     $("#mensaje").hide(1000);
                    
                     //recibe el arreglo 'items' de la respuesta a la petición
-                   llenarcamposlote(respuesta);
+                   llenarcamposoperaciones(respuesta);
                    console.log(respuesta);
                 },
         
@@ -151,19 +175,18 @@ class Manejolotes{
             });
         }
     
-    actualizarlotexid(id){
+        actualizaroperacionesxid(id){
     
             let datos={
-                codigoLote:$("#codigoLote").val(),
-                nombre:$("#nombreLote").val(),
-                cantidad:$("#cantidadLote").val(),
-                fechaCreacion:$("#fechalote").val()    
+                fecha:$("#fechaOperaciones").val(),
+                descripcion:$("#nombreOperaciones").val(),
+                costoxprenda:$("#costoxprenda").val(),    
             }
     
         //    let datos = JSON.stringify(datos_vect);
             $.ajax({
                
-                url: "http://localhost/confeccionesunoa/principal.php/lote/actualizar/"+id,
+                url: "http://localhost/confeccionesunoa/principal.php/operaciones/actualizar/"+id,
           
     
                 data : datos,
@@ -182,7 +205,6 @@ class Manejolotes{
                     //console.log(respuesta);
                     $("#mensaje").html("llego respuesta actualizar con valores nuevos");
                     $("#mensaje").hide(1000);
-                    
                    
                     //recibe el arreglo 'items' de la respuesta a la petición
                   // mostrarinformacionlote();
@@ -205,18 +227,17 @@ class Manejolotes{
                     //$("#mensajes").hide(1000);
                     console.log("entro por complete listar");
                     console.log(status);
-                    listarlotes();
                 }
             });
     
         }
     
-    eliminarlote(id){
+        eliminaroperaciones(id){
     
             $.ajax({
                 // la URL para la petición (url: "url al recurso o endpoint")
                // url: "http://localhost:8080/api/Cabin/all",
-                url: "http://localhost/confeccionesunoa/principal.php/lote/eliminar/"+id,
+                url: "http://localhost/confeccionesunoa/principal.php/operaciones/eliminar/"+id,
            
         
                 // especifica el tipo de petición http: POST, GET, PUT, DELETE
@@ -255,49 +276,48 @@ class Manejolotes{
             });
         }
 
+       
 
 
 
+
+}
+/***SE CREAN LOS MODULOS PARA OPERACIONES */
+function guardarmodoperaciones(){
+
+    let objoperaciones = new ManejOperaciones();
+    objoperaciones.registrarModulo();
+
+
 }
 
-function registrarlote(){
-    console.log("Se ejecuto registrar lote")
-    let objLote = new Manejolotes();
-    objLote.registrarlote();
-}
-function listarlotes(){
-    let objLote = new Manejolotes();
-    objLote.listarlote(); 
-}
-function listarlotexid(id){
-    $("#idlote").val(id);
-    var objlote = new Manejolotes();
-    objlote.consultarlotexId(id);
-}
-function llenarcamposlote(datos){
-    $("#codigoLote").val(datos.codigoLote);
-    $("#nombreLote").val(datos.nombre);
-    $("#cantidadLote").val(datos.cantidad);
-    $("#fechalote").val(datos.fechaCreacion);
-}
-function eliminarlotexid(id){
-    var objlote = new Manejolotes();
-      objlote.eliminarlote(id);
-      
-}
-function actualizarlote(){
-    var objlote = new Manejolotes();
-    //objlote.consultarlotexId(id);
-    let id=$("#idlote").val();
-    objlote.actualizarlotexid(id);
-}
-/* function enviarIdLote(id){
-    document.getElementById('idLote').value(id);
-    var objlote = new Manejolotes();
-    objlote.actualizarlotexid(id)
 
-} */
-function mostrarinformacionlote(vecitems){
+ 
+//Me ingresa valores en el select de operador
+function listarOperarios(respuesta){
+    
+    let listaOperaciones = []
+    let operadorSelect = document.getElementById('operadorSelect');
+    console.log(respuesta)
+    console.log("Se ejecuto la funcion listar Operarios...")
+    for (item of respuesta){
+        listaOperaciones.push(primeraLetraMayuscula(item[1]) +" "+ primeraLetraMayuscula(item[2]) )
+        console.log(listaOperaciones)
+    }
+    
+    for (value in listaOperaciones){
+        var option = document.createElement("option");
+        option.text = listaOperaciones[value];
+        operadorSelect.add(option)
+    }
+}
+const primeraLetraMayuscula = (cadena) => {
+    const primerCaracter = cadena.charAt(0).toUpperCase();
+    const restoDeLaCadena = cadena.substring(1, cadena.length);
+    return primerCaracter.concat(restoDeLaCadena);
+  }
+
+  function  mostrarinformacionoperaciones(items){
     $("#listar_contenidos").html("");
     $("#listar_contenidos").show(500);
     
@@ -307,44 +327,69 @@ function mostrarinformacionlote(vecitems){
   
             <thead class="thead-dark">
                   <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Codigo Lote</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Fecha Creación</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">costoxprenda</th>
+                  
                    </tr>
                   </thead>`;
-
-    //recorre el arreglo de 'items' y construye dinamicamente la fila de datos de la tabla for (var i = 0; i < items2.length; i++)
-     
-    vecitems.forEach((items)=>{
-       // console.log(items);
-        tabla += `<tr>
-        <th scope="row">${items[0]}</th>
-                  <td>${items['codigoLote']}</td>
-                  <td>${items['nombre']}</td>
-                  <td>${items['cantidad']}</td>
-                  <td>${items['fechaCreacion']}</td>
-                  <td id="id-boton"><button id="boton-primary" class="btn btn-primary btn-sm" onclick="listarlotexid(${items.id});">Editar</td>
-                  <td id="id-boton"><button type="button" class="btn btn-dark btn-sm" onclick="eliminarlotexid(${items.id});">Borrar</button></td>                
-                   </tr>`;
-    
-                   
-    //cierra tabla agregando el tag adecuado
-    
-
-    //accede al elemento con id 'listado' y adiciona la tabla de datos a su html
-   
-     });
-     tabla += `</table></div>`;
-     $("#listar_contenidos").html(tabla);
 }
-function listarRespuestalote(){
+/**INICIO DE FUNCIONES DE LA TABLA OPERACION */
+function listarOperaciones (respuesta, select){
+    console.log("Se ejecuto listar Operaciones")
+    let listaOperaciones = []
+    let idOPeraciones = []
+    
+    console.log(select)
+    console.log("Se ejecuto la funcion listar Operaciones...")
+    for (item of respuesta){
+        listaOperaciones.push(item[2])
+        console.log(listaOperaciones)
+        idOPeraciones.push(item.id)
+    }
+    
+    for (value in listaOperaciones){
+        var option = document.createElement("option");
+        option.text = listaOperaciones[value];
+        option.value = idOPeraciones[value];
+        console.log(idOPeraciones[value]);
+        select.add(option)
+    }
 
-    var objMOdulos = new Manejomodulos();
+}
+function listarmodoperaciones(){
+    let objoperaciones = new ManejOperaciones();
+    objoperaciones.listarModulo();
 
-    let datos =objMOdulos.listarlote();
-   // console.log(datos);
-    //objMOdulos.mostrarinformacion(datos);
 
-}  
+}
+
+
+function enviaridoperaciones(id){
+    //$("#codigoId").val(id);
+    let objoperaciones = new ManejOperaciones();
+    objoperaciones.consultaroperacionesxId(id);
+
+}
+
+function llenarcamposoperaciones(datos){
+    $("#idoperaciones").val(datos.id);
+    $("#fechaOperaciones").val(datos.fecha);
+    $("#nombreOperaciones").val(datos.descripcion);
+    $("#costoxprenda").val(datos.costoxprenda);
+
+}
+function actualizarmodoperaciones(){
+    let id=$("#idoperaciones").val();
+    let objoperaciones = new ManejOperaciones();
+    objoperaciones.actualizaroperacionesxid(id);
+
+
+}
+
+function eliminaroperaciones(id){
+
+    let objoperaciones = new ManejOperaciones();
+    objoperaciones.eliminaroperaciones(id);
+}

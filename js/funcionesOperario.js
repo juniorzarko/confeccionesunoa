@@ -383,3 +383,25 @@ function llenarcampos(datos){
         
     
     }
+    function guardarOperador(){
+        var objMOdulos = new Manejomodulos();
+        let validar=validarOperario();
+        // console.log(validar);
+        if (validar){
+             respuesta=objMOdulos.registrarOperario();
+        }
+}
+
+function eliminaroperario(id){
+
+    var objMOdulos = new Manejomodulos();
+    
+        objMOdulos.eliminar(id);
+
+}
+function enviaridoperario(id) //,nombre,apellido,direccion,telefono,cargo,email)
+{  
+    $("#codigoId").val(id);
+    var objModulos = new Manejomodulos();
+    objModulos.consultarOperarioxId(id);
+}
