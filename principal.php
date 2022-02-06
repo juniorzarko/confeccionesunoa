@@ -179,6 +179,7 @@ if(isset($_SESSION['usuario'])) {
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
       <script src ="gsap-public/minified/gsap.min.js" > </script>    
       <script src="js/funcionesOperario.js"></script>  
+      <script src="js/funcionesLotes.js"></script>
       <script src="js/oper_principal.js"></script>
       <script src="js/gsap.js"></script>      
       <script src="bootstrap/js/bootstrap.js"></script>
