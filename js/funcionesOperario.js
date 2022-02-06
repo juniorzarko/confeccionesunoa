@@ -56,7 +56,7 @@ class Manejomodulos{ // clase que maneja las opciones de ingreso del operador
     }
 
     listarOperario(){
-
+console.log('entro a listar operario')
     $.ajax({
         // la URL para la petición (url: "url al recurso o endpoint")
        // url: "http://localhost:8080/api/Cabin/all",
@@ -198,7 +198,7 @@ class Manejomodulos{ // clase que maneja las opciones de ingreso del operador
                 console.log(respuesta)//vacioo
                
                 //recibe el arreglo 'items' de la respuesta a la petición
-               llenarcampos(respuesta);
+                
               
             },
     
@@ -210,6 +210,7 @@ class Manejomodulos{ // clase que maneja las opciones de ingreso del operador
                 //$("#mensajes").hide(1000);
                 console.log("entro por error listar");
                 console.log(status);
+                
             },
     
             // código a ejecutar sin importar si la petición falló o no
@@ -218,6 +219,7 @@ class Manejomodulos{ // clase que maneja las opciones de ingreso del operador
                 //$("#mensajes").hide(1000);
                 console.log("entro por complete listar");
                 console.log(status);
+                listarRespuesta();//renderiza la tabla
             }
         });
 
@@ -378,5 +380,6 @@ function llenarcampos(datos){
         
         var id=$("#codigoId").val();
         objMOdulos.actualizarOperario(id);
+        
     
     }
