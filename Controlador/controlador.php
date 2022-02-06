@@ -149,6 +149,7 @@ public function recibirdatos($url){
                     $this_rest = RestUtils::processRequest();
                     $datos=$this_rest->getData();
                     $resultado=$this->servOperario->actualizarRegistro($datos,$id);
+                    var_dump($resultado);
                     RestUtils::sendResponse(http_response_code(202), json_encode($resultado), 'application/json');
                  break; 
                  case 'Operario/eliminar/':

@@ -1,6 +1,23 @@
 <?php
 include_once 'Controlador/controlador.php';
 
+/***
+ * 
+ * CORS
+ * 
+ */
+
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+header("Allow: GET, POST, OPTIONS, PUT, DELETE");
+$method = $_SERVER['REQUEST_METHOD'];
+if($method == "OPTIONS") {
+    die();
+}
+
+/**** */
+
 $control = new controlador();
 
 if(isset($_SESSION['usuario'])) {
@@ -160,7 +177,8 @@ if(isset($_SESSION['usuario'])) {
 
       <script src="js/jquery-3.6.0.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-      <script src ="gsap-public/minified/gsap.min.js" > </script>      
+      <script src ="gsap-public/minified/gsap.min.js" > </script>    
+      <script src="js/funcionesOperario.js"></script>  
       <script src="js/oper_principal.js"></script>
       <script src="js/gsap.js"></script>      
       <script src="bootstrap/js/bootstrap.js"></script>
