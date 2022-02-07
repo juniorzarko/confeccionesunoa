@@ -37,6 +37,7 @@ class ManejOperacion{
                 $("#mensajes").html("Obteniendo lista...");
                 $("#mensajes").hide(500);
                 console.log("entro por complete");
+                listarOperacion();
             }
         });
       
@@ -93,6 +94,7 @@ class ManejOperacion{
                 //$("#mensajes").hide(1000);
                 console.log("entro por complete listar");
                 console.log(status);
+                
             }
         });
 
@@ -148,6 +150,7 @@ class ManejOperacion{
                 //$("#mensajes").hide(1000);
                 console.log("entro por complete listar");
                 console.log(status);
+                listarOperacion();
             }
         });
     }
@@ -192,6 +195,7 @@ class ManejOperacion{
                 //$("#mensajes").hide(1000);
                 console.log("entro por complete listar");
                 console.log(status);
+                listarOperacion();
             }
         });
     }
@@ -199,6 +203,7 @@ class ManejOperacion{
     actualizaroperacionxid(id){
     
         let datos={
+            id:$("#idOperacion").val(),
             fecha:$("#fechaOperacion").val(),
             nombre:$("#nombreOperacion").val(),
               
@@ -248,6 +253,7 @@ class ManejOperacion{
                 //$("#mensajes").hide(1000);
                 console.log("entro por complete listar");
                 console.log(status);
+                listarOperacion();
             }
         });
 
@@ -299,8 +305,8 @@ function mostrarinformacionoperacion(items){
                   <td>${items['nombre']}</td>
                 
                  
-                  <td id="id-boton"><button id="boton-primary" class="btn btn-primary btn-sm" onclick="listarlotexid(${items.id});">Editar</td>
-                  <td id="id-boton"><button type="button" class="btn btn-dark btn-sm" onclick="eliminarlotexid(${items.id});">Borrar</button></td>                
+                  <td id="id-boton"><button id="boton-primary" class="btn btn-primary btn-sm" onclick="listaroperacionxid(${items.id});">Editar</td>
+                  <td id="id-boton"><button type="button" class="btn btn-dark btn-sm" onclick="eliminaroperacion(${items.id});">Borrar</button></td>                
                    </tr>`;
     
                    
@@ -313,3 +319,32 @@ function mostrarinformacionoperacion(items){
      tabla += `</table></div>`;
      $("#listar_contenidos").html(tabla);
     }
+
+
+    function actualizarOperacion(){
+        let id=$("#idOperacion").val();
+        let objoperaciones = new ManejOperacion();
+        objoperaciones.actualizaroperacionxid(id);
+    
+    }
+
+    function eliminaroperacion(id){
+
+        let objOperacion = new ManejOperacion();
+        objOperacion.eliminaroperacionxid(id);
+    }
+
+    function llenarcamposoperacion(datos){
+        $("#idOperacion").val(datos.id);
+        $("#fechaOperacion").val(datos.fecha);
+        $("#nombreOperacion").val(datos.nombre);
+       
+    
+    }
+
+    function listaroperacionxid(id){
+
+        let objOperacion = new ManejOperacion();
+        objOperacion.consultaroperacionxId(id);
+    }
+    

@@ -6,7 +6,7 @@ class ManejOperaciones{
             fecha:$("#fechaOperaciones").val(),
             descripcion:$("#nombreOperaciones").val(),
             costoxprenda:$("#costoxprenda").val(),
-              
+            idOperacion:$("#operacionesSelect").val() 
         }
 
        $.ajax({
@@ -38,6 +38,7 @@ class ManejOperaciones{
                 $("#mensajes").html("Obteniendo lista...");
                 $("#mensajes").hide(500);
                 console.log("entro por complete");
+                listarmodoperaciones();
             }
         });
       
@@ -333,8 +334,38 @@ const primeraLetraMayuscula = (cadena) => {
                     <th scope="col">costoxprenda</th>
                   
                    </tr>
-                  </thead>`;
+         
+         
+                   </thead>`;
+
+                       //recorre el arreglo de 'items' y construye dinamicamente la fila de datos de la tabla for (var i = 0; i < items2.length; i++)
+                 
+                items.forEach((items)=>{
+                    // console.log(items);
+                     tabla += `<tr>
+                     <th scope="row">${items['id']}</th>
+                               <td>${items['fecha']}</td>
+                               <td>${items['descripcion']}</td>
+                               <td>${items['costoxprenda']}</td>
+                              
+                               <td id="id-boton"><button id="boton-primary" class="btn btn-primary btn-sm" onclick="enviaridoperaciones(${items.id});">Editar</td>
+                               <td id="id-boton"><button type="button" class="btn btn-dark btn-sm" onclick="eliminaroperaciones(${items.id});">Borrar</button></td>                
+                                </tr>`;
+                 
+                                
+                 //cierra tabla agregando el tag adecuado
+                 
+             
+                 //accede al elemento con id 'listado' y adiciona la tabla de datos a su html
+                
+                  });
+                  tabla += `</table></div>`;
+                  $("#listar_contenidos").html(tabla);
+
+
+
 }
+
 /**INICIO DE FUNCIONES DE LA TABLA OPERACION */
 function listarOperaciones (respuesta, select){
     console.log("Se ejecuto listar Operaciones")
