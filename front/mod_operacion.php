@@ -6,13 +6,13 @@
               <div class="input-group">
                 <div class="input-group-text">Fecha:
                  </div>
-                  <input type="date" class="form-control" id="fechaOperacion" placeholder="">
+                  <input type="date" class="form-control" id="fechaOperacion" >
               </div>
             </div>
             <div class="col-md-6 mt-2 ">
                 <div class="input-group">
-                  <div class="input-group-text">Nombre</div>
-                     <input type="text" class="form-control" id="nombreOperacion" placeholder="Nombre">
+                  <div class="input-group-text">Operación</div>
+                     <input type="text" class="form-control" id="nombreOperacion" placeholder="Digite Nombre">
                   </div>
             </div>          
         </div>  
