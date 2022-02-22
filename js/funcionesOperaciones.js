@@ -297,18 +297,21 @@ function guardarmodoperaciones(){
 //Me ingresa valores en el select de operador
 function listarOperarios(respuesta){
     
-    let listaOperaciones = []
+    let listaOperaciones = [];
     let operadorSelect = document.getElementById('operadorSelect');
+    let listaidoperario =[];
     console.log(respuesta)
     console.log("Se ejecuto la funcion listar Operarios...")
     for (item of respuesta){
-        listaOperaciones.push(primeraLetraMayuscula(item[1]) +" "+ primeraLetraMayuscula(item[2]) )
-        console.log(listaOperaciones)
+        listaOperaciones.push(primeraLetraMayuscula(item[1]) +" "+ primeraLetraMayuscula(item[2]) );
+        listaidoperario.push(item.id);
+        console.log(item);
     }
-    
+    console.log(listaidoperario);
     for (value in listaOperaciones){
         var option = document.createElement("option");
         option.text = listaOperaciones[value];
+        option.value = listaidoperario[value];
         operadorSelect.add(option)
     }
 }

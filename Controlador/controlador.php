@@ -5,6 +5,8 @@ include_once "confecciones/api/serviciosOperario.php";
 include_once "confecciones/api/servicioslote.php";
 include_once "confecciones/api/ServiciosOperaciones.php";
 include_once "confecciones/api/ServiciosOperacion.php";
+include_once "confecciones/api/ServiciosModulo.php";
+
 
 class controlador extends RestUtils{
 
@@ -17,6 +19,7 @@ public $servlote;
 public $servOperario;
 public $servOperacion;
 public $servOperaciones;
+public $servModulos;
 public $msj;
 
 function __construct(){
@@ -26,6 +29,7 @@ function __construct(){
     $this->servlote = new ServiciosLote();
     $this->servOperacion = new ServiciosOperacion();
     $this->servOperaciones = new ServiciosOperaciones();
+    $this->servModulos = new ServiciosModulo();
     $this->url ="";
    
 
@@ -231,7 +235,42 @@ public function recibirdatos($url){
                        RestUtils::sendResponse(http_response_code(204), json_encode($resultado), 'application/json');
                   break; 
 
+               /***API CRUD PARA MODULOS-OPERACIONES */
 
+               case 'modulo/asignar/':
+                  $this_rest = RestUtils::processRequest();
+                  $datos=$this_rest->getData();
+                  $resultado=$this->servModulos->insertar($datos);
+                  RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+               break;  
+               case 'modulo/listar/':
+                 
+                  $this->setMsj($url_pet);
+                  $this_rest = RestUtils::processRequest();
+                  $resultado=$this->servOperacion->getAll();
+                  RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                  
+               break; 
+               case 'modulo/buscarxid/':
+                $this_rest = RestUtils::processRequest();
+                $resultado=$this->servOperacion->buscarId($id);
+                RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
+                break;
+
+                        
+                case 'modulo/actualizar/':
+                   $this_rest = RestUtils::processRequest();
+                   $datos=$this_rest->getData();
+                   $resultado=$this->servOperacion->actualizarRegistro($datos,$id);
+                   RestUtils::sendResponse(http_response_code(202), json_encode($resultado), 'application/json');
+                break;   
+                
+                case 'modulo/eliminar/':
+                   $this_rest = RestUtils::processRequest();
+                   $resultado=$this->servOperacion->eliminarxid($id);
+                  // var_dump($resultado);
+                     RestUtils::sendResponse(http_response_code(204), json_encode($resultado), 'application/json');
+                break; 
 
                 default:{
                  

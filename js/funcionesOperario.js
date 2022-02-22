@@ -249,13 +249,13 @@ console.log('entro a listar operario')
                 $("#mensaje").hide(1000);
                 alert("Usuario eliminado");
                 //recibe el arreglo 'items' de la respuesta a la petición
-          
+                listarRespuesta();
             },
 
             error: function (xhr, status) {
                 $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
                 //$("#mensajes").hide(1000);
-                console.log("entro por error listar");
+                console.log("entro por error eliminar");
                 console.log(status);
             },
     
@@ -263,8 +263,9 @@ console.log('entro a listar operario')
             complete: function (xhr, status) {
                 $("#mensajes").html("Usuario no existe");
                 //$("#mensajes").hide(1000);
-                console.log("entro por complete listar");
+                console.log("entro por complete eliminar");
                 console.log(status);
+                listarRespuesta();
             }
         });
     }

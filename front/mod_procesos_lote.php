@@ -26,11 +26,7 @@
               <div class="input-group-text">Proceso:</div>
                 <select id="operacion-general" class="form-select form-select-sm"  aria-label=".form-select-sm example">
                     <option selected>Seleccione el Lote</option>
-                    <!-- <option value="1">ad1815</option>
-                    <option value="2">a123445<e/option>
-                    <option value="3">cx5434</option>
-                    <option value="4">f554</option>
-                    <option value="5">dg543446</option> -->
+               
                 </select>
               </div>
           </div> 
@@ -72,7 +68,7 @@
           <div class="col-md-12 mt-2" >
              <div class="input-group">
                 <span class="input-group-text">Observaciones</span>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <textarea class="form-control" id="observaciones" aria-label="With textarea"></textarea>
              </div>     
           </div>    
       </div>        
@@ -83,7 +79,7 @@
        
         <button class="btn btn-sm btn-outline-primary" type="button">Actualizar</button>
         <button class="btn btn-sm btn-outline-primary mx-3" type="button">Listar</button>
-        <button class="btn btn-sm btn-outline-primary" type="button">Guardar</button>
+        <button class="btn btn-sm btn-outline-primary" Onclick="asignaroperacion()" type="button">Guardar</button>
       </form>
     </nav>
   </div>    

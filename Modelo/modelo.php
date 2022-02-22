@@ -391,8 +391,8 @@ class tb_mod_prendas{
 	public $id;
 	public $fecha_mvto;
 	public $id_operaciones;
-	public $codigoOperador;
-	public $nombreOperador;
+//	public $codigoOperador;
+//	public $nombreOperador;
 	public $unidad_hora;
 	public $unidadTotalDia;
 	public $salarioDia;
@@ -411,6 +411,23 @@ class tb_mod_prendas{
 		$this->id=null;//$id;
 	
 	}
+
+	function ParamModulos($param){
+		//	 $this->id=$param['id'];
+		$this->fecha_mvto=$param['fecha_mvto'];
+		$this->id_operaciones=$param['id_operaciones'];
+	//	$this->codigoOperador=$param['codigoOperador']; Eliminado campo se saca con el id de operario
+	//	$this->nombreOperador=$param['nombreOperador']; para guardar con el id del operador eliminado
+		$this->unidad_hora=$param['unidad_hora'];
+		$this->unidadTotalDia=$param['unidadTotalDia'];
+		$this->salarioDia=$param['salarioDia'];
+		$this->total=$param['total'];
+		$this->observaciones=$param['observaciones'];
+		$this->id_operario=$param['id_operario'];
+		$this->id_lote=$param['id_lote'];
+	
+		}
+
 				/**
 				 * Get the value of id
 				 *
@@ -485,53 +502,7 @@ class tb_mod_prendas{
 					return $this;
 				}
 
-				/**
-				 * Get the value of codigoOperador
-				 *
-				 * @return 	public
-				 */
-				public function getCodigoOperador()
-				{
-					return $this->codigoOperador;
-				}
-
-				/**
-				 * Set the value of codigoOperador
-				 *
-				 * @param public $codigoOperador
-				 *
-				 * @return self
-				 */
-				public function setCodigoOperador($codigoOperador)
-				{
-					$this->codigoOperador = $codigoOperador;
-
-					return $this;
-				}
-
-				/**
-				 * Get the value of nombreOperador
-				 *
-				 * @return 	public
-				 */
-				public function getNombreOperador()
-				{
-					return $this->nombreOperador;
-				}
-
-				/**
-				 * Set the value of nombreOperador
-				 *
-				 * @param public $nombreOperador
-				 *
-				 * @return self
-				 */
-				public function setNombreOperador($nombreOperador)
-				{
-					$this->nombreOperador = $nombreOperador;
-
-					return $this;
-				}
+				
 
 				/**
 				 * Get the value of unidad_hora
