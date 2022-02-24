@@ -77,7 +77,8 @@ class Manejolotes{
                 $("#mensajes").hide(1000);
                
                 //recibe el arreglo 'items' de la respuesta a la petición
-               mostrarinformacionlote(respuesta);
+             //  mostrarinformacionlote(respuesta);
+               return respuesta;
             },
     
             // código a ejecutar si la petición falla;

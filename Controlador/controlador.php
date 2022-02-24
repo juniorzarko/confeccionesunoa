@@ -247,7 +247,7 @@ public function recibirdatos($url){
                  
                   $this->setMsj($url_pet);
                   $this_rest = RestUtils::processRequest();
-                  $resultado=$this->servOperacion->getAll();
+                  $resultado=$this->servModulos->getAll();
                   RestUtils::sendResponse(http_response_code(), json_encode($resultado), 'application/json');
                   
                break; 

@@ -53,9 +53,10 @@ class ProcesoLotes{
 
     
     //inicio
-    listaritem(){
+    
+    listarproceso(){
         $.ajax({
-            url: "http://localhost/confeccionesunoa/principal.php/operacion/listar",
+            url: "http://localhost/confeccionesunoa/principal.php/operaciones/listar",
             type: 'GET',
             dataType: 'json',
             success: function (respuesta) {
@@ -64,8 +65,8 @@ class ProcesoLotes{
                 $("#mensajes").hide(1000);
                console.log(respuesta)
                //Llenar el select de procesos con las operaciones
-               let select = document.getElementById('operacionesSelect');
-               listarOperaciones(respuesta, select);
+               let select = document.getElementById('selectorProceso');
+               selectorproceso(respuesta, select);
             },
             error: function (xhr, status) {
                 $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
@@ -78,6 +79,7 @@ class ProcesoLotes{
                 console.log(status);
             }
         });}
+        
     //fin
 
 
@@ -86,7 +88,7 @@ class ProcesoLotes{
         $.ajax({
             // la URL para la petición (url: "url al recurso o endpoint")
            // url: "http://localhost:8080/api/Cabin/all",
-            url: "http://localhost/confeccionesunoa/principal.php/operaciones/listar",
+            url: "http://localhost/confeccionesunoa/principal.php/modulo/listar",
             // la información a enviar
             // (también es posible utilizar una cadena de datos)
             //si el metodo del servicio recibe datos, es necesario definir el parametro adicional
@@ -108,7 +110,7 @@ class ProcesoLotes{
                 $("#mensajes").hide(1000);
                
                 //recibe el arreglo 'items' de la respuesta a la petición
-                mostrarinformacionoperaciones(respuesta);
+                mostrarinformacionModulos(respuesta);
             },
     
             // código a ejecutar si la petición falla;
@@ -313,7 +315,7 @@ class ProcesoLotes{
     //interfaz mod_procesos_lote
     listaritem(){
         $.ajax({
-            url: "http://localhost/confeccionesunoa/principal.php/operacion/listar",
+            url: "http://localhost/confeccionesunoa/principal.php/lote/listar",
             type: 'GET',
             dataType: 'json',
             success: function (respuesta) {
@@ -341,7 +343,7 @@ class ProcesoLotes{
     //Insertar los procesos en el select de la interfaz procesos de lote
     listarProcesos(){
         $.ajax({
-           url: "http://localhost/confeccionesunoa/principal.php/operaciones/listar",
+           url: "http://localhost/confeccionesunoa/principal.php/operacion/listar",
            type: 'GET',
            dataType: 'json',
            success: function (respuesta) {
@@ -369,18 +371,22 @@ class ProcesoLotes{
 //ingresa valores a el select de operaciones //tabla procesos lotes
 function listarProcesosMod(respuesta){
     
-    let listaOperaciones = []
+    let listaOperacion = []
+    let idOPeracion = [];
     let operacionSelect = document.getElementById('selectOperacion-mod');
   //  console.log(operacionSelect)
    // console.log("Se ejecuto la funcion listar Operaraciones ...")
     for (item of respuesta){
-        listaOperaciones.push(item[2])
+        listaOperacion.push(item[2])
+        idOPeracion.push(item.id)
+
    //     console.log(listaOperaciones)
     }
     
-    for (value in listaOperaciones){
+    for (value in listaOperacion){
         var option = document.createElement("option");
-        option.text = listaOperaciones[value];
+        option.text = listaOperacion[value];
+        option.value = idOPeracion[value];
 
         operacionSelect.add(option)
     }
@@ -395,6 +401,7 @@ function listarProcesosMod(respuesta){
     objManejoProcesLotes.listarOperario();
     objManejoProcesLotes.listarProcesos();
     objManejoProcesLotes.listaritem();
+    objManejoProcesLotes.listarproceso();
     
            
 } 
@@ -405,4 +412,18 @@ function asignaroperacion(){
     objManejoProcesLotes.registrarProceso();
 }
 
+function listarasignaciones(){
 
+    var objManejoProcesLotes = new ProcesoLotes;
+    objManejoProcesLotes.listarModulo();
+
+}
+
+//RESPUESTA LISTAR MODULOS
+
+function mostrarinformacionModulos(datos){
+
+    let tablaModulos = document.getElementById('tabladatos');
+    console.log(tablaModulos);
+
+}

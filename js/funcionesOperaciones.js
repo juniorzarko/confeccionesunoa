@@ -59,7 +59,7 @@ class ManejOperaciones{
                console.log(respuesta)
                //Llenar el select de procesos con las operaciones
                let select = document.getElementById('operacionesSelect');
-               listarOperaciones(respuesta, select);
+               selectorproceso(respuesta, select);
             },
             error: function (xhr, status) {
                 $("#mensajes").html("Ocurrio un problema al ejecutar la petición..." + status);
@@ -372,11 +372,36 @@ const primeraLetraMayuscula = (cadena) => {
 /**INICIO DE FUNCIONES DE LA TABLA OPERACION */
 function listarOperaciones (respuesta, select){
     console.log("Se ejecuto listar Operaciones")
-    let listaOperaciones = []
-    let idOPeraciones = []
+    console.log(respuesta);
+    let listaOperaciones = [];
+    let idOPeraciones = [];
     
-    console.log(select)
+  //  console.log(select)
     console.log("Se ejecuto la funcion listar Operaciones...")
+    for (item of respuesta){
+        listaOperaciones.push(item[1])
+        console.log(listaOperaciones)
+        idOPeraciones.push(item.id)
+    }
+    
+    for (value in listaOperaciones){
+        var option = document.createElement("option");
+        option.text = listaOperaciones[value];
+        option.value = idOPeraciones[value];
+        console.log(idOPeraciones[value]);
+        select.add(option)
+    }
+
+}
+
+function selectorproceso (respuesta, select){
+    console.log("Se ejecuto listar Operacion")
+    console.log(respuesta);
+    let listaOperaciones = [];
+    let idOPeraciones = [];
+    
+  //  console.log(select)
+    console.log("Se ejecuto la funcion listar Operacion...")
     for (item of respuesta){
         listaOperaciones.push(item[2])
         console.log(listaOperaciones)
@@ -392,6 +417,7 @@ function listarOperaciones (respuesta, select){
     }
 
 }
+
 function listarmodoperaciones(){
     let objoperaciones = new ManejOperaciones();
     objoperaciones.listarModulo();

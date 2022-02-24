@@ -23,7 +23,7 @@
           </div>
           <div class="col-md-4 mx-auto  mt-2">
               <div class="input-group">
-              <div class="input-group-text">Proceso:</div>
+              <div class="input-group-text">Lote:</div>
                 <select id="operacion-general" class="form-select form-select-sm"  aria-label=".form-select-sm example">
                     <option selected>Seleccione el Lote</option>
                
@@ -42,11 +42,11 @@
          </div> 
         <div class="col-md-4 mx-auto  mt-2">
               <div class="input-group">
-                <div class="input-group-text">Operacion</div>
-                  <select class="form-select form-select-sm" requiered aria-label=".form-select-sm example">
+                <div class="input-group-text">Procesos</div>
+                  <select class="form-select form-select-sm" id="selectorProceso" requiered aria-label=".form-select-sm example">
                     <option selected>Seleccione el Proceso</option>
-                    <option value="1">Ojalar</option>    
-                    <option value="2">Prender Garra</option>                      
+
+                                     
                   </select>  
               </div>
           </div>             
@@ -78,7 +78,7 @@
       <form class="container-fluid justify-content-center">
        
         <button class="btn btn-sm btn-outline-primary" type="button">Actualizar</button>
-        <button class="btn btn-sm btn-outline-primary mx-3" type="button">Listar</button>
+        <button class="btn btn-sm btn-outline-primary mx-3" Onclick="listarasignaciones()" type="button">Listar</button>
         <button class="btn btn-sm btn-outline-primary" Onclick="asignaroperacion()" type="button">Guardar</button>
       </form>
     </nav>
@@ -507,7 +507,7 @@
           </div>
       </div>
       <div class="table-responsive">
-               <table class="table table-striped table-sm">
+               <table class="table table-striped table-sm" id="tabladatos">
             
                       <thead class="thead-dark">
                             <tr>
